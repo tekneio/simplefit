@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — ActiveCal</title>
+  <style>
+    :root {
+      --accent: #3478f6;
+      --bg: #ffffff;
+      --text: #1c1c1e;
+      --secondary: #6e6e73;
+      --border: #e5e5ea;
+      --card: #f2f2f7;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000;
+        --text: #f5f5f7;
+        --secondary: #98989d;
+        --border: #2c2c2e;
+        --card: #1c1c1e;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+    .lang-switch {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 40px;
+    }
+    .lang-switch a {
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      border: 1.5px solid var(--border);
+      color: var(--secondary);
+      transition: all 0.15s;
+    }
+    .lang-switch a.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .section { display: none; }
+    .section.visible { display: block; }
+    .app-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .app-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #3478f6, #5e9cf6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .app-icon svg { width: 32px; height: 32px; fill: white; }
+    .app-title h1 { font-size: 24px; font-weight: 700; }
+    .app-title p { font-size: 14px; color: var(--secondary); margin-top: 2px; }
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 36px 0 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 24px 0 8px;
+      color: var(--accent);
+    }
+    p { margin-bottom: 12px; color: var(--text); }
+    ul { margin: 8px 0 12px 20px; }
+    li { margin-bottom: 4px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .meta {
+      font-size: 13px;
+      color: var(--secondary);
+      margin-bottom: 32px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 15px;
+    }
+    .card strong { display: block; margin-bottom: 4px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 14px;
+    }
+    th {
+      text-align: left;
+      padding: 8px 12px;
+      background: var(--card);
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--secondary);
+    }
+    td { padding: 8px 12px; border-top: 1px solid var(--border); }
+    .badge {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--secondary);
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Language Switch -->
+  <div class="lang-switch">
+    <a href="#" class="active" onclick="showLang('en', this); return false;">English</a>
+    <a href="#" onclick="showLang('de', this); return false;">Deutsch</a>
+  </div>
+
+  <!-- ===== ENGLISH ===== -->
+  <div id="lang-en" class="section visible">
+
+    <div class="app-header">
+      <div class="app-icon">
+        <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5C3.9 4 3 4.9 3 6v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 8V6h14v2H5zm7 4a3 3 0 100 6 3 3 0 000-6z"/></svg>
+      </div>
+      <div class="app-title">
+        <h1>ActiveCal</h1>
+        <p>Privacy Policy</p>
+      </div>
+    </div>
+
+    <div class="meta">
+      Last updated: April 16, 2026 &nbsp;·&nbsp;
+      Developer: Anastasios Panagou, Switzerland &nbsp;·&nbsp;
+      <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>
+    </div>
+
+    <h2>1. Introduction</h2>
+    <p>This Privacy Policy explains how ActiveCal ("the app", "we") processes your personal data. We follow a strict data minimization principle: ActiveCal operates no own servers, uses no advertising, and integrates no analytics or tracking SDKs. All data either stays on your device or is stored in your private iCloud account, which only you can access.</p>
+    <p>This policy covers the requirements of the <strong>EU General Data Protection Regulation (GDPR)</strong> and the <strong>Swiss Federal Act on Data Protection (nFADP / nDSG)</strong>.</p>
+
+    <div class="card">
+      <strong>Controller (Data Responsible Party)</strong>
+      Anastasios Panagou · Switzerland<br>
+      <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>
+    </div>
+
+    <h2>2. Data We Process</h2>
+
+    <h3>2.1 Workout &amp; Activity Logs</h3>
+    <p><strong>What:</strong> Your workout entries (date, activity type, duration, intensity, notes) and any custom sport types or categories you create.</p>
+    <p><strong>Where stored:</strong> Exclusively in your private iCloud CloudKit database. This data is encrypted by Apple and is accessible only to you — we have zero access.</p>
+    <p><strong>Legal basis:</strong> Art. 6(1)(b) GDPR — performance of contract; Art. 6 nDSG — contract performance.</p>
+    <p><strong>Retention:</strong> Until you delete the data in the app or remove it from your iCloud account. You control retention entirely.</p>
+
+    <h3>2.2 Apple HealthKit Data <span class="badge">Sensitive</span></h3>
+    <p><strong>What:</strong> With your explicit permission, we request read-only access to:</p>
+    <ul>
+      <li>Workouts (<code>HKWorkoutType</code>)</li>
+      <li>Active Energy Burned (<code>HKQuantityTypeIdentifierActiveEnergyBurned</code>)</li>
+      <li>Step Count (<code>HKQuantityTypeIdentifierStepCount</code>)</li>
+    </ul>
+    <p><strong>Where stored:</strong> HealthKit data is read directly from Apple Health on your device. It is never stored on any server, never transmitted to us, and never shared with any third party — including RevenueCat.</p>
+    <p><strong>Sensitive data:</strong> Health data is a special category under Art. 9 GDPR and Art. 5 lit. c nDSG. We process it solely on the basis of your explicit consent (Art. 9(2)(a) GDPR) granted when you enable Health access in the app or in iOS Settings &gt; Privacy &amp; Security &gt; Health.</p>
+    <p><strong>Withdraw consent:</strong> Any time via iOS Settings &gt; Privacy &amp; Security &gt; Health &gt; ActiveCal.</p>
+    <p><em>We do not use HealthKit data for advertising purposes and do not sell HealthKit data to third parties or data brokers.</em></p>
+
+    <h3>2.3 App Settings &amp; Preferences</h3>
+    <p><strong>What:</strong> Your optional name, weekly goal, appearance settings, notification preferences.</p>
+    <p><strong>Where stored:</strong> Locally on your device only (UserDefaults). Never transmitted or synced.</p>
+    <p><strong>Legal basis:</strong> Art. 6(1)(b) GDPR / Art. 6 nDSG — contract performance.</p>
+    <p><strong>Retention:</strong> Until you uninstall the app.</p>
+
+    <h3>2.4 Widget Data</h3>
+    <p><strong>What:</strong> Active days this week, current streak, accent color — to power the home screen widget.</p>
+    <p><strong>Where stored:</strong> Locally in an App Group shared container between the app and the widget extension. Never transmitted.</p>
+
+    <h3>2.5 In-App Purchase Verification (RevenueCat)</h3>
+    <p><strong>What:</strong> To verify your ActiveCal Lifetime purchase, we use RevenueCat, Inc. (USA) as our data processor. RevenueCat receives a <em>pseudonymous</em> device/user identifier and purchase transaction data from Apple. It does not receive your name, email, or any health or workout data.</p>
+    <p><strong>Legal basis:</strong> Art. 6(1)(b) GDPR — contract fulfillment; Art. 6 nDSG — contract performance.</p>
+    <p><strong>International transfer:</strong> RevenueCat is based in the USA. The transfer of pseudonymous identifiers is governed by Standard Contractual Clauses (SCCs) pursuant to Art. 46(2)(c) GDPR and constitutes an adequate safeguard under Art. 16–17 nDSG.</p>
+    <p><strong>Data Processing Agreement:</strong> A DPA is in place with RevenueCat per Art. 28 GDPR.</p>
+    <p>RevenueCat's privacy policy: <a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a></p>
+
+    <h3>2.6 Local Notifications</h3>
+    <p>Handled entirely by iOS. No notification server is involved. No data leaves your device.</p>
+
+    <h2>3. What We Do NOT Collect</h2>
+    <ul>
+      <li>No advertising identifiers (IDFA)</li>
+      <li>No analytics or crash-reporting SDKs</li>
+      <li>No data sold or shared for marketing</li>
+      <li>No automated profiling or individual decisions (Art. 22 GDPR; Art. 21 nDSG)</li>
+      <li>No server infrastructure — there is no "ActiveCal backend"</li>
+    </ul>
+
+    <h2>4. Your Rights</h2>
+    <table>
+      <tr><th>Right</th><th>GDPR</th><th>nDSG</th></tr>
+      <tr><td>Access</td><td>Art. 15</td><td>Art. 25</td></tr>
+      <tr><td>Rectification</td><td>Art. 16</td><td>Art. 32</td></tr>
+      <tr><td>Erasure</td><td>Art. 17</td><td>Art. 32</td></tr>
+      <tr><td>Restriction</td><td>Art. 18</td><td>—</td></tr>
+      <tr><td>Portability</td><td>Art. 20</td><td>—</td></tr>
+      <tr><td>Objection</td><td>Art. 21</td><td>—</td></tr>
+      <tr><td>Withdraw consent</td><td>Art. 7(3)</td><td>Art. 6</td></tr>
+    </table>
+    <h3>How to delete your data</h3>
+    <ul>
+      <li><strong>Workout data:</strong> Delete entries in the app, or go to iOS Settings &gt; [Your Name] &gt; iCloud &gt; Manage Account Storage &gt; ActiveCal.</li>
+      <li><strong>HealthKit access:</strong> Revoke in iOS Settings &gt; Privacy &amp; Security &gt; Health &gt; ActiveCal.</li>
+      <li><strong>Purchase data (RevenueCat):</strong> <a href="mailto:privacy@revenuecat.com">privacy@revenuecat.com</a></li>
+      <li><strong>Any other request:</strong> <a href="mailto:hello@tekneio.com">hello@tekneio.com</a> — we respond within 30 days.</li>
+    </ul>
+
+    <h2>5. Right to Lodge a Complaint</h2>
+    <div class="card">
+      <strong>Switzerland (nDSG)</strong>
+      Federal Data Protection and Information Commissioner (FDPIC)<br>
+      <a href="https://www.edoeb.admin.ch" target="_blank">www.edoeb.admin.ch</a>
+    </div>
+    <div class="card">
+      <strong>European Union (GDPR)</strong>
+      The supervisory authority in your EU member state of residence.<br>
+      Directory: <a href="https://www.edpb.europa.eu/about-edpb/about-edpb/members_en" target="_blank">edpb.europa.eu</a>
+    </div>
+
+    <h2>6. Security</h2>
+    <p>iCloud data is encrypted in transit and at rest by Apple. Local data is protected by iOS sandboxing and device encryption. We use no unencrypted storage and operate no servers.</p>
+
+    <h2>7. Children</h2>
+    <p>ActiveCal is rated 4+ on the App Store and is not directed at children under 13. We do not knowingly collect personal data from children under 13. If you believe a child has provided data through the app, contact us at <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>.</p>
+
+    <h2>8. Changes</h2>
+    <p>We may update this policy. The "Last updated" date reflects the latest version. For material changes, we will notify you within the app. Continued use does not constitute consent to new processing — any new processing requiring consent will be explicitly requested in the app.</p>
+
+    <div class="footer">
+      <strong>Contact:</strong> Anastasios Panagou · Switzerland · <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>
+    </div>
+
+  </div><!-- /lang-en -->
+
+
+  <!-- ===== DEUTSCH ===== -->
+  <div id="lang-de" class="section">
+
+    <div class="app-header">
+      <div class="app-icon">
+        <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5C3.9 4 3 4.9 3 6v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 8V6h14v2H5zm7 4a3 3 0 100 6 3 3 0 000-6z"/></svg>
+      </div>
+      <div class="app-title">
+        <h1>ActiveCal</h1>
+        <p>Datenschutzerklärung</p>
+      </div>
+    </div>
+
+    <div class="meta">
+      Zuletzt aktualisiert: 16. April 2026 &nbsp;·&nbsp;
+      Entwickler: Anastasios Panagou, Schweiz &nbsp;·&nbsp;
+      <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>
+    </div>
+
+    <h2>1. Einleitung</h2>
+    <p>Diese Datenschutzerklärung erläutert, wie ActiveCal („die App", „wir") personenbezogene Daten verarbeitet. Wir verfolgen das Prinzip der Datensparsamkeit: ActiveCal betreibt keine eigenen Server, verwendet keine Werbung und integriert keine Analyse- oder Tracking-SDKs. Alle Daten verbleiben entweder auf Ihrem Gerät oder werden in Ihrer privaten iCloud gespeichert, auf die ausschließlich Sie Zugriff haben.</p>
+    <p>Diese Erklärung berücksichtigt die Anforderungen der <strong>EU-Datenschutz-Grundverordnung (DSGVO)</strong> sowie des <strong>Schweizer Bundesgesetzes über den Datenschutz (nDSG/revDSG)</strong>.</p>
+
+    <div class="card">
+      <strong>Verantwortliche Person</strong>
+      Anastasios Panagou · Schweiz<br>
+      <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>
+    </div>
+
+    <h2>2. Daten, die wir verarbeiten</h2>
+
+    <h3>2.1 Trainings- und Aktivitätsdaten</h3>
+    <p><strong>Was:</strong> Ihre Trainingseinträge (Datum, Sportart, Dauer, Intensität, Notizen) sowie eigene Sportarten und Kategorien.</p>
+    <p><strong>Wo gespeichert:</strong> Ausschließlich in Ihrer privaten iCloud-CloudKit-Datenbank. Diese Daten sind von Apple verschlüsselt und nur für Sie zugänglich — wir haben keinen Zugriff.</p>
+    <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO — Vertragserfüllung; Art. 6 nDSG — Vertragserfüllung.</p>
+    <p><strong>Aufbewahrung:</strong> Bis Sie die Daten in der App löschen oder aus Ihrem iCloud-Konto entfernen. Die Kontrolle liegt vollständig bei Ihnen.</p>
+
+    <h3>2.2 Apple HealthKit-Daten <span class="badge">Sensibel</span></h3>
+    <p><strong>Was:</strong> Mit Ihrer ausdrücklichen Genehmigung fordern wir ausschließlich Lesezugriff auf folgende Datentypen an:</p>
+    <ul>
+      <li>Trainingseinheiten (<code>HKWorkoutType</code>)</li>
+      <li>Aktiv verbrannte Kalorien (<code>HKQuantityTypeIdentifierActiveEnergyBurned</code>)</li>
+      <li>Schrittanzahl (<code>HKQuantityTypeIdentifierStepCount</code>)</li>
+    </ul>
+    <p><strong>Wo gespeichert:</strong> HealthKit-Daten werden direkt von Apple Health auf Ihrem Gerät gelesen. Sie werden weder auf Servern gespeichert, noch übermittelt, noch mit Dritten — einschliesslich RevenueCat — geteilt.</p>
+    <p><strong>Sensible Daten:</strong> Gesundheitsdaten sind besonders schützenswerte Daten gemäss Art. 9 DSGVO und Art. 5 lit. c nDSG. Wir verarbeiten sie ausschliesslich auf Basis Ihrer ausdrücklichen Einwilligung (Art. 9 Abs. 2 lit. a DSGVO), die Sie durch Aktivierung des Gesundheitszugriffs in den App-Einstellungen oder unter iOS-Einstellungen &gt; Datenschutz &amp; Sicherheit &gt; Gesundheit erteilen.</p>
+    <p><strong>Einwilligung widerrufen:</strong> Jederzeit unter iOS-Einstellungen &gt; Datenschutz &amp; Sicherheit &gt; Gesundheit &gt; ActiveCal.</p>
+    <p><em>HealthKit-Daten werden nicht für Werbezwecke verwendet und nicht an Dritte oder Datenhändler weitergegeben.</em></p>
+
+    <h3>2.3 App-Einstellungen und Präferenzen</h3>
+    <p><strong>Was:</strong> Optionaler Name, Wochenziel, Darstellungseinstellungen, Benachrichtigungszeiten.</p>
+    <p><strong>Wo gespeichert:</strong> Ausschliesslich lokal auf Ihrem Gerät (UserDefaults). Keine Übertragung.</p>
+    <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO / Art. 6 nDSG.</p>
+    <p><strong>Aufbewahrung:</strong> Bis zur Deinstallation der App.</p>
+
+    <h3>2.4 Widget-Daten</h3>
+    <p><strong>Was:</strong> Aktive Tage dieser Woche, aktueller Streak, Akzentfarbe — für das Home-Screen-Widget.</p>
+    <p><strong>Wo gespeichert:</strong> Lokal in einem geteilten App-Group-Container. Keine Übertragung.</p>
+
+    <h3>2.5 Kaufverifizierung (RevenueCat)</h3>
+    <p><strong>Was:</strong> Zur Verifizierung Ihres ActiveCal-Lifetime-Kaufs verwenden wir RevenueCat, Inc. (USA) als Auftragsverarbeiter. RevenueCat erhält ein <em>pseudonymisiertes</em> Gerätekennzeichen und Kauftransaktionsdaten von Apple. RevenueCat erhält keine Namen, E-Mail-Adressen oder Gesundheits- bzw. Trainingsdaten.</p>
+    <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO — Vertragserfüllung; Art. 6 nDSG.</p>
+    <p><strong>Internationaler Datentransfer:</strong> RevenueCat hat Sitz in den USA. Die Übermittlung erfolgt auf Basis von Standardvertragsklauseln (SCCs) gemäss Art. 46 Abs. 2 lit. c DSGVO und stellt eine geeignete Garantie nach Art. 16–17 nDSG dar.</p>
+    <p><strong>Auftragsverarbeitungsvertrag:</strong> Ein AVV mit RevenueCat gemäss Art. 28 DSGVO liegt vor.</p>
+    <p>Datenschutzerklärung von RevenueCat: <a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a></p>
+
+    <h3>2.6 Lokale Benachrichtigungen</h3>
+    <p>Vollständig durch iOS verwaltet. Kein Server involviert, keine Daten verlassen Ihr Gerät.</p>
+
+    <h2>3. Was wir NICHT erfassen</h2>
+    <ul>
+      <li>Keine Werbe-IDs (IDFA)</li>
+      <li>Keine Analyse- oder Absturzbericht-SDKs</li>
+      <li>Keine Datenweitergabe zu Marketingzwecken</li>
+      <li>Keine automatisierten Entscheidungen oder Profiling (Art. 22 DSGVO; Art. 21 nDSG)</li>
+      <li>Keine eigene Serverinfrastruktur — es gibt kein „ActiveCal-Backend"</li>
+    </ul>
+
+    <h2>4. Ihre Rechte</h2>
+    <table>
+      <tr><th>Recht</th><th>DSGVO</th><th>nDSG</th></tr>
+      <tr><td>Auskunft</td><td>Art. 15</td><td>Art. 25</td></tr>
+      <tr><td>Berichtigung</td><td>Art. 16</td><td>Art. 32</td></tr>
+      <tr><td>Löschung</td><td>Art. 17</td><td>Art. 32</td></tr>
+      <tr><td>Einschränkung</td><td>Art. 18</td><td>—</td></tr>
+      <tr><td>Datenübertragbarkeit</td><td>Art. 20</td><td>—</td></tr>
+      <tr><td>Widerspruch</td><td>Art. 21</td><td>—</td></tr>
+      <tr><td>Einwilligung widerrufen</td><td>Art. 7 Abs. 3</td><td>Art. 6</td></tr>
+    </table>
+    <h3>So löschen Sie Ihre Daten</h3>
+    <ul>
+      <li><strong>Trainingsdaten:</strong> Direkt in der App löschen oder über iOS-Einstellungen &gt; [Ihr Name] &gt; iCloud &gt; Speicher verwalten &gt; ActiveCal.</li>
+      <li><strong>HealthKit-Zugriff:</strong> iOS-Einstellungen &gt; Datenschutz &amp; Sicherheit &gt; Gesundheit &gt; ActiveCal.</li>
+      <li><strong>Kaufdaten (RevenueCat):</strong> <a href="mailto:privacy@revenuecat.com">privacy@revenuecat.com</a></li>
+      <li><strong>Sonstige Anfragen:</strong> <a href="mailto:hello@tekneio.com">hello@tekneio.com</a> — Antwort innerhalb von 30 Tagen.</li>
+    </ul>
+
+    <h2>5. Beschwerderecht</h2>
+    <div class="card">
+      <strong>Schweiz (nDSG)</strong>
+      Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter (EDÖB)<br>
+      <a href="https://www.edoeb.admin.ch" target="_blank">www.edoeb.admin.ch</a>
+    </div>
+    <div class="card">
+      <strong>Europäische Union (DSGVO)</strong>
+      Die Datenschutzbehörde Ihres EU-Mitgliedstaates.<br>
+      Übersicht: <a href="https://www.edpb.europa.eu/about-edpb/about-edpb/members_en" target="_blank">edpb.europa.eu</a>
+    </div>
+
+    <h2>6. Datensicherheit</h2>
+    <p>iCloud-Daten werden von Apple verschlüsselt übertragen und gespeichert. Lokale Daten sind durch iOS-Sandboxing und Geräteverschlüsselung geschützt. Wir betreiben keine eigenen Server.</p>
+
+    <h2>7. Kinder</h2>
+    <p>ActiveCal ist im App Store ab 4 Jahren eingestuft und richtet sich nicht an Kinder unter 13 Jahren. Wir erheben wissentlich keine personenbezogenen Daten von Kindern unter 13 Jahren. Falls Sie glauben, dass ein Kind Daten über die App übermittelt hat, kontaktieren Sie uns unter <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>.</p>
+
+    <h2>8. Änderungen</h2>
+    <p>Wir können diese Erklärung aktualisieren. Das Datum „Zuletzt aktualisiert" zeigt den aktuellen Stand. Bei wesentlichen Änderungen informieren wir Sie in der App. Die weitere Nutzung der App stellt keine rechtswirksame Einwilligung in neue Verarbeitungsvorgänge dar.</p>
+
+    <div class="footer">
+      <strong>Kontakt:</strong> Anastasios Panagou · Schweiz · <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>
+    </div>
+
+  </div><!-- /lang-de -->
+
+</div><!-- /container -->
+
+<script>
+  function showLang(lang, el) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('visible'));
+    document.querySelectorAll('.lang-switch a').forEach(a => a.classList.remove('active'));
+    document.getElementById('lang-' + lang).classList.add('visible');
+    el.classList.add('active');
+  }
+</script>
+</body>
+</html>
