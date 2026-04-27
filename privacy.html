@@ -165,7 +165,7 @@
     </div>
 
     <div class="meta">
-      Last updated: April 16, 2026 (v2) &nbsp;&middot;&nbsp;
+      Last updated: April 27, 2026 (v3) &nbsp;&middot;&nbsp;
       Developer: Anastasios Panagou, Switzerland &nbsp;&middot;&nbsp;
       <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>
     </div>
@@ -194,7 +194,7 @@
       <li><strong>Read:</strong> Workouts (<code>HKWorkoutType</code>), Active Energy Burned (<code>HKQuantityTypeIdentifierActiveEnergyBurned</code>), Step Count (<code>HKQuantityTypeIdentifierStepCount</code>) &ndash; to import your existing Apple Health workouts and activity into SimpleFit Tracker.</li>
       <li><strong>Write:</strong> Workouts (<code>HKWorkoutType</code>) &ndash; when you log a new workout in SimpleFit Tracker, it can optionally be written back to Apple Health so it shows up there as well.</li>
     </ul>
-    <p><strong>Where stored:</strong> HealthKit data is exchanged directly with Apple Health on your device. Data read from Apple Health is never stored on any server, never transmitted to the developer, and never shared with any third party &ndash; including RevenueCat. Workouts written to Apple Health are stored and managed by Apple Health and are subject to Apple&rsquo;s privacy policy.</p>
+    <p><strong>Where stored:</strong> HealthKit data is exchanged directly with Apple Health on your device. Data read from Apple Health is never stored on any server, never transmitted to the developer, and never shared with any third party. Workouts written to Apple Health are stored and managed by Apple Health and are subject to Apple&rsquo;s privacy policy.</p>
     <p><strong>Sensitive data:</strong> Health data is a special category of personal data under Art.&nbsp;9 GDPR and particularly sensitive personal data under Swiss law. It is processed solely on the basis of your explicit consent (for example Art.&nbsp;9(2)(a) GDPR), which you grant when you enable Health access in the app or in iOS Settings &gt; Privacy &amp; Security &gt; Health.</p>
     <p><strong>Withdraw consent:</strong> You can withdraw Health access at any time in iOS Settings &gt; Privacy &amp; Security &gt; Health &gt; SimpleFit Tracker. Revoking access stops both reading and writing. Workouts already written to Apple Health can be deleted in the Apple Health app.</p>
     <p><em>SimpleFit Tracker does not use HealthKit data for advertising purposes and does not sell HealthKit data to third parties or data brokers.</em></p>
@@ -210,12 +210,10 @@
     <p><strong>Where stored:</strong> Locally in an app group shared container between the app and the widget extension. This data is never transmitted.</p>
     <p><strong>Legal basis (where GDPR applies):</strong> Performance of a contract (Art.&nbsp;6(1)(b) GDPR).</p>
 
-    <h3>2.5 In&#8209;App Purchase Verification (RevenueCat)</h3>
-    <p><strong>What:</strong> To verify your SimpleFit Pro purchase, the app uses RevenueCat, Inc. (USA) as a service provider. RevenueCat receives a pseudonymous device or user identifier and purchase transaction data from Apple. RevenueCat does not receive your name, email address, or any health or workout data from SimpleFit Tracker.</p>
+    <h3>2.5 In&#8209;App Purchase (Apple StoreKit)</h3>
+    <p>SimpleFit Pro is sold exclusively through Apple&rsquo;s App Store using Apple&rsquo;s StoreKit framework. Purchase processing and receipt verification are handled entirely by Apple on your device and through Apple&rsquo;s servers. The app does not use any third-party purchase verification service. The developer has no access to payment details such as credit card numbers.</p>
     <p><strong>Legal basis (where GDPR applies):</strong> Performance of a contract (Art.&nbsp;6(1)(b) GDPR).</p>
-    <p><strong>International transfer:</strong> RevenueCat is based in the USA. The transfer of pseudonymous identifiers and purchase information is based on standard contractual safeguards as required by data protection law (such as EU Standard Contractual Clauses).</p>
-    <p><strong>Data Processing Agreement:</strong> A data processing agreement is in place with RevenueCat in line with Art.&nbsp;28 GDPR.</p>
-    <p>RevenueCat&rsquo;s privacy policy: <a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a></p>
+    <p>For information about how Apple processes transaction data, see <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple&rsquo;s Privacy Policy</a>.</p>
 
     <h3>2.6 Local Notifications</h3>
     <p>Local notifications (for example, reminders) are handled entirely by iOS. No separate notification server is used and no notification data leaves your device.</p>
@@ -247,7 +245,7 @@
     <ul>
       <li><strong>Workout data:</strong> Delete entries directly in the app, or go to iOS Settings &gt; [Your Name] &gt; iCloud &gt; Manage Account Storage &gt; SimpleFit Tracker.</li>
       <li><strong>HealthKit access and data:</strong> Revoke Health access in iOS Settings &gt; Privacy &amp; Security &gt; Health &gt; SimpleFit Tracker. Workouts already written to Apple Health can be deleted in the Apple Health app.</li>
-      <li><strong>Purchase data (RevenueCat):</strong> Contact <a href="mailto:privacy@revenuecat.com">privacy@revenuecat.com</a> for questions about RevenueCat&rsquo;s processing.</li>
+      <li><strong>Purchase data:</strong> In-app purchases are processed by Apple. For questions about Apple&rsquo;s processing of transaction data, refer to <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple&rsquo;s Privacy Policy</a>.</li>
       <li><strong>Any other request:</strong> Contact <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>.</li>
     </ul>
 
@@ -293,7 +291,7 @@
     </div>
 
     <div class="meta">
-      Zuletzt aktualisiert: 16. April 2026 (v2) &nbsp;&middot;&nbsp;
+      Zuletzt aktualisiert: 27. April 2026 (v3) &nbsp;&middot;&nbsp;
       Entwickler: Anastasios Panagou, Schweiz &nbsp;&middot;&nbsp;
       <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>
     </div>
@@ -322,7 +320,7 @@
       <li><strong>Lesen:</strong> Trainingseinheiten (<code>HKWorkoutType</code>), aktiv verbrannte Kalorien (<code>activeEnergyBurned</code>), Schrittanzahl (<code>stepCount</code>) &ndash; um bestehende Apple&#8209;Health&#8209;Trainings in SimpleFit Tracker zu importieren.</li>
       <li><strong>Schreiben:</strong> Trainingseinheiten (<code>HKWorkoutType</code>) &ndash; wenn Sie ein neues Training in SimpleFit Tracker erfassen, kann es optional zur&uuml;ck in Apple Health geschrieben werden, sodass es dort ebenfalls erscheint.</li>
     </ul>
-    <p><strong>Wo gespeichert:</strong> HealthKit&#8209;Daten werden direkt mit Apple Health auf Ihrem Ger&auml;t ausgetauscht. Von Apple Health gelesene Daten werden weder auf Servern gespeichert noch &uuml;bermittelt oder mit Dritten &ndash; einschliesslich RevenueCat &ndash; geteilt. In Apple Health geschriebene Trainings werden von Apple Health verwaltet und unterliegen Apples Datenschutzrichtlinien.</p>
+    <p><strong>Wo gespeichert:</strong> HealthKit&#8209;Daten werden direkt mit Apple Health auf Ihrem Ger&auml;t ausgetauscht. Von Apple Health gelesene Daten werden weder auf Servern gespeichert noch &uuml;bermittelt oder mit Dritten geteilt. In Apple Health geschriebene Trainings werden von Apple Health verwaltet und unterliegen Apples Datenschutzrichtlinien.</p>
     <p><strong>Sensible Daten:</strong> Gesundheitsdaten sind besonders sch&uuml;tzenswerte Personendaten gem&auml;ss Art.&nbsp;9 DSGVO und nach Schweizer Datenschutzrecht. Wir bearbeiten sie ausschliesslich auf Basis Ihrer ausdr&uuml;cklichen Einwilligung (z.B. Art.&nbsp;9 Abs.&nbsp;2 lit.&nbsp;a DSGVO), die Sie durch Aktivierung des Gesundheitszugriffs in der App oder unter iOS&#8209;Einstellungen &gt; Datenschutz &amp; Sicherheit &gt; Gesundheit erteilen.</p>
     <p><strong>Einwilligung widerrufen:</strong> Sie k&ouml;nnen den Zugriff jederzeit unter iOS&#8209;Einstellungen &gt; Datenschutz &amp; Sicherheit &gt; Gesundheit &gt; SimpleFit Tracker widerrufen. Das Widerrufen stoppt sowohl Lesen als auch Schreiben. Bereits in Apple Health geschriebene Trainings k&ouml;nnen in der Apple&#8209;Health&#8209;App gel&ouml;scht werden.</p>
     <p><em>HealthKit&#8209;Daten werden nicht f&uuml;r Werbezwecke verwendet und nicht an Dritte oder Datenh&auml;ndler weitergegeben.</em></p>
@@ -338,12 +336,10 @@
     <p><strong>Wo gespeichert:</strong> Lokal in einem geteilten App&#8209;Group&#8209;Container. Keine &Uuml;bertragung an Server.</p>
     <p><strong>Rechtsgrundlage (soweit DSGVO anwendbar):</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO / Vertragserf&uuml;llung.</p>
 
-    <h3>2.5 Kaufverifizierung (RevenueCat)</h3>
-    <p><strong>Was:</strong> Zur Verifizierung Ihres SimpleFit&#8209;Pro&#8209;Kaufs verwenden wir RevenueCat, Inc. (USA) als Auftragsverarbeiter. RevenueCat erh&auml;lt ein pseudonymisiertes Ger&auml;tekennzeichen sowie Kauftransaktionsdaten von Apple. RevenueCat erh&auml;lt keine Namen, E&#8209;Mail&#8209;Adressen oder Gesundheits&#8209; bzw. Trainingsdaten von SimpleFit Tracker.</p>
+    <h3>2.5 In&#8209;App&#8209;Kauf (Apple StoreKit)</h3>
+    <p>SimpleFit Pro wird ausschliesslich &uuml;ber den Apple App Store per Apple StoreKit angeboten. Kaufabwicklung und Belegverifizierung erfolgen vollst&auml;ndig durch Apple auf Ihrem Ger&auml;t und &uuml;ber Apples Server. Die App verwendet keinen Drittanbieter f&uuml;r die Kaufverifizierung. Der Entwickler hat keinen Zugriff auf Zahlungsdetails wie Kreditkartennummern.</p>
     <p><strong>Rechtsgrundlage (soweit DSGVO anwendbar):</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO &ndash; Vertragserf&uuml;llung; nach Schweizer Recht Vertragsabwicklung.</p>
-    <p><strong>Internationaler Datentransfer:</strong> RevenueCat hat Sitz in den USA. Die &Uuml;bermittlung erfolgt auf Basis von vertraglichen Garantien (z.B. Standardvertragsklauseln) gem&auml;ss Datenschutzrecht und stellt eine geeignete Garantie im Sinne des DSG dar.</p>
-    <p><strong>Auftragsverarbeitungsvertrag:</strong> Ein Auftragsverarbeitungsvertrag mit RevenueCat gem&auml;ss Art.&nbsp;28 DSGVO liegt vor.</p>
-    <p>Datenschutzerkl&auml;rung von RevenueCat: <a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a></p>
+    <p>Informationen zur Verarbeitung von Transaktionsdaten durch Apple finden Sie in <a href="https://www.apple.com/legal/privacy/" target="_blank">Apples Datenschutzrichtlinien</a>.</p>
 
     <h3>2.6 Lokale Benachrichtigungen</h3>
     <p>Lokale Benachrichtigungen (z.B. Erinnerungen) werden vollst&auml;ndig durch iOS verwaltet. Kein Server ist involviert, keine Daten verlassen Ihr Ger&auml;t.</p>
@@ -375,7 +371,7 @@
     <ul>
       <li><strong>Trainingsdaten:</strong> Direkt in der App l&ouml;schen oder &uuml;ber iOS&#8209;Einstellungen &gt; [Ihr Name] &gt; iCloud &gt; Speicher verwalten &gt; SimpleFit Tracker.</li>
       <li><strong>HealthKit&#8209;Zugriff und &#8209;Daten:</strong> Unter iOS&#8209;Einstellungen &gt; Datenschutz &amp; Sicherheit &gt; Gesundheit &gt; SimpleFit Tracker verwalten. Von SimpleFit Tracker in Apple Health geschriebene Trainings k&ouml;nnen in der Apple&#8209;Health&#8209;App gel&ouml;scht werden.</li>
-      <li><strong>Kaufdaten (RevenueCat):</strong> F&uuml;r Fragen zur Bearbeitung durch RevenueCat k&ouml;nnen Sie <a href="mailto:privacy@revenuecat.com">privacy@revenuecat.com</a> kontaktieren.</li>
+      <li><strong>Kaufdaten:</strong> In&#8209;App&#8209;K&auml;ufe werden von Apple abgewickelt. F&uuml;r Fragen zur Verarbeitung von Transaktionsdaten durch Apple beachten Sie bitte <a href="https://www.apple.com/legal/privacy/" target="_blank">Apples Datenschutzrichtlinien</a>.</li>
       <li><strong>Sonstige Anfragen:</strong> <a href="mailto:hello@tekneio.com">hello@tekneio.com</a> &ndash; Antwort in der Regel innerhalb von 30 Tagen.</li>
     </ul>
 
