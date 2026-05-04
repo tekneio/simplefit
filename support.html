@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — SimpleFit Tracker</title>
+  <style>
+    :root {
+      --accent: #3478f6;
+      --bg: #ffffff;
+      --text: #1c1c1e;
+      --secondary: #6e6e73;
+      --border: #e5e5ea;
+      --card: #f2f2f7;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000;
+        --text: #f5f5f7;
+        --secondary: #98989d;
+        --border: #2c2c2e;
+        --card: #1c1c1e;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+    .lang-switch {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 40px;
+    }
+    .lang-switch a {
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      border: 1.5px solid var(--border);
+      color: var(--secondary);
+      transition: all 0.15s;
+      cursor: pointer;
+    }
+    .lang-switch a.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .section { display: none; }
+    .section.visible { display: block; }
+    .app-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .app-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #3478f6, #5e9cf6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .app-icon svg { width: 32px; height: 32px; fill: white; }
+    .app-title h1 { font-size: 24px; font-weight: 700; }
+    .app-title p { font-size: 14px; color: var(--secondary); margin-top: 2px; }
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 36px 0 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 24px 0 8px;
+      color: var(--accent);
+    }
+    p { margin-bottom: 12px; color: var(--text); }
+    ul, ol { margin: 8px 0 12px 22px; }
+    li { margin-bottom: 4px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .meta {
+      font-size: 13px;
+      color: var(--secondary);
+      margin-bottom: 32px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 15px;
+    }
+    .card strong { display: block; margin-bottom: 4px; }
+    .contact-card {
+      background: linear-gradient(135deg, rgba(52,120,246,0.10), rgba(94,156,246,0.06));
+      border: 1px solid rgba(52,120,246,0.25);
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .contact-card .email {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    details {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 4px 20px;
+      margin: 12px 0;
+      transition: all 0.2s;
+    }
+    details[open] {
+      padding-bottom: 16px;
+    }
+    summary {
+      padding: 16px 0;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::before {
+      content: '+';
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--accent);
+      transition: transform 0.2s;
+      width: 20px;
+      flex-shrink: 0;
+    }
+    details[open] summary::before { content: '–'; }
+    details p, details ol, details ul { margin-bottom: 8px; }
+    code {
+      background: rgba(127,127,127,0.18);
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    }
+    .footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--secondary);
+    }
+    .footer a { color: var(--accent); }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Language Switch -->
+  <div class="lang-switch">
+    <a class="active" onclick="showLang('en', this); return false;">English</a>
+    <a onclick="showLang('de', this); return false;">Deutsch</a>
+    <a onclick="showLang('fr', this); return false;">Français</a>
+  </div>
+
+  <!-- ===== ENGLISH ===== -->
+  <div id="lang-en" class="section visible">
+
+    <div class="app-header">
+      <div class="app-icon">
+        <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5C3.9 4 3 4.9 3 6v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 8V6h14v2H5zm7 4a3 3 0 100 6 3 3 0 000-6z"/></svg>
+      </div>
+      <div class="app-title">
+        <h1>SimpleFit Tracker</h1>
+        <p>Support &amp; Help</p>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <strong style="display:block; margin-bottom:6px;">Need help directly?</strong>
+      <span class="email"><a href="mailto:hello@tekneio.com?subject=SimpleFit%20Support">hello@tekneio.com</a></span>
+      <p style="margin-top:8px; color:var(--secondary); font-size:14px;">We usually reply within 1–2 business days. When reporting an issue, please include your iOS version, iPhone model, and a short description of what you tried.</p>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+      <summary>iCloud Sync isn't working between my devices</summary>
+      <p>SimpleFit Tracker uses your private iCloud account to sync workouts. To troubleshoot:</p>
+      <ol>
+        <li>Confirm both devices are signed in to <strong>the same iCloud account</strong> (Settings → [Your Name] → check Apple ID)</li>
+        <li>iCloud Drive must be enabled (Settings → [Your Name] → iCloud → iCloud Drive → On)</li>
+        <li>SimpleFit Tracker must be enabled in iCloud (Settings → [Your Name] → iCloud → See All → SimpleFit Tracker → On)</li>
+        <li>Make sure both devices have an internet connection</li>
+        <li>Open SimpleFit on both devices and pull-to-refresh on the calendar</li>
+      </ol>
+      <p>Sync usually completes within seconds to a few minutes. If it still doesn't work after 10 minutes, contact us with your iOS version and a screenshot.</p>
+    </details>
+
+    <details>
+      <summary>Apple Health workouts don't appear in SimpleFit</summary>
+      <p>SimpleFit can import workouts that exist in Apple Health, but only if you've granted permission:</p>
+      <ol>
+        <li>Open the <strong>Apple Health app</strong> on your iPhone</li>
+        <li>Tap your profile picture (top right) → <strong>Apps and Services</strong> → <strong>SimpleFit Tracker</strong></li>
+        <li>Enable <strong>all categories</strong>: Workouts, Active Energy, Step Count</li>
+        <li>Return to SimpleFit and trigger an import in Settings → Apple Health</li>
+      </ol>
+      <p>Note: SimpleFit reads workouts only — it cannot read individual heart-rate samples or location data.</p>
+    </details>
+
+    <details>
+      <summary>How do I unlock SimpleFit Pro after my trial?</summary>
+      <p>After your 7-day trial, SimpleFit Pro is a one-time purchase that unlocks all premium features forever. To purchase:</p>
+      <ol>
+        <li>Open SimpleFit → <strong>Settings</strong> → <strong>SimpleFit Pro</strong></li>
+        <li>Tap <strong>Buy SimpleFit Pro</strong> and confirm with Face ID / Touch ID</li>
+        <li>The price shown is the localized price for your App Store region</li>
+      </ol>
+      <p>If you previously purchased on another iPhone signed in to the same Apple ID, tap <strong>Restore Purchases</strong> to unlock without paying again.</p>
+    </details>
+
+    <details>
+      <summary>How can I export my data?</summary>
+      <p>Your data belongs to you. SimpleFit lets you export it any time:</p>
+      <ol>
+        <li>Open <strong>Settings</strong> → <strong>Data &amp; Privacy</strong> → <strong>Export</strong></li>
+        <li>Choose CSV (for spreadsheets) or JSON (for full structure)</li>
+        <li>Share or save the file via the iOS Share Sheet</li>
+      </ol>
+    </details>
+
+    <details>
+      <summary>How do I delete all my data?</summary>
+      <ul>
+        <li><strong>Workouts &amp; settings:</strong> Settings → Data &amp; Privacy → Reset App</li>
+        <li><strong>iCloud copies:</strong> Settings → [Your Name] → iCloud → Manage Account Storage → SimpleFit Tracker → Delete</li>
+        <li><strong>Apple Health workouts:</strong> open the Apple Health app → Browse → Workouts → swipe-delete entries</li>
+        <li><strong>Right-to-erasure request:</strong> email <a href="mailto:hello@tekneio.com">hello@tekneio.com</a></li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>The widget on my home screen isn't updating</summary>
+      <p>iOS controls how often widgets refresh. Try:</p>
+      <ol>
+        <li>Open SimpleFit and log a workout — this triggers a widget reload</li>
+        <li>Long-press the widget → <strong>Edit Widget</strong> and change a setting to force a refresh</li>
+        <li>Restart your iPhone if the widget shows stale data for more than a day</li>
+      </ol>
+    </details>
+
+    <details>
+      <summary>Notifications aren't arriving</summary>
+      <ol>
+        <li>Settings (iOS) → <strong>Notifications</strong> → <strong>SimpleFit Tracker</strong> → Allow Notifications: ON</li>
+        <li>Inside SimpleFit: Settings → Reminders → enable and pick a time</li>
+        <li>Make sure Focus mode (Do Not Disturb) is not blocking the app</li>
+      </ol>
+    </details>
+
+    <details>
+      <summary>The app crashed or behaves unexpectedly</summary>
+      <p>We don't collect crash logs automatically (no analytics SDK), so we rely on your report. Please email <a href="mailto:hello@tekneio.com">hello@tekneio.com</a> with:</p>
+      <ul>
+        <li>What you were doing when it crashed</li>
+        <li>iPhone model and iOS version (Settings → General → About)</li>
+        <li>SimpleFit version (Settings → About inside the app)</li>
+        <li>Optional: a screen recording of the issue</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Will my data work on a new iPhone?</summary>
+      <p>Yes — as long as you sign in to the same iCloud account. Install SimpleFit on the new device, grant iCloud permission, and your workouts will sync down within minutes.</p>
+    </details>
+
+    <details>
+      <summary>Is SimpleFit really subscription-free?</summary>
+      <p>Yes. SimpleFit Pro is a one-time purchase, not a subscription. There are no recurring charges, no auto-renewals, no premium tier upsells. Buy once, keep forever — across all your iPhones signed in to the same Apple ID.</p>
+    </details>
+
+    <h2>Privacy &amp; Data</h2>
+    <p>SimpleFit follows a strict data-minimization principle. Your workouts live in your private iCloud or on your device. We do not run our own servers, do not use analytics, and do not show ads.</p>
+    <p>Read the full <a href="privacy.html">Privacy Policy</a>.</p>
+
+    <h2>System Requirements</h2>
+    <ul>
+      <li>iOS 18 or later</li>
+      <li>iPhone (Dynamic Island optional but supported)</li>
+      <li>Apple ID with iCloud enabled (for sync)</li>
+    </ul>
+
+    <h2>Still need help?</h2>
+    <p>Send an email to <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>. Include screenshots if you can — they speed things up considerably.</p>
+
+    <div class="footer">
+      <strong>SimpleFit Tracker</strong> &middot; Anastasios Panagou, Switzerland<br>
+      <a href="mailto:hello@tekneio.com">hello@tekneio.com</a> &middot;
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+
+  </div><!-- /lang-en -->
+
+
+  <!-- ===== DEUTSCH ===== -->
+  <div id="lang-de" class="section">
+
+    <div class="app-header">
+      <div class="app-icon">
+        <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5C3.9 4 3 4.9 3 6v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 8V6h14v2H5zm7 4a3 3 0 100 6 3 3 0 000-6z"/></svg>
+      </div>
+      <div class="app-title">
+        <h1>SimpleFit Tracker</h1>
+        <p>Support &amp; Hilfe</p>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <strong style="display:block; margin-bottom:6px;">Direkter Support?</strong>
+      <span class="email"><a href="mailto:hello@tekneio.com?subject=SimpleFit%20Support">hello@tekneio.com</a></span>
+      <p style="margin-top:8px; color:var(--secondary); font-size:14px;">Wir antworten in der Regel innerhalb von 1–2 Arbeitstagen. Bei Problemen helfen iOS-Version, iPhone-Modell und eine kurze Beschreibung deiner letzten Schritte.</p>
+    </div>
+
+    <h2>Häufige Fragen</h2>
+
+    <details>
+      <summary>iCloud-Sync funktioniert nicht zwischen meinen Geräten</summary>
+      <p>SimpleFit Tracker synchronisiert Trainings über deine private iCloud. So kannst du das Problem eingrenzen:</p>
+      <ol>
+        <li>Beide Geräte müssen mit <strong>derselben Apple ID</strong> angemeldet sein (Einstellungen → [Dein Name])</li>
+        <li>iCloud Drive muss aktiv sein (Einstellungen → [Dein Name] → iCloud → iCloud Drive → Ein)</li>
+        <li>SimpleFit Tracker in iCloud aktivieren (Einstellungen → [Dein Name] → iCloud → Alle anzeigen → SimpleFit Tracker → Ein)</li>
+        <li>Beide Geräte brauchen eine Internetverbindung</li>
+        <li>SimpleFit auf beiden Geräten öffnen und im Kalender nach unten ziehen, um zu aktualisieren</li>
+      </ol>
+      <p>Der Sync ist meist innerhalb weniger Minuten fertig. Wenn nach 10 Minuten nichts passiert, melde dich bei uns — gerne mit iOS-Version und Screenshot.</p>
+    </details>
+
+    <details>
+      <summary>Apple-Health-Trainings erscheinen nicht in SimpleFit</summary>
+      <p>SimpleFit kann Trainings aus Apple Health importieren, sobald du den Zugriff erlaubst:</p>
+      <ol>
+        <li>Öffne die <strong>Apple-Health-App</strong> auf deinem iPhone</li>
+        <li>Tippe oben rechts auf dein Profilbild → <strong>Apps und Dienste</strong> → <strong>SimpleFit Tracker</strong></li>
+        <li>Aktiviere <strong>alle Kategorien</strong>: Workouts, Aktive Energie, Schritte</li>
+        <li>Zurück in SimpleFit → Einstellungen → Apple Health → Import auslösen</li>
+      </ol>
+      <p>Hinweis: SimpleFit liest nur Workouts — keine einzelnen Herzfrequenz-Werte oder Standortdaten.</p>
+    </details>
+
+    <details>
+      <summary>Wie schalte ich SimpleFit Pro nach dem Trial frei?</summary>
+      <p>Nach den 7 Tagen Trial ist SimpleFit Pro ein einmaliger Kauf, der dauerhaft alle Pro-Features freischaltet. So gehts:</p>
+      <ol>
+        <li>SimpleFit öffnen → <strong>Einstellungen</strong> → <strong>SimpleFit Pro</strong></li>
+        <li>Auf <strong>SimpleFit Pro kaufen</strong> tippen und mit Face ID / Touch ID bestätigen</li>
+        <li>Der angezeigte Preis ist der lokalisierte Preis deiner App-Store-Region</li>
+      </ol>
+      <p>Hast du bereits auf einem anderen iPhone mit derselben Apple ID gekauft? Tippe auf <strong>Käufe wiederherstellen</strong>, um ohne erneute Zahlung freizuschalten.</p>
+    </details>
+
+    <details>
+      <summary>Wie exportiere ich meine Daten?</summary>
+      <p>Deine Daten gehören dir — du kannst sie jederzeit exportieren:</p>
+      <ol>
+        <li><strong>Einstellungen</strong> → <strong>Daten &amp; Datenschutz</strong> → <strong>Export</strong></li>
+        <li>CSV (für Tabellen) oder JSON (volle Struktur) wählen</li>
+        <li>Über das iOS-Share-Sheet teilen oder speichern</li>
+      </ol>
+    </details>
+
+    <details>
+      <summary>Wie lösche ich alle meine Daten?</summary>
+      <ul>
+        <li><strong>Trainings &amp; Einstellungen:</strong> Einstellungen → Daten &amp; Datenschutz → App zurücksetzen</li>
+        <li><strong>iCloud-Kopien:</strong> Einstellungen → [Dein Name] → iCloud → Speicher verwalten → SimpleFit Tracker → Löschen</li>
+        <li><strong>Apple-Health-Trainings:</strong> Apple-Health-App → Übersicht → Workouts → einzelne Einträge nach links wischen</li>
+        <li><strong>Recht auf Löschung:</strong> E-Mail an <a href="mailto:hello@tekneio.com">hello@tekneio.com</a></li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Das Widget auf meinem Home-Bildschirm aktualisiert sich nicht</summary>
+      <p>iOS steuert, wie oft Widgets neu laden. Versuche:</p>
+      <ol>
+        <li>SimpleFit öffnen und ein Training eintragen — das löst ein Widget-Update aus</li>
+        <li>Widget lange drücken → <strong>Widget bearbeiten</strong> und eine Einstellung ändern</li>
+        <li>iPhone neustarten, falls das Widget länger als einen Tag veraltet ist</li>
+      </ol>
+    </details>
+
+    <details>
+      <summary>Erinnerungen kommen nicht an</summary>
+      <ol>
+        <li>iOS-Einstellungen → <strong>Mitteilungen</strong> → <strong>SimpleFit Tracker</strong> → Mitteilungen erlauben: Ein</li>
+        <li>In SimpleFit: Einstellungen → Erinnerungen → aktivieren und Zeit wählen</li>
+        <li>Fokus-Modus (Nicht stören) prüfen — er kann Mitteilungen blockieren</li>
+      </ol>
+    </details>
+
+    <details>
+      <summary>Die App ist abgestürzt oder verhält sich unerwartet</summary>
+      <p>Wir sammeln keine automatischen Crash-Logs (keine Analytics-SDKs), deshalb sind wir auf deine Rückmeldung angewiesen. Bitte sende eine E-Mail an <a href="mailto:hello@tekneio.com">hello@tekneio.com</a> mit:</p>
+      <ul>
+        <li>Was du gemacht hast, als der Fehler auftrat</li>
+        <li>iPhone-Modell und iOS-Version (Einstellungen → Allgemein → Info)</li>
+        <li>SimpleFit-Version (in der App: Einstellungen → Über die App)</li>
+        <li>Optional: Bildschirmaufnahme des Problems</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Funktionieren meine Daten auf einem neuen iPhone?</summary>
+      <p>Ja — sofern dieselbe Apple ID verwendet wird. SimpleFit auf dem neuen Gerät installieren, iCloud-Zugriff erlauben, und deine Trainings werden innerhalb weniger Minuten geladen.</p>
+    </details>
+
+    <details>
+      <summary>Ist SimpleFit wirklich abo-frei?</summary>
+      <p>Ja. SimpleFit Pro ist ein einmaliger Kauf, kein Abo. Keine wiederkehrenden Zahlungen, keine Auto-Verlängerung, keine versteckten Tier-Upgrades. Einmal kaufen, für immer behalten — auf allen iPhones mit derselben Apple ID.</p>
+    </details>
+
+    <h2>Datenschutz &amp; Daten</h2>
+    <p>SimpleFit folgt dem Prinzip der Datensparsamkeit. Deine Trainings liegen in deiner privaten iCloud oder auf deinem Gerät. Wir betreiben keine eigenen Server, keine Analyse-Tools, keine Werbung.</p>
+    <p>Vollständige <a href="privacy.html">Datenschutzerklärung</a>.</p>
+
+    <h2>Systemvoraussetzungen</h2>
+    <ul>
+      <li>iOS 18 oder neuer</li>
+      <li>iPhone (Dynamic Island optional, aber unterstützt)</li>
+      <li>Apple ID mit aktivem iCloud (für Sync)</li>
+    </ul>
+
+    <h2>Brauchst du noch Hilfe?</h2>
+    <p>Schreib uns an <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>. Screenshots beschleunigen die Antwort spürbar.</p>
+
+    <div class="footer">
+      <strong>SimpleFit Tracker</strong> &middot; Anastasios Panagou, Schweiz<br>
+      <a href="mailto:hello@tekneio.com">hello@tekneio.com</a> &middot;
+      <a href="privacy.html">Datenschutzerklärung</a>
+    </div>
+
+  </div><!-- /lang-de -->
+
+
+  <!-- ===== FRANÇAIS ===== -->
+  <div id="lang-fr" class="section">
+
+    <div class="app-header">
+      <div class="app-icon">
+        <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5C3.9 4 3 4.9 3 6v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 8V6h14v2H5zm7 4a3 3 0 100 6 3 3 0 000-6z"/></svg>
+      </div>
+      <div class="app-title">
+        <h1>SimpleFit Tracker</h1>
+        <p>Support &amp; aide</p>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <strong style="display:block; margin-bottom:6px;">Besoin d'aide directement ?</strong>
+      <span class="email"><a href="mailto:hello@tekneio.com?subject=SimpleFit%20Support">hello@tekneio.com</a></span>
+      <p style="margin-top:8px; color:var(--secondary); font-size:14px;">Nous répondons en général sous 1 à 2 jours ouvrés. En cas de problème, indique ta version d'iOS, ton modèle d'iPhone et une brève description.</p>
+    </div>
+
+    <h2>Questions fréquentes</h2>
+
+    <details>
+      <summary>La synchronisation iCloud ne fonctionne pas entre mes appareils</summary>
+      <p>SimpleFit Tracker utilise ton iCloud privé pour synchroniser les entraînements. Vérifie :</p>
+      <ol>
+        <li>Les deux appareils sont connectés au <strong>même identifiant Apple</strong> (Réglages → [Ton nom])</li>
+        <li>iCloud Drive est activé (Réglages → [Ton nom] → iCloud → iCloud Drive → Activé)</li>
+        <li>SimpleFit Tracker est activé dans iCloud (Réglages → [Ton nom] → iCloud → Tout afficher → SimpleFit Tracker)</li>
+        <li>Les deux appareils ont une connexion Internet</li>
+        <li>Ouvre SimpleFit sur les deux appareils et tire vers le bas pour rafraîchir</li>
+      </ol>
+      <p>La synchro se termine généralement en quelques minutes. Si rien ne se passe après 10 minutes, contacte-nous avec une capture d'écran et la version d'iOS.</p>
+    </details>
+
+    <details>
+      <summary>Mes entraînements Apple Health n'apparaissent pas dans SimpleFit</summary>
+      <p>SimpleFit peut importer les entraînements existants dans Apple Health, à condition d'avoir l'autorisation :</p>
+      <ol>
+        <li>Ouvre l'<strong>app Santé</strong> d'Apple sur ton iPhone</li>
+        <li>Touche ta photo de profil (en haut à droite) → <strong>Apps et services</strong> → <strong>SimpleFit Tracker</strong></li>
+        <li>Active <strong>toutes les catégories</strong> : Entraînements, Énergie active, Pas</li>
+        <li>Retourne dans SimpleFit → Réglages → Apple Health → Importer</li>
+      </ol>
+      <p>Note : SimpleFit ne lit que les entraînements — pas les fréquences cardiaques détaillées ni les données de localisation.</p>
+    </details>
+
+    <details>
+      <summary>Comment débloquer SimpleFit Pro après l'essai ?</summary>
+      <p>Après les 7 jours d'essai, SimpleFit Pro est un achat unique qui débloque toutes les fonctions premium pour toujours :</p>
+      <ol>
+        <li>Ouvre SimpleFit → <strong>Réglages</strong> → <strong>SimpleFit Pro</strong></li>
+        <li>Touche <strong>Acheter SimpleFit Pro</strong> et confirme avec Face ID / Touch ID</li>
+        <li>Le prix affiché est celui de ta région App Store</li>
+      </ol>
+      <p>Tu as déjà acheté sur un autre iPhone avec le même identifiant Apple ? Touche <strong>Restaurer les achats</strong> pour débloquer sans payer à nouveau.</p>
+    </details>
+
+    <details>
+      <summary>Comment exporter mes données ?</summary>
+      <p>Tes données t'appartiennent — tu peux les exporter à tout moment :</p>
+      <ol>
+        <li><strong>Réglages</strong> → <strong>Données et confidentialité</strong> → <strong>Exporter</strong></li>
+        <li>Choisis CSV (pour tableurs) ou JSON (structure complète)</li>
+        <li>Partage ou enregistre via la feuille de partage iOS</li>
+      </ol>
+    </details>
+
+    <details>
+      <summary>Comment supprimer toutes mes données ?</summary>
+      <ul>
+        <li><strong>Entraînements &amp; réglages :</strong> Réglages → Données et confidentialité → Réinitialiser l'app</li>
+        <li><strong>Copies iCloud :</strong> Réglages → [Ton nom] → iCloud → Gérer le stockage → SimpleFit Tracker → Supprimer</li>
+        <li><strong>Entraînements Apple Health :</strong> ouvre l'app Santé → Parcourir → Entraînements → glisse-supprime les entrées</li>
+        <li><strong>Droit à l'effacement :</strong> e-mail à <a href="mailto:hello@tekneio.com">hello@tekneio.com</a></li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Le widget sur mon écran d'accueil ne se met pas à jour</summary>
+      <p>iOS contrôle la fréquence de rafraîchissement des widgets :</p>
+      <ol>
+        <li>Ouvre SimpleFit et enregistre un entraînement — cela force un rafraîchissement du widget</li>
+        <li>Appui long sur le widget → <strong>Modifier le widget</strong> et change un réglage</li>
+        <li>Redémarre ton iPhone si le widget reste figé plus d'une journée</li>
+      </ol>
+    </details>
+
+    <details>
+      <summary>Les notifications n'arrivent pas</summary>
+      <ol>
+        <li>Réglages iOS → <strong>Notifications</strong> → <strong>SimpleFit Tracker</strong> → Autoriser : activé</li>
+        <li>Dans SimpleFit : Réglages → Rappels → activer et choisir une heure</li>
+        <li>Vérifie le mode Concentration (Ne pas déranger) — il peut bloquer les apps</li>
+      </ol>
+    </details>
+
+    <details>
+      <summary>L'app a planté ou se comporte mal</summary>
+      <p>Nous ne collectons pas de logs de plantage automatiques (aucun SDK d'analytique). Envoie-nous un e-mail à <a href="mailto:hello@tekneio.com">hello@tekneio.com</a> avec :</p>
+      <ul>
+        <li>Ce que tu faisais au moment du plantage</li>
+        <li>Modèle d'iPhone et version d'iOS (Réglages → Général → Informations)</li>
+        <li>Version de SimpleFit (Réglages → À propos dans l'app)</li>
+        <li>Optionnel : enregistrement d'écran du problème</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Mes données fonctionneront-elles sur un nouvel iPhone ?</summary>
+      <p>Oui — tant que tu te connectes au même identifiant Apple. Installe SimpleFit sur le nouvel appareil, autorise iCloud, et tes entraînements arrivent en quelques minutes.</p>
+    </details>
+
+    <details>
+      <summary>SimpleFit est-il vraiment sans abonnement ?</summary>
+      <p>Oui. SimpleFit Pro est un achat unique, pas un abonnement. Pas de paiements récurrents, pas de renouvellement automatique, pas d'options premium cachées. Acheté une fois, gardé pour toujours — sur tous tes iPhones avec le même identifiant Apple.</p>
+    </details>
+
+    <h2>Confidentialité et données</h2>
+    <p>SimpleFit suit le principe de minimisation des données. Tes entraînements restent dans ton iCloud privé ou sur ton appareil. Pas de serveurs, pas d'analytique, pas de publicité.</p>
+    <p>Lis la <a href="privacy.html">politique de confidentialité complète</a>.</p>
+
+    <h2>Configuration requise</h2>
+    <ul>
+      <li>iOS 18 ou plus récent</li>
+      <li>iPhone (Dynamic Island optionnelle mais prise en charge)</li>
+      <li>Identifiant Apple avec iCloud activé (pour la sync)</li>
+    </ul>
+
+    <h2>Encore besoin d'aide ?</h2>
+    <p>Écris à <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>. Les captures d'écran accélèrent vraiment la réponse.</p>
+
+    <div class="footer">
+      <strong>SimpleFit Tracker</strong> &middot; Anastasios Panagou, Suisse<br>
+      <a href="mailto:hello@tekneio.com">hello@tekneio.com</a> &middot;
+      <a href="privacy.html">Politique de confidentialité</a>
+    </div>
+
+  </div><!-- /lang-fr -->
+
+</div><!-- /container -->
+
+<script>
+  function showLang(lang, el) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('visible'));
+    document.querySelectorAll('.lang-switch a').forEach(a => a.classList.remove('active'));
+    document.getElementById('lang-' + lang).classList.add('visible');
+    el.classList.add('active');
+    document.documentElement.lang = lang;
+  }
+
+  // Auto-detect browser language on first load
+  (function() {
+    const browserLang = (navigator.language || 'en').slice(0, 2);
+    if (['de', 'fr'].includes(browserLang)) {
+      const target = document.querySelector('.lang-switch a:nth-child(' + (browserLang === 'de' ? 2 : 3) + ')');
+      if (target) target.click();
+    }
+  })();
+</script>
+</body>
+</html>
