@@ -24,6 +24,11 @@
 <!-- Smart App Banner für iOS Safari -->
 <meta name="apple-itunes-app" content="app-id=6762292658">
 
+<!-- App Icon & Favicons -->
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="icon.png">
+<link rel="shortcut icon" href="icon.png">
+
 <!-- Theme color für mobile browser chrome -->
 <meta name="theme-color" content="#06091a">
 <style>
@@ -401,6 +406,30 @@
     .feat-text { min-width: 0; }
     p.body-text { max-width: 100%; }
   }
+  /* ── Premium Fade-In on Scroll ── */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s ease-out, transform 0.9s ease-out; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+  /* ── App Icon Hero ── */
+  .app-icon {
+    width: 132px; height: 132px;
+    border-radius: 30px;
+    box-shadow:
+      0 28px 80px rgba(54,112,224,0.45),
+      0 10px 30px rgba(0,0,0,0.55),
+      inset 0 1px 0 rgba(255,255,255,0.18);
+    margin-bottom: 24px;
+    position: relative; z-index: 4;
+    transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .app-icon:hover { transform: scale(1.04) rotate(-1deg); }
+  .app-icon-footer {
+    width: 44px; height: 44px;
+    border-radius: 11px;
+    box-shadow: 0 6px 20px rgba(54,112,224,0.30);
+  }
+
   @media (max-width: 480px) {
     .section { padding: 64px 20px; }
     .hero { min-height: auto; padding: 56px 16px 40px; }
@@ -425,7 +454,8 @@
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
   <div class="orb orb-3"></div>
-  <div class="badge" style="background:rgba(52,199,89,0.15); border-color:rgba(52,199,89,0.42); color:#34c759;">
+  <img src="icon.png" alt="SimpleFit Tracker App Icon" class="app-icon">
+  <div class="badge" style="background:rgba(52,199,89,0.15); border-color:rgba(52,199,89,0.42); color:#34c759; margin-bottom:20px;">
     <span style="width:8px; height:8px; background:#34c759; border-radius:50%; box-shadow:0 0 12px #34c759; display:inline-block;"></span>
     <span data-key="live-badge">Jetzt im App Store</span>
   </div>
@@ -445,6 +475,25 @@
       </svg>
     </a>
     <p style="font-size:13px; color:rgba(255,255,255,0.65); letter-spacing:0.04em;" data-key="hero-price">7 Tage gratis · danach <strong style="color:rgba(255,255,255,0.92);">einmaliger Kauf · Kein Abo · Für immer dein</strong></p>
+
+    <div style="display:flex; gap:18px; flex-wrap:wrap; justify-content:center; margin-top:8px; opacity:0.82;">
+      <span style="display:inline-flex; align-items:center; gap:6px; font-size:12px; color:rgba(255,255,255,0.62); letter-spacing:0.02em;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+        <span data-key="trust-1">Apple Health</span>
+      </span>
+      <span style="display:inline-flex; align-items:center; gap:6px; font-size:12px; color:rgba(255,255,255,0.62); letter-spacing:0.02em;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+        <span data-key="trust-2">iCloud Sync</span>
+      </span>
+      <span style="display:inline-flex; align-items:center; gap:6px; font-size:12px; color:rgba(255,255,255,0.62); letter-spacing:0.02em;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+        <span data-key="trust-3">Keine Werbung · Kein Tracking</span>
+      </span>
+      <span style="display:inline-flex; align-items:center; gap:6px; font-size:12px; color:rgba(255,255,255,0.62); letter-spacing:0.02em;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+        <span data-key="trust-4">Daten lokal auf deinem Gerät</span>
+      </span>
+    </div>
   </div>
 
   <div class="cluster hero-cluster">
@@ -454,7 +503,7 @@
     </div>
     <div class="phone xl center">
       <div class="di"></div>
-      <div class="phone-screen"><img src="screenshots/ss_08_calendar_tennis_mint_light.png" alt="SimpleFit Kalender mit Heatmap im Light-Modus zeigt aktive Trainings-Tage in Mint-Akzent"></div>
+      <div class="phone-screen"><img src="screenshots/10_calendar_sunset_dark.png" alt="SimpleFit Kalender im Dark Mode mit Sunset-Akzentfarbe, Heatmap zeigt aktive Trainingstage in Orange"></div>
     </div>
     <div class="phone lg side right-side">
       <div class="di"></div>
@@ -774,6 +823,50 @@
   </div>
 </section>
 
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer style="padding:60px 24px 48px; border-top:1px solid rgba(255,255,255,0.06); background:rgba(0,0,0,0.30);">
+  <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:40px; align-items:start;">
+
+    <div>
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+        <img src="icon.png" alt="SimpleFit Tracker" class="app-icon-footer">
+        <strong style="font-size:18px; letter-spacing:-0.01em; color:#fff;">SimpleFit Tracker</strong>
+      </div>
+      <p style="font-size:13px; color:rgba(255,255,255,0.55); line-height:1.6; max-width:280px;" data-key="footer-about">Workout-Kalender mit Heatmap, Streaks und Apple Health. Made in Switzerland.</p>
+    </div>
+
+    <div>
+      <h4 style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.50); margin-bottom:16px;" data-key="footer-product">Produkt</h4>
+      <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;">
+        <li><a href="https://apps.apple.com/app/id6762292658" style="font-size:14px; color:rgba(255,255,255,0.78); text-decoration:none;" data-key="footer-download">Im App Store laden</a></li>
+        <li><a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="font-size:14px; color:rgba(255,255,255,0.78); text-decoration:none;" data-key="footer-features">Features</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.50); margin-bottom:16px;" data-key="footer-support-h">Support</h4>
+      <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;">
+        <li><a href="https://tekneio.github.io/simplefit/support.html" style="font-size:14px; color:rgba(255,255,255,0.78); text-decoration:none;" data-key="footer-help">Hilfe &amp; FAQ</a></li>
+        <li><a href="mailto:hello@tekneio.com" style="font-size:14px; color:rgba(255,255,255,0.78); text-decoration:none;">hello@tekneio.com</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.50); margin-bottom:16px;" data-key="footer-legal-h">Rechtliches</h4>
+      <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;">
+        <li><a href="https://tekneio.github.io/simplefit/privacy.html" style="font-size:14px; color:rgba(255,255,255,0.78); text-decoration:none;" data-key="footer-privacy">Datenschutz</a></li>
+        <li><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" style="font-size:14px; color:rgba(255,255,255,0.78); text-decoration:none;" data-key="footer-terms">Lizenzbedingungen</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div style="max-width:1100px; margin:48px auto 0; padding-top:28px; border-top:1px solid rgba(255,255,255,0.06); display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap;">
+    <p style="font-size:12px; color:rgba(255,255,255,0.40); margin:0;" data-key="footer-copyright">© 2026 Anastasios Panagou · Tekneio. SimpleFit Tracker. Alle Rechte vorbehalten.</p>
+    <p style="font-size:12px; color:rgba(255,255,255,0.40); margin:0;" data-key="footer-version">iOS 18+ · iPhone · Optimiert für Apple Health</p>
+  </div>
+</footer>
+
 <!-- ═══════════════════════════════════════════
      APP STORE SLIDES (390×844 — screenshot each)
 ═══════════════════════════════════════════ -->
@@ -903,6 +996,21 @@
 <script>
 const T = {
   'live-badge': { de: 'Jetzt im App Store', en: 'Now on the App Store' },
+  'trust-1': { de: 'Apple Health', en: 'Apple Health' },
+  'trust-2': { de: 'iCloud Sync', en: 'iCloud Sync' },
+  'trust-3': { de: 'Keine Werbung · Kein Tracking', en: 'No ads · No tracking' },
+  'trust-4': { de: 'Daten lokal auf deinem Gerät', en: 'Data stays on your device' },
+  'footer-about':   { de: 'Workout-Kalender mit Heatmap, Streaks und Apple Health. Made in Switzerland.', en: 'Workout calendar with heatmap, streaks and Apple Health. Made in Switzerland.' },
+  'footer-product': { de: 'Produkt', en: 'Product' },
+  'footer-download':{ de: 'Im App Store laden', en: 'Download on the App Store' },
+  'footer-features':{ de: 'Features', en: 'Features' },
+  'footer-support-h':{ de: 'Support', en: 'Support' },
+  'footer-help':    { de: 'Hilfe & FAQ', en: 'Help & FAQ' },
+  'footer-legal-h': { de: 'Rechtliches', en: 'Legal' },
+  'footer-privacy': { de: 'Datenschutz', en: 'Privacy Policy' },
+  'footer-terms':   { de: 'Lizenzbedingungen', en: 'License Terms' },
+  'footer-copyright':{ de: '© 2026 Anastasios Panagou · Tekneio. SimpleFit Tracker. Alle Rechte vorbehalten.', en: '© 2026 Anastasios Panagou · Tekneio. SimpleFit Tracker. All rights reserved.' },
+  'footer-version': { de: 'iOS 18+ · iPhone · Optimiert für Apple Health', en: 'iOS 18+ · iPhone · Optimized for Apple Health' },
   'hero-tagline': { de: 'Dein Training, jeden Tag.', en: 'Your Training, Every Day.' },
   'hero-sub':  { de: 'Bleib konsequent. Sieh deinen Fortschritt.<br>Kein Abo, kein Login — einfach öffnen und trainieren.', en: 'Stay consistent. See your progress.<br>No subscription, no login — just open and train.' },
   'hero-btn':  { de: '7 Tage kostenlos testen', en: 'Try Free for 7 Days' },
@@ -1049,6 +1157,18 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('lang-toggle').addEventListener('click', () => {
     setLang(currentLang === 'de' ? 'en' : 'de');
   });
+
+  // Premium fade-in on scroll
+  const sections = document.querySelectorAll('.section, .cta-section, footer, .feat-row, .stat-grid, .phone-grid, .theme-row');
+  sections.forEach(s => s.classList.add('reveal'));
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -80px 0px', threshold: 0.05 });
+    sections.forEach(s => io.observe(s));
+  } else {
+    sections.forEach(s => s.classList.add('in'));
+  }
 });
 </script>
 
