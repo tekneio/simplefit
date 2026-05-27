@@ -165,13 +165,14 @@
     </div>
 
     <div class="meta">
-      Last updated: April 27, 2026 (v3) &nbsp;&middot;&nbsp;
+      Last updated: May 25, 2026 (v4) &nbsp;&middot;&nbsp;
       Developer: Anastasios Panagou, Switzerland &nbsp;&middot;&nbsp;
+      Platforms: iOS &amp; Android &nbsp;&middot;&nbsp;
       <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>
     </div>
 
     <h2>1. Introduction</h2>
-    <p>This Privacy Policy explains how SimpleFit Tracker (&ldquo;the app&rdquo;, &ldquo;we&rdquo;) processes your personal data. SimpleFit Tracker follows a strict data minimization principle: the app does not operate its own servers, uses no advertising, and integrates no analytics or tracking SDKs. All data either stays on your device or is stored in your private iCloud account, which only you can access.</p>
+    <p>This Privacy Policy explains how SimpleFit Tracker (&ldquo;the app&rdquo;, &ldquo;we&rdquo;) processes your personal data. SimpleFit Tracker is available for <strong>iOS</strong> and <strong>Android</strong> and follows a strict data minimization principle: the app does not operate its own servers, uses no advertising, and integrates no analytics or tracking SDKs. All data either stays on your device or, on iOS, is stored in your private iCloud account, which only you can access. On Android, data stays exclusively on your device unless you choose to export it.</p>
     <p>This policy is intended to meet the requirements of the <strong>Swiss Federal Act on Data Protection (DSG/revFADP)</strong> and, where applicable, the <strong>EU General Data Protection Regulation (GDPR)</strong>.</p>
 
     <div class="card">
@@ -184,39 +185,67 @@
 
     <h3>2.1 Workout &amp; Activity Logs</h3>
     <p><strong>What:</strong> Your workout entries (date, activity type, duration, intensity, notes) and any custom sport types or categories you create.</p>
-    <p><strong>Where stored:</strong> Exclusively in your private iCloud CloudKit database. This data is encrypted by Apple and is accessible only to you &ndash; the developer has no access.</p>
-    <p><strong>Legal basis (where GDPR applies):</strong> Performance of a contract (Art.&nbsp;6(1)(b) GDPR).</p>
-    <p><strong>Retention:</strong> Until you delete the data in the app or remove it from your iCloud account. You fully control retention.</p>
-
-    <h3>2.2 Apple HealthKit Data <span class="badge">Sensitive</span></h3>
-    <p><strong>What:</strong> With your explicit permission, the app requests the following access to Apple Health:</p>
+    <p><strong>Where stored:</strong></p>
     <ul>
-      <li><strong>Read:</strong> Workouts (<code>HKWorkoutType</code>), Active Energy Burned (<code>HKQuantityTypeIdentifierActiveEnergyBurned</code>), Step Count (<code>HKQuantityTypeIdentifierStepCount</code>) &ndash; to import your existing Apple Health workouts and activity into SimpleFit Tracker.</li>
-      <li><strong>Write:</strong> Workouts (<code>HKWorkoutType</code>) &ndash; when you log a new workout in SimpleFit Tracker, it can optionally be written back to Apple Health so it shows up there as well.</li>
+      <li><strong>iOS:</strong> Exclusively in your private iCloud CloudKit database. Data is encrypted by Apple and is accessible only to you &ndash; the developer has no access.</li>
+      <li><strong>Android:</strong> Exclusively on your device in the app&rsquo;s private storage (Room database). No cloud sync. You can export your data at any time via Settings &gt; Data.</li>
     </ul>
-    <p><strong>Where stored:</strong> HealthKit data is exchanged directly with Apple Health on your device. Data read from Apple Health is never stored on any server, never transmitted to the developer, and never shared with any third party. Workouts written to Apple Health are stored and managed by Apple Health and are subject to Apple&rsquo;s privacy policy.</p>
-    <p><strong>Sensitive data:</strong> Health data is a special category of personal data under Art.&nbsp;9 GDPR and particularly sensitive personal data under Swiss law. It is processed solely on the basis of your explicit consent (for example Art.&nbsp;9(2)(a) GDPR), which you grant when you enable Health access in the app or in iOS Settings &gt; Privacy &amp; Security &gt; Health.</p>
-    <p><strong>Withdraw consent:</strong> You can withdraw Health access at any time in iOS Settings &gt; Privacy &amp; Security &gt; Health &gt; SimpleFit Tracker. Revoking access stops both reading and writing. Workouts already written to Apple Health can be deleted in the Apple Health app.</p>
-    <p><em>SimpleFit Tracker does not use HealthKit data for advertising purposes and does not sell HealthKit data to third parties or data brokers.</em></p>
+    <p><strong>Legal basis (where GDPR applies):</strong> Performance of a contract (Art.&nbsp;6(1)(b) GDPR).</p>
+    <p><strong>Retention:</strong> Until you delete the data in the app, uninstall the app, or remove it from your iCloud account (iOS). You fully control retention.</p>
+
+    <h3>2.2 Health Data (Apple Health / Health Connect) <span class="badge">Sensitive</span></h3>
+    <p><strong>What:</strong> With your explicit permission, the app integrates with the platform health service:</p>
+    <ul>
+      <li><strong>iOS &mdash; Apple HealthKit:</strong>
+        <ul>
+          <li><strong>Read:</strong> Workouts (<code>HKWorkoutType</code>), Active Energy Burned, Step Count &ndash; to import your existing Apple Health workouts and activity.</li>
+          <li><strong>Write:</strong> Workouts (<code>HKWorkoutType</code>) &ndash; new workouts can optionally be written back to Apple Health.</li>
+        </ul>
+      </li>
+      <li><strong>Android &mdash; Health Connect:</strong>
+        <ul>
+          <li><strong>Read:</strong> Exercise Sessions &ndash; to import existing workouts from Health Connect into SimpleFit Tracker. Writing is currently not implemented on Android.</li>
+        </ul>
+      </li>
+    </ul>
+    <p><strong>Where stored:</strong> Health data is exchanged directly with Apple Health (iOS) or Health Connect (Android) on your device. Data read from either source is never stored on any server, never transmitted to the developer, and never shared with any third party. Workouts written to Apple Health are stored and managed by Apple Health and are subject to Apple&rsquo;s privacy policy.</p>
+    <p><strong>Sensitive data:</strong> Health data is a special category of personal data under Art.&nbsp;9 GDPR and particularly sensitive personal data under Swiss law. It is processed solely on the basis of your explicit consent (Art.&nbsp;9(2)(a) GDPR), which you grant when you enable Health integration in the app or in your platform&rsquo;s health settings.</p>
+    <p><strong>Withdraw consent:</strong></p>
+    <ul>
+      <li><strong>iOS:</strong> Settings &gt; Privacy &amp; Security &gt; Health &gt; SimpleFit Tracker.</li>
+      <li><strong>Android:</strong> Open the Health Connect app &gt; App permissions &gt; SimpleFit Tracker &gt; revoke access.</li>
+    </ul>
+    <p>Revoking access stops both reading and (on iOS) writing. Workouts already written to Apple Health can be deleted in the Apple Health app.</p>
+    <p><em>SimpleFit Tracker does not use health data for advertising purposes and does not sell it to third parties or data brokers.</em></p>
 
     <h3>2.3 App Settings &amp; Preferences</h3>
-    <p><strong>What:</strong> Your optional name, weekly goal, appearance settings, and notification preferences.</p>
-    <p><strong>Where stored:</strong> Locally on your device only (UserDefaults). This data is never transmitted or synced by the app.</p>
+    <p><strong>What:</strong> Your optional name, weekly goal, appearance settings, notification preferences, accent color, and custom background selection.</p>
+    <p><strong>Where stored:</strong> Locally on your device only. iOS uses <code>UserDefaults</code>; Android uses Jetpack <code>DataStore</code>. This data is never transmitted or synced by the app to any server.</p>
     <p><strong>Legal basis (where GDPR applies):</strong> Performance of a contract (Art.&nbsp;6(1)(b) GDPR).</p>
     <p><strong>Retention:</strong> Until you uninstall the app or reset the settings.</p>
 
     <h3>2.4 Widget Data</h3>
     <p><strong>What:</strong> Active days this week, your current streak, and the selected accent colour &ndash; used to power the home screen widget.</p>
-    <p><strong>Where stored:</strong> Locally in an app group shared container between the app and the widget extension. This data is never transmitted.</p>
+    <p><strong>Where stored:</strong> Locally on your device. iOS uses an app group shared container between the app and the widget extension; Android uses the same <code>DataStore</code> the main app reads from, accessed by the Glance widget worker. This data is never transmitted.</p>
     <p><strong>Legal basis (where GDPR applies):</strong> Performance of a contract (Art.&nbsp;6(1)(b) GDPR).</p>
 
-    <h3>2.5 In&#8209;App Purchase (Apple StoreKit)</h3>
-    <p>SimpleFit Pro is sold exclusively through Apple&rsquo;s App Store using Apple&rsquo;s StoreKit framework. Purchase processing and receipt verification are handled entirely by Apple on your device and through Apple&rsquo;s servers. The app does not use any third-party purchase verification service. The developer has no access to payment details such as credit card numbers.</p>
+    <h3>2.5 In&#8209;App Purchase</h3>
+    <p>SimpleFit Pro is sold exclusively through the platform store:</p>
+    <ul>
+      <li><strong>iOS:</strong> Apple&rsquo;s App Store via the StoreKit 2 framework.</li>
+      <li><strong>Android:</strong> Google Play via the Google Play Billing Library.</li>
+    </ul>
+    <p>Purchase processing and receipt verification are handled entirely by Apple or Google on your device and through their servers. The app does not use any third-party purchase verification service. The developer has no access to payment details such as credit card numbers.</p>
     <p><strong>Legal basis (where GDPR applies):</strong> Performance of a contract (Art.&nbsp;6(1)(b) GDPR).</p>
-    <p>For information about how Apple processes transaction data, see <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple&rsquo;s Privacy Policy</a>.</p>
+    <p>For information about how the platforms process transaction data, see <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple&rsquo;s Privacy Policy</a> and <a href="https://policies.google.com/privacy" target="_blank">Google&rsquo;s Privacy Policy</a>.</p>
 
     <h3>2.6 Local Notifications</h3>
-    <p>Local notifications (for example, reminders) are handled entirely by iOS. No separate notification server is used and no notification data leaves your device.</p>
+    <p>Local notifications (for example, daily reminders) are scheduled and delivered entirely by your operating system (iOS or Android). No separate notification server is used and no notification data leaves your device.</p>
+
+    <h3>2.7 Trial Period Tracking</h3>
+    <p><strong>What:</strong> The timestamp of your first app launch, used to determine whether your 7-day free trial is still active.</p>
+    <p><strong>Where stored:</strong> Locally in <code>UserDefaults</code> (iOS) or <code>DataStore</code> (Android). On iOS, it is also mirrored to <code>NSUbiquitousKeyValueStore</code> (iCloud Key-Value Store) to prevent trial resets through reinstall. No personal identification is associated with this timestamp.</p>
+    <p><strong>Legal basis (where GDPR applies):</strong> Performance of a contract (Art.&nbsp;6(1)(b) GDPR).</p>
 
     <h2>3. What We Do NOT Collect</h2>
     <p>SimpleFit Tracker does not:</p>
@@ -243,9 +272,11 @@
 
     <h3>How to delete your data</h3>
     <ul>
-      <li><strong>Workout data:</strong> Delete entries directly in the app, or go to iOS Settings &gt; [Your Name] &gt; iCloud &gt; Manage Account Storage &gt; SimpleFit Tracker.</li>
-      <li><strong>HealthKit access and data:</strong> Revoke Health access in iOS Settings &gt; Privacy &amp; Security &gt; Health &gt; SimpleFit Tracker. Workouts already written to Apple Health can be deleted in the Apple Health app.</li>
-      <li><strong>Purchase data:</strong> In-app purchases are processed by Apple. For questions about Apple&rsquo;s processing of transaction data, refer to <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple&rsquo;s Privacy Policy</a>.</li>
+      <li><strong>Workout data (iOS):</strong> Delete entries directly in the app, or go to Settings &gt; [Your Name] &gt; iCloud &gt; Manage Account Storage &gt; SimpleFit Tracker.</li>
+      <li><strong>Workout data (Android):</strong> Delete entries directly in the app, or uninstall the app to remove all local data. You can also export the data first via Settings &gt; Data &gt; Export JSON.</li>
+      <li><strong>Health access (iOS):</strong> Revoke in Settings &gt; Privacy &amp; Security &gt; Health &gt; SimpleFit Tracker. Workouts already written to Apple Health can be deleted in the Apple Health app.</li>
+      <li><strong>Health access (Android):</strong> Open the Health Connect app &gt; App permissions &gt; SimpleFit Tracker &gt; revoke.</li>
+      <li><strong>Purchase data:</strong> In-app purchases are processed by Apple (iOS) or Google (Android). Refer to <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple&rsquo;s Privacy Policy</a> or <a href="https://policies.google.com/privacy" target="_blank">Google&rsquo;s Privacy Policy</a>.</li>
       <li><strong>Any other request:</strong> Contact <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>.</li>
     </ul>
 
@@ -262,10 +293,10 @@
     </div>
 
     <h2>6. Security</h2>
-    <p>iCloud data is encrypted in transit and at rest by Apple. Local data is protected by iOS sandboxing and device encryption. The app does not use unencrypted storage and does not operate its own servers.</p>
+    <p>iCloud data (iOS) is encrypted in transit and at rest by Apple. Local data is protected by iOS sandboxing and device encryption on Apple devices, and by Android&rsquo;s per-app storage isolation on Android devices. The app does not use unencrypted storage and does not operate its own servers.</p>
 
     <h2>7. Children</h2>
-    <p>SimpleFit Tracker is rated 9+ on the App Store and is not directed at children under 13. The app does not knowingly collect personal data from children under 13. If you believe a child has provided data through the app, contact <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>.</p>
+    <p>SimpleFit Tracker is rated 9+ on the App Store and PEGI 3 / 18+ on Google Play and is not directed at children under 13. The app does not knowingly collect personal data from children under 13. If you believe a child has provided data through the app, contact <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>.</p>
 
     <h2>8. Changes</h2>
     <p>This policy may be updated from time to time. The &ldquo;Last updated&rdquo; date at the top reflects the current version. For material changes, you will be informed within the app. Any new processing that requires consent will be explicitly requested in the app.</p>
@@ -291,13 +322,14 @@
     </div>
 
     <div class="meta">
-      Zuletzt aktualisiert: 27. April 2026 (v3) &nbsp;&middot;&nbsp;
+      Zuletzt aktualisiert: 25. Mai 2026 (v4) &nbsp;&middot;&nbsp;
       Entwickler: Anastasios Panagou, Schweiz &nbsp;&middot;&nbsp;
+      Plattformen: iOS &amp; Android &nbsp;&middot;&nbsp;
       <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>
     </div>
 
     <h2>1. Einleitung</h2>
-    <p>Diese Datenschutzerkl&auml;rung erl&auml;utert, wie SimpleFit Tracker (&bdquo;die App&ldquo;, &bdquo;wir&ldquo;) personenbezogene Daten bearbeitet. Die App folgt dem Prinzip der Datensparsamkeit: SimpleFit Tracker betreibt keine eigenen Server, verwendet keine Werbung und integriert keine Analyse&#8209; oder Tracking&#8209;SDKs. Alle Daten verbleiben entweder auf Ihrem Ger&auml;t oder werden in Ihrer privaten iCloud gespeichert, auf die ausschliesslich Sie Zugriff haben.</p>
+    <p>Diese Datenschutzerkl&auml;rung erl&auml;utert, wie SimpleFit Tracker (&bdquo;die App&ldquo;, &bdquo;wir&ldquo;) personenbezogene Daten bearbeitet. Die App ist f&uuml;r <strong>iOS</strong> und <strong>Android</strong> verf&uuml;gbar und folgt dem Prinzip der Datensparsamkeit: SimpleFit Tracker betreibt keine eigenen Server, verwendet keine Werbung und integriert keine Analyse&#8209; oder Tracking&#8209;SDKs. Alle Daten verbleiben entweder auf Ihrem Ger&auml;t oder werden &ndash; nur auf iOS &ndash; in Ihrer privaten iCloud gespeichert. Auf Android verbleiben alle Daten ausschliesslich lokal, ausser Sie exportieren sie manuell.</p>
     <p>Diese Erkl&auml;rung ber&uuml;cksichtigt das <strong>revidierte Schweizer Datenschutzgesetz (DSG/revDSG)</strong> sowie &ndash; soweit anwendbar &ndash; die <strong>EU&#8209;Datenschutz&#8209;Grundverordnung (DSGVO)</strong>.</p>
 
     <div class="card">
@@ -310,39 +342,67 @@
 
     <h3>2.1 Trainings&#8209; und Aktivit&auml;tsdaten</h3>
     <p><strong>Was:</strong> Ihre Trainingseintr&auml;ge (Datum, Sportart, Dauer, Intensit&auml;t, Notizen) sowie eigene Sportarten und Kategorien.</p>
-    <p><strong>Wo gespeichert:</strong> Ausschliesslich in Ihrer privaten iCloud&#8209;CloudKit&#8209;Datenbank. Diese Daten sind von Apple verschl&uuml;sselt und nur f&uuml;r Sie zug&auml;nglich &ndash; wir haben keinen Zugriff.</p>
-    <p><strong>Rechtsgrundlage (soweit DSGVO anwendbar):</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO &ndash; Vertragserf&uuml;llung; nach Schweizer Recht Vertragserf&uuml;llung gem&auml;ss DSG.</p>
-    <p><strong>Aufbewahrung:</strong> Bis Sie die Daten in der App l&ouml;schen oder aus Ihrem iCloud&#8209;Konto entfernen. Die Kontrolle liegt vollst&auml;ndig bei Ihnen.</p>
-
-    <h3>2.2 Apple HealthKit&#8209;Daten <span class="badge">Sensibel</span></h3>
-    <p><strong>Was:</strong> Mit Ihrer ausdr&uuml;cklichen Genehmigung fordern wir folgenden Zugriff auf Apple Health an:</p>
+    <p><strong>Wo gespeichert:</strong></p>
     <ul>
-      <li><strong>Lesen:</strong> Trainingseinheiten (<code>HKWorkoutType</code>), aktiv verbrannte Kalorien (<code>activeEnergyBurned</code>), Schrittanzahl (<code>stepCount</code>) &ndash; um bestehende Apple&#8209;Health&#8209;Trainings in SimpleFit Tracker zu importieren.</li>
-      <li><strong>Schreiben:</strong> Trainingseinheiten (<code>HKWorkoutType</code>) &ndash; wenn Sie ein neues Training in SimpleFit Tracker erfassen, kann es optional zur&uuml;ck in Apple Health geschrieben werden, sodass es dort ebenfalls erscheint.</li>
+      <li><strong>iOS:</strong> Ausschliesslich in Ihrer privaten iCloud&#8209;CloudKit&#8209;Datenbank. Diese Daten sind von Apple verschl&uuml;sselt und nur f&uuml;r Sie zug&auml;nglich &ndash; wir haben keinen Zugriff.</li>
+      <li><strong>Android:</strong> Ausschliesslich lokal auf Ihrem Ger&auml;t in der privaten App&#8209;Datenbank (Room). Keine Cloud&#8209;Synchronisation. Sie k&ouml;nnen die Daten jederzeit unter Einstellungen &gt; Daten exportieren.</li>
     </ul>
-    <p><strong>Wo gespeichert:</strong> HealthKit&#8209;Daten werden direkt mit Apple Health auf Ihrem Ger&auml;t ausgetauscht. Von Apple Health gelesene Daten werden weder auf Servern gespeichert noch &uuml;bermittelt oder mit Dritten geteilt. In Apple Health geschriebene Trainings werden von Apple Health verwaltet und unterliegen Apples Datenschutzrichtlinien.</p>
-    <p><strong>Sensible Daten:</strong> Gesundheitsdaten sind besonders sch&uuml;tzenswerte Personendaten gem&auml;ss Art.&nbsp;9 DSGVO und nach Schweizer Datenschutzrecht. Wir bearbeiten sie ausschliesslich auf Basis Ihrer ausdr&uuml;cklichen Einwilligung (z.B. Art.&nbsp;9 Abs.&nbsp;2 lit.&nbsp;a DSGVO), die Sie durch Aktivierung des Gesundheitszugriffs in der App oder unter iOS&#8209;Einstellungen &gt; Datenschutz &amp; Sicherheit &gt; Gesundheit erteilen.</p>
-    <p><strong>Einwilligung widerrufen:</strong> Sie k&ouml;nnen den Zugriff jederzeit unter iOS&#8209;Einstellungen &gt; Datenschutz &amp; Sicherheit &gt; Gesundheit &gt; SimpleFit Tracker widerrufen. Das Widerrufen stoppt sowohl Lesen als auch Schreiben. Bereits in Apple Health geschriebene Trainings k&ouml;nnen in der Apple&#8209;Health&#8209;App gel&ouml;scht werden.</p>
-    <p><em>HealthKit&#8209;Daten werden nicht f&uuml;r Werbezwecke verwendet und nicht an Dritte oder Datenh&auml;ndler weitergegeben.</em></p>
+    <p><strong>Rechtsgrundlage (soweit DSGVO anwendbar):</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO &ndash; Vertragserf&uuml;llung; nach Schweizer Recht Vertragserf&uuml;llung gem&auml;ss DSG.</p>
+    <p><strong>Aufbewahrung:</strong> Bis Sie die Daten in der App l&ouml;schen, die App deinstallieren oder sie aus Ihrem iCloud&#8209;Konto entfernen (iOS).</p>
+
+    <h3>2.2 Gesundheitsdaten (Apple Health / Health Connect) <span class="badge">Sensibel</span></h3>
+    <p><strong>Was:</strong> Mit Ihrer ausdr&uuml;cklichen Genehmigung integriert sich die App in den jeweiligen Plattform&#8209;Gesundheitsdienst:</p>
+    <ul>
+      <li><strong>iOS &mdash; Apple HealthKit:</strong>
+        <ul>
+          <li><strong>Lesen:</strong> Trainingseinheiten (<code>HKWorkoutType</code>), aktiv verbrannte Kalorien, Schrittanzahl &ndash; zum Importieren bestehender Apple&#8209;Health&#8209;Trainings.</li>
+          <li><strong>Schreiben:</strong> Neue Trainings k&ouml;nnen optional zur&uuml;ck in Apple Health geschrieben werden.</li>
+        </ul>
+      </li>
+      <li><strong>Android &mdash; Health Connect:</strong>
+        <ul>
+          <li><strong>Lesen:</strong> Exercise Sessions &ndash; zum Importieren bestehender Workouts aus Health Connect. Schreiben ist aktuell nicht implementiert.</li>
+        </ul>
+      </li>
+    </ul>
+    <p><strong>Wo gespeichert:</strong> Gesundheitsdaten werden direkt zwischen App und Apple Health (iOS) bzw. Health Connect (Android) auf Ihrem Ger&auml;t ausgetauscht. Gelesene Daten werden weder auf Servern gespeichert noch &uuml;bermittelt oder mit Dritten geteilt. In Apple Health geschriebene Trainings werden von Apple Health verwaltet und unterliegen Apples Datenschutzrichtlinien.</p>
+    <p><strong>Sensible Daten:</strong> Gesundheitsdaten sind besonders sch&uuml;tzenswerte Personendaten gem&auml;ss Art.&nbsp;9 DSGVO und nach Schweizer Datenschutzrecht. Wir bearbeiten sie ausschliesslich auf Basis Ihrer ausdr&uuml;cklichen Einwilligung (Art.&nbsp;9 Abs.&nbsp;2 lit.&nbsp;a DSGVO), die Sie durch Aktivierung der Gesundheits&#8209;Integration in der App oder den Plattform&#8209;Einstellungen erteilen.</p>
+    <p><strong>Einwilligung widerrufen:</strong></p>
+    <ul>
+      <li><strong>iOS:</strong> Einstellungen &gt; Datenschutz &amp; Sicherheit &gt; Gesundheit &gt; SimpleFit Tracker.</li>
+      <li><strong>Android:</strong> Health&#8209;Connect&#8209;App &ouml;ffnen &gt; App&#8209;Berechtigungen &gt; SimpleFit Tracker &gt; Zugriff entziehen.</li>
+    </ul>
+    <p>Der Widerruf stoppt sowohl Lesen als auch (auf iOS) Schreiben. Bereits in Apple Health geschriebene Trainings k&ouml;nnen in der Apple&#8209;Health&#8209;App gel&ouml;scht werden.</p>
+    <p><em>Gesundheitsdaten werden nicht f&uuml;r Werbezwecke verwendet und nicht an Dritte oder Datenh&auml;ndler weitergegeben.</em></p>
 
     <h3>2.3 App&#8209;Einstellungen und Pr&auml;ferenzen</h3>
-    <p><strong>Was:</strong> Optionaler Name, Wochenziel, Darstellungseinstellungen, Benachrichtigungszeiten.</p>
-    <p><strong>Wo gespeichert:</strong> Ausschliesslich lokal auf Ihrem Ger&auml;t (UserDefaults). Es findet keine &Uuml;bertragung statt.</p>
+    <p><strong>Was:</strong> Optionaler Name, Wochenziel, Darstellungseinstellungen, Benachrichtigungszeiten, Akzentfarbe, gew&auml;hlter Hintergrund.</p>
+    <p><strong>Wo gespeichert:</strong> Ausschliesslich lokal auf Ihrem Ger&auml;t. iOS verwendet <code>UserDefaults</code>, Android verwendet Jetpack <code>DataStore</code>. Es findet keine &Uuml;bertragung statt.</p>
     <p><strong>Rechtsgrundlage (soweit DSGVO anwendbar):</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO / nach Schweizer Recht Vertragserf&uuml;llung.</p>
     <p><strong>Aufbewahrung:</strong> Bis zur Deinstallation der App oder bis Sie die Einstellungen zur&uuml;cksetzen.</p>
 
     <h3>2.4 Widget&#8209;Daten</h3>
     <p><strong>Was:</strong> Aktive Tage dieser Woche, aktueller Streak und Akzentfarbe &ndash; f&uuml;r das Home&#8209;Screen&#8209;Widget.</p>
-    <p><strong>Wo gespeichert:</strong> Lokal in einem geteilten App&#8209;Group&#8209;Container. Keine &Uuml;bertragung an Server.</p>
+    <p><strong>Wo gespeichert:</strong> Lokal auf Ihrem Ger&auml;t. iOS nutzt einen App&#8209;Group&#8209;Container, Android verwendet denselben <code>DataStore</code> wie die Haupt&#8209;App, auf den der Glance&#8209;Widget&#8209;Worker zugreift. Keine &Uuml;bertragung an Server.</p>
     <p><strong>Rechtsgrundlage (soweit DSGVO anwendbar):</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO / Vertragserf&uuml;llung.</p>
 
-    <h3>2.5 In&#8209;App&#8209;Kauf (Apple StoreKit)</h3>
-    <p>SimpleFit Pro wird ausschliesslich &uuml;ber den Apple App Store per Apple StoreKit angeboten. Kaufabwicklung und Belegverifizierung erfolgen vollst&auml;ndig durch Apple auf Ihrem Ger&auml;t und &uuml;ber Apples Server. Die App verwendet keinen Drittanbieter f&uuml;r die Kaufverifizierung. Der Entwickler hat keinen Zugriff auf Zahlungsdetails wie Kreditkartennummern.</p>
+    <h3>2.5 In&#8209;App&#8209;Kauf</h3>
+    <p>SimpleFit Pro wird ausschliesslich &uuml;ber den jeweiligen Plattform&#8209;Store angeboten:</p>
+    <ul>
+      <li><strong>iOS:</strong> Apple App Store &uuml;ber das StoreKit&#8209;2&#8209;Framework.</li>
+      <li><strong>Android:</strong> Google Play &uuml;ber die Google&#8209;Play&#8209;Billing&#8209;Library.</li>
+    </ul>
+    <p>Kaufabwicklung und Belegverifizierung erfolgen vollst&auml;ndig durch Apple bzw. Google auf Ihrem Ger&auml;t und &uuml;ber deren Server. Die App verwendet keinen Drittanbieter f&uuml;r die Kaufverifizierung. Der Entwickler hat keinen Zugriff auf Zahlungsdetails wie Kreditkartennummern.</p>
     <p><strong>Rechtsgrundlage (soweit DSGVO anwendbar):</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO &ndash; Vertragserf&uuml;llung; nach Schweizer Recht Vertragsabwicklung.</p>
-    <p>Informationen zur Verarbeitung von Transaktionsdaten durch Apple finden Sie in <a href="https://www.apple.com/legal/privacy/" target="_blank">Apples Datenschutzrichtlinien</a>.</p>
+    <p>Informationen zur Verarbeitung von Transaktionsdaten finden Sie in <a href="https://www.apple.com/legal/privacy/" target="_blank">Apples Datenschutzrichtlinien</a> bzw. <a href="https://policies.google.com/privacy" target="_blank">Googles Datenschutzrichtlinien</a>.</p>
 
     <h3>2.6 Lokale Benachrichtigungen</h3>
-    <p>Lokale Benachrichtigungen (z.B. Erinnerungen) werden vollst&auml;ndig durch iOS verwaltet. Kein Server ist involviert, keine Daten verlassen Ihr Ger&auml;t.</p>
+    <p>Lokale Benachrichtigungen (z.B. t&auml;gliche Erinnerungen) werden vollst&auml;ndig durch das Betriebssystem (iOS bzw. Android) verwaltet. Kein Server ist involviert, keine Daten verlassen Ihr Ger&auml;t.</p>
+
+    <h3>2.7 Trial&#8209;Periode</h3>
+    <p><strong>Was:</strong> Zeitstempel des ersten App&#8209;Starts, um zu bestimmen, ob Ihre 7&#8209;t&auml;gige Gratis&#8209;Testphase noch l&auml;uft.</p>
+    <p><strong>Wo gespeichert:</strong> Lokal in <code>UserDefaults</code> (iOS) bzw. <code>DataStore</code> (Android). Auf iOS zus&auml;tzlich in <code>NSUbiquitousKeyValueStore</code> (iCloud Key&#8209;Value Store), um Trial&#8209;Resets durch Neuinstallation zu verhindern. Mit diesem Zeitstempel ist keine Personenidentifikation verkn&uuml;pft.</p>
+    <p><strong>Rechtsgrundlage (soweit DSGVO anwendbar):</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO &ndash; Vertragserf&uuml;llung.</p>
 
     <h2>3. Was wir nicht erfassen</h2>
     <p>SimpleFit Tracker:</p>
@@ -369,9 +429,11 @@
 
     <h3>So l&ouml;schen Sie Ihre Daten</h3>
     <ul>
-      <li><strong>Trainingsdaten:</strong> Direkt in der App l&ouml;schen oder &uuml;ber iOS&#8209;Einstellungen &gt; [Ihr Name] &gt; iCloud &gt; Speicher verwalten &gt; SimpleFit Tracker.</li>
-      <li><strong>HealthKit&#8209;Zugriff und &#8209;Daten:</strong> Unter iOS&#8209;Einstellungen &gt; Datenschutz &amp; Sicherheit &gt; Gesundheit &gt; SimpleFit Tracker verwalten. Von SimpleFit Tracker in Apple Health geschriebene Trainings k&ouml;nnen in der Apple&#8209;Health&#8209;App gel&ouml;scht werden.</li>
-      <li><strong>Kaufdaten:</strong> In&#8209;App&#8209;K&auml;ufe werden von Apple abgewickelt. F&uuml;r Fragen zur Verarbeitung von Transaktionsdaten durch Apple beachten Sie bitte <a href="https://www.apple.com/legal/privacy/" target="_blank">Apples Datenschutzrichtlinien</a>.</li>
+      <li><strong>Trainingsdaten (iOS):</strong> Direkt in der App l&ouml;schen oder unter Einstellungen &gt; [Ihr Name] &gt; iCloud &gt; Speicher verwalten &gt; SimpleFit Tracker.</li>
+      <li><strong>Trainingsdaten (Android):</strong> Direkt in der App l&ouml;schen oder die App deinstallieren, um alle lokalen Daten zu entfernen. Sie k&ouml;nnen vorher exportieren via Einstellungen &gt; Daten &gt; JSON exportieren.</li>
+      <li><strong>Health-Zugriff (iOS):</strong> Einstellungen &gt; Datenschutz &amp; Sicherheit &gt; Gesundheit &gt; SimpleFit Tracker. Von SimpleFit Tracker in Apple Health geschriebene Trainings k&ouml;nnen in der Apple&#8209;Health&#8209;App gel&ouml;scht werden.</li>
+      <li><strong>Health-Zugriff (Android):</strong> Health&#8209;Connect&#8209;App &ouml;ffnen &gt; App&#8209;Berechtigungen &gt; SimpleFit Tracker &gt; Zugriff entziehen.</li>
+      <li><strong>Kaufdaten:</strong> In&#8209;App&#8209;K&auml;ufe werden von Apple (iOS) bzw. Google (Android) abgewickelt. Beachten Sie <a href="https://www.apple.com/legal/privacy/" target="_blank">Apples Datenschutzrichtlinien</a> oder <a href="https://policies.google.com/privacy" target="_blank">Googles Datenschutzrichtlinien</a>.</li>
       <li><strong>Sonstige Anfragen:</strong> <a href="mailto:hello@tekneio.com">hello@tekneio.com</a> &ndash; Antwort in der Regel innerhalb von 30 Tagen.</li>
     </ul>
 
@@ -388,10 +450,10 @@
     </div>
 
     <h2>6. Datensicherheit</h2>
-    <p>iCloud&#8209;Daten werden von Apple verschl&uuml;sselt &uuml;bertragen und gespeichert. Lokale Daten sind durch iOS&#8209;Sandboxing und Ger&auml;teverschl&uuml;sselung gesch&uuml;tzt. Wir verwenden keine unverschl&uuml;sselten Speicher und betreiben keine eigenen Server.</p>
+    <p>iCloud&#8209;Daten (iOS) werden von Apple verschl&uuml;sselt &uuml;bertragen und gespeichert. Lokale Daten sind durch iOS&#8209;Sandboxing und Ger&auml;teverschl&uuml;sselung (Apple) bzw. Androids App&#8209;spezifische Speicher&#8209;Isolation gesch&uuml;tzt. Wir verwenden keine unverschl&uuml;sselten Speicher und betreiben keine eigenen Server.</p>
 
     <h2>7. Kinder</h2>
-    <p>SimpleFit Tracker ist im App Store ab 9 Jahren eingestuft und richtet sich nicht gezielt an Kinder unter 13 Jahren. Wir erheben wissentlich keine personenbezogenen Daten von Kindern unter 13 Jahren. Falls Sie glauben, dass ein Kind Daten &uuml;ber die App &uuml;bermittelt hat, kontaktieren Sie uns unter <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>.</p>
+    <p>SimpleFit Tracker ist im App Store ab 9 Jahren und auf Google Play als PEGI 3 / 18+ eingestuft und richtet sich nicht gezielt an Kinder unter 13 Jahren. Wir erheben wissentlich keine personenbezogenen Daten von Kindern unter 13 Jahren. Falls Sie glauben, dass ein Kind Daten &uuml;ber die App &uuml;bermittelt hat, kontaktieren Sie uns unter <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>.</p>
 
     <h2>8. &Auml;nderungen</h2>
     <p>Wir k&ouml;nnen diese Erkl&auml;rung aktualisieren. Das Datum &bdquo;Zuletzt aktualisiert&ldquo; zeigt den aktuellen Stand. Bei wesentlichen &Auml;nderungen informieren wir Sie in der App. Neue Bearbeitungsvorg&auml;nge, die eine Einwilligung erfordern, werden in der App ausdr&uuml;cklich abgefragt.</p>
