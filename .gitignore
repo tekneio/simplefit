@@ -1,0 +1,6 @@
+.DS_Store
+**/.DS_Store
+# temporary measurement / retouch helper images
+screenshots/_*.png
+# raw source screenshots (resized versions are committed instead)
+screenshots/neu/

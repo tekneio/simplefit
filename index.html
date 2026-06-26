@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SimpleFit Tracker — Dein Training, jeden Tag.</title>
-<meta name="description" content="Workout-Kalender mit Heatmap. Streaks, Statistiken, Apple Health. Kein Abo, kein Login. Einmaliger Kauf.">
+<title>SimpleFit Tracker — Workout-Kalender, Apple Watch & Kraft-Logging</title>
+<meta name="description" content="Workout-Tracker mit Heatmap-Kalender, Apple Watch App und Kraft-Logging (Sätze, Wdh., Gewicht). Streaks, Statistiken, Apple Health. Kein Abo, einmaliger Kauf.">
+<meta name="keywords" content="Workout Tracker, Trainingstagebuch, Heatmap Kalender, Apple Watch Fitness App, Kraft-Logging, Sätze Wiederholungen Gewicht, Streak, Trainingsstatistiken, Apple Health, kein Abo, Einmalkauf, Gym Tracker, Fitness App iPhone">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="SimpleFit Tracker — Dein Training, jeden Tag.">
-<meta property="og:description" content="Workout-Kalender mit Heatmap. Kein Abo, kein Login. Einmaliger Kauf.">
+<meta property="og:title" content="SimpleFit Tracker — Workout-Kalender, Apple Watch & Kraft-Logging">
+<meta property="og:description" content="Workout-Tracker mit Heatmap-Kalender, Apple Watch App und Kraft-Logging. Streaks, Statistiken, Apple Health. Kein Abo, einmaliger Kauf.">
 <meta property="og:url" content="https://tekneio.github.io/simplefit/">
 <meta property="og:image" content="https://tekneio.github.io/simplefit/_render_premium/en_slide-1.png">
 <meta property="og:locale" content="de_CH">
@@ -17,8 +18,8 @@
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SimpleFit Tracker">
-<meta name="twitter:description" content="Workout-Kalender mit Heatmap. Kein Abo, kein Login.">
+<meta name="twitter:title" content="SimpleFit Tracker — Workout-Kalender & Apple Watch">
+<meta name="twitter:description" content="Heatmap-Kalender, Apple Watch App und Kraft-Logging. Streaks, Statistiken, Apple Health. Kein Abo, einmaliger Kauf.">
 <meta name="twitter:image" content="https://tekneio.github.io/simplefit/_render_premium/en_slide-1.png">
 
 <!-- Smart App Banner für iOS Safari -->
@@ -46,8 +47,20 @@
   "name": "SimpleFit Tracker",
   "operatingSystem": "iOS 18",
   "applicationCategory": "HealthApplication",
-  "description": "Workout-Kalender mit Heatmap, Streaks und Apple Health Integration. Kein Abo, kein Login, kein Tracking. Einmaliger Pro-Kauf.",
+  "description": "Workout-Tracker mit Heatmap-Kalender, Apple Watch App und Kraft-Logging (Sätze, Wiederholungen, Gewicht, Allzeit-Rekorde). Streaks, Statistiken und Apple Health. Kein Abo, kein Login, kein Tracking. Einmaliger Pro-Kauf.",
   "image": "https://tekneio.github.io/simplefit/icon.png",
+  "screenshot": "https://tekneio.github.io/simplefit/_render_premium/en_slide-1.png",
+  "softwareVersion": "2.0.1",
+  "featureList": [
+    "Heatmap-Kalender",
+    "Apple Watch App mit Complications",
+    "Kraft-Logging: Sätze, Wiederholungen, Gewicht, Volumen, Allzeit-Rekorde",
+    "Streaks und Wochenziele",
+    "Statistiken: Woche, Monat, Jahr",
+    "Eigene Akzentfarbe (Farbwähler)",
+    "Home- und Lock-Screen Widgets",
+    "Apple Health Import, iCloud Sync, CSV/JSON Export"
+  ],
   "url": "https://tekneio.github.io/simplefit/",
   "downloadUrl": "https://apps.apple.com/app/id6762292658",
   "offers": {
@@ -280,7 +293,7 @@
   .hero {
     min-height: auto;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
-    padding: 56px 24px 32px;
+    padding: 26px 24px 18px;
     background: linear-gradient(180deg, #080e28 0%, var(--bg) 100%);
     position: relative; overflow: hidden; text-align: center;
   }
@@ -357,12 +370,12 @@
   }
   .badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--blue-light); box-shadow: 0 0 8px var(--blue-light); }
   .hero h1 {
-    font-size: clamp(48px, 7.5vw, 86px);
-    font-weight: 800; letter-spacing: -0.02em; line-height: 1.0; margin-bottom: 14px;
+    font-size: clamp(38px, 5.2vw, 60px);
+    font-weight: 800; letter-spacing: -0.02em; line-height: 1.0; margin-bottom: 6px;
   }
   .hero h1 .a { background: linear-gradient(140deg, var(--blue) 0%, var(--blue-light) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
   .hero-tagline { font-size: clamp(18px, 2.3vw, 28px); font-weight: 600; color: rgba(255,255,255,0.80); margin: 0 auto 10px; position: relative; z-index: 5; letter-spacing: -0.01em; }
-  .hero-sub { font-size: 17px; font-weight: 400; color: var(--muted); max-width: 480px; line-height: 1.5; margin: 0 auto 28px; position: relative; z-index: 5; }
+  .hero-sub { font-size: 16px; font-weight: 400; color: var(--muted); max-width: 480px; line-height: 1.45; margin: 0 auto 16px; position: relative; z-index: 5; }
 
   /* ── CTA ── */
   .cta-section { text-align: center; padding: 110px 24px 90px; background: radial-gradient(ellipse 65% 50% at 50% 100%, rgba(36,85,210,0.32) 0%, transparent 70%); }
@@ -467,13 +480,13 @@
 
   /* ── App Icon Hero ── */
   .app-icon {
-    width: 96px; height: 96px;
-    border-radius: 22px;
+    width: 64px; height: 64px;
+    border-radius: 16px;
     box-shadow:
       0 18px 48px rgba(54,112,224,0.40),
       0 6px 18px rgba(0,0,0,0.50),
       inset 0 1px 0 rgba(255,255,255,0.18);
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     position: relative; z-index: 4;
     transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
   }
@@ -495,6 +508,60 @@
     .phone.md { width: 240px; }
     .phone.lg { width: 280px; }
     .theme-row { gap: 14px; }
+    .watch { width: 158px; }
+  }
+
+  /* ── Video (in phone frame) ── */
+  .phone-screen video { width: 100%; display: block; }
+  .video-caption { font-size: 13px; color: rgba(255,255,255,0.42); margin-top: 18px; letter-spacing: 0.02em; }
+
+  /* ── Apple Watch frame ── */
+  .watch-row { display: flex; justify-content: center; gap: 34px; flex-wrap: wrap; margin-top: 54px; align-items: flex-start; }
+  .watch-card { display: flex; flex-direction: column; align-items: center; gap: 14px; position: relative; }
+  .watch-card::before { content: ''; position: absolute; left: 50%; top: 32%; transform: translate(-50%,-50%);
+    width: 150%; height: 120%; z-index: 0; pointer-events: none;
+    background: radial-gradient(ellipse at center, rgba(52,199,89,0.20), transparent 68%); filter: blur(26px); }
+  .watch-card > * { position: relative; z-index: 1; }
+  .watch {
+    width: 190px; background: #08080a; border-radius: 54px; padding: 13px;
+    position: relative; flex-shrink: 0;
+    box-shadow:
+      0 0 0 1.5px rgba(255,255,255,0.16),
+      0 0 0 7px rgba(38,38,42,0.55),
+      0 18px 50px rgba(0,0,0,0.55),
+      0 6px 16px rgba(0,0,0,0.4),
+      inset 0 1px 0 rgba(255,255,255,0.12);
+  }
+  .watch::after {
+    content: ''; position: absolute; right: -9px; top: 36%;
+    width: 7px; height: 48px;
+    background: linear-gradient(180deg, #3c3c40, #18181a);
+    border-radius: 4px; box-shadow: inset 0 1px 0 rgba(255,255,255,0.18);
+  }
+  .watch-screen { border-radius: 42px; overflow: hidden; background: #000; line-height: 0; }
+  .watch-screen img { width: 100%; display: block; }
+  .watch-label {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.05em;
+    color: rgba(255,255,255,0.82);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 100px; padding: 4px 14px;
+  }
+
+  /* ── Apple Watch in hero cluster ── */
+  .hero-watch { position: absolute; z-index: 6; width: 13%; left: 28.5%; bottom: 1%; }
+  .hero-watch .watch { width: 100%; padding: 8px; border-radius: 32px;
+    box-shadow: 0 0 0 1.2px rgba(255,255,255,0.16), 0 0 0 5px rgba(38,38,42,0.6),
+      0 16px 40px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.12); }
+  .hero-watch .watch::after { width: 5px; height: 30px; right: -7px; }
+  .hero-watch .watch-screen { border-radius: 25px; }
+  @media (max-width: 800px) { .hero-watch { display: none; } }
+
+  /* ── Color Spectrum (custom accent) ── */
+  .spectrum {
+    height: 16px; border-radius: 10px; max-width: 440px; margin: 26px auto 0;
+    background: linear-gradient(90deg, #ff3b30, #ff9500, #ffcc00, #34c759, #30c8c8, #5ac8fa, #007aff, #5856d6, #af52de, #ff2d55);
+    box-shadow: 0 6px 22px rgba(0,0,0,0.38), inset 0 1px 0 rgba(255,255,255,0.30);
   }
 </style>
 </head>
@@ -509,7 +576,7 @@
   <div class="orb orb-2"></div>
   <div class="orb orb-3"></div>
   <img src="icon.png" alt="SimpleFit Tracker App Icon" class="app-icon">
-  <div class="badge" style="background:rgba(52,199,89,0.15); border-color:rgba(52,199,89,0.42); color:#34c759; margin-bottom:20px;">
+  <div class="badge" style="background:rgba(52,199,89,0.15); border-color:rgba(52,199,89,0.42); color:#34c759; margin-bottom:12px;">
     <span style="width:8px; height:8px; background:#34c759; border-radius:50%; box-shadow:0 0 12px #34c759; display:inline-block;"></span>
     <span data-key="live-badge">Jetzt im App Store</span>
   </div>
@@ -517,7 +584,7 @@
   <p class="hero-tagline" data-key="hero-tagline">Dein Training, jeden Tag.</p>
   <p class="hero-sub" data-key="hero-sub">Bleib konsequent. Sieh deinen Fortschritt.<br>Kein Abo, kein Login — einfach öffnen und trainieren.</p>
 
-  <div style="position:relative; z-index:5; margin-bottom:28px; display:flex; flex-direction:column; align-items:center; gap:12px;">
+  <div style="position:relative; z-index:5; margin-bottom:14px; display:flex; flex-direction:column; align-items:center; gap:10px;">
     <a href="https://apps.apple.com/app/id6762292658" aria-label="Download on the App Store" style="display:inline-block; transition:transform 0.15s, filter 0.15s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
       <svg xmlns="http://www.w3.org/2000/svg" width="180" height="60" viewBox="0 0 180 60" style="filter:drop-shadow(0 8px 24px rgba(0,0,0,0.45));">
         <rect width="180" height="60" rx="11" fill="#000" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
@@ -528,7 +595,7 @@
         <text x="60" y="45" fill="#fff" font-family="-apple-system, SF Pro Display, sans-serif" font-size="20" font-weight="600" letter-spacing="-0.01em">App Store</text>
       </svg>
     </a>
-    <p style="font-size:13px; color:rgba(255,255,255,0.65); letter-spacing:0.04em;" data-key="hero-price">7 Tage gratis · danach <strong style="color:rgba(255,255,255,0.92);">einmaliger Kauf · Kein Abo · Für immer dein</strong></p>
+    <p style="font-size:13px; color:rgba(255,255,255,0.65); letter-spacing:0.04em;" data-key="hero-price">3 Tage gratis · danach <strong style="color:rgba(255,255,255,0.92);">einmaliger Kauf · Kein Abo · Für immer dein</strong></p>
 
     <div style="display:flex; gap:18px; flex-wrap:wrap; justify-content:center; margin-top:8px; opacity:0.82;">
       <span style="display:inline-flex; align-items:center; gap:6px; font-size:12px; color:rgba(255,255,255,0.62); letter-spacing:0.02em;">
@@ -552,19 +619,71 @@
 
   <div class="cluster hero-cluster">
     <div class="phone lg side left-side">
-      <div class="di"></div>
-      <div class="phone-screen"><img src="screenshots/ss_02_stats_week_cycling_glacierblue_dark.png" alt="SimpleFit Statistik-Ansicht: Wochenübersicht mit Fortschrittsbalken in Glacier Blue"></div>
+      <div class="phone-screen"><img src="screenshots/hero_week_fire.png" alt="SimpleFit Wochenübersicht mit Sportarten und Fokus, lebendiger Hintergrund"></div>
     </div>
     <div class="phone xl center">
-      <div class="di"></div>
-      <div class="phone-screen"><img src="screenshots/10_calendar_sunset_dark.png" alt="SimpleFit Kalender im Dark Mode mit Sunset-Akzentfarbe, Heatmap zeigt aktive Trainingstage in Orange"></div>
+      <div class="phone-screen"><img src="screenshots/hero_home_green.png" alt="SimpleFit Startbildschirm mit Heatmap-Kalender, Apple Health (Schlaf, Move, Ruhepuls) und Kraft-Eintrag"></div>
     </div>
     <div class="phone lg side right-side">
-      <div class="di"></div>
-      <div class="phone-screen"><img src="screenshots/ss_06_stats_all_strength_midnight_dark.png" alt="SimpleFit Gesamtstatistiken mit Streak und Top-Sportarten im Dark-Modus"></div>
+      <div class="phone-screen"><img src="screenshots/hero_stats_teal.png" alt="SimpleFit Statistiken mit Training-Insights und Top-Sportarten, Teal-Akzent im Dark Mode"></div>
     </div>
   </div>
 </section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ APP PREVIEW VIDEO ═══════════════ -->
+<div class="bg-radial-blue">
+<div class="section" style="text-align:center; padding-top:84px; padding-bottom:84px;">
+  <div class="wrap" style="text-align:center; max-width:680px;">
+    <div class="label" style="display:block;" data-key="vid-label">App Preview · Video</div>
+    <h2 class="title" style="text-align:center;" data-key="vid-h2">Sieh es<br><span class="dim">in Aktion.</span></h2>
+    <p class="body-text" style="margin:0 auto 8px; text-align:center; max-width:480px;" data-key="vid-body">Kalender, Statistiken, Kraft-Logging und die Apple Watch App — in unter 30 Sekunden.</p>
+  </div>
+  <div style="display:flex; justify-content:center; margin-top:44px;">
+    <div class="phone xl">
+      <div class="di"></div>
+      <div class="phone-screen">
+        <video src="appreview_en.mp4" poster="appreview_poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="SimpleFit App Preview"></video>
+      </div>
+    </div>
+  </div>
+  <p class="video-caption" data-key="vid-cap">Echte App-Aufnahmen · Ton aus</p>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ APPLE WATCH ═══════════════ -->
+<div class="bg-radial-blue">
+<div class="section" style="text-align:center;">
+  <div class="wrap" style="text-align:center; max-width:680px;">
+    <div class="label green" style="display:block;" data-key="w-label">Apple Watch · Am Handgelenk</div>
+    <h2 class="title" style="text-align:center;" data-key="w-h2">Auch an<br><span class="dim">deinem Handgelenk.</span></h2>
+    <p class="body-text" style="margin:0 auto; text-align:center; max-width:500px;" data-key="w-body">Logge dein Training und sieh Tagesfortschritt, Wochenziel und Streak direkt auf der Apple Watch. Mit Complications fürs Zifferblatt — ein Tipp genügt.</p>
+  </div>
+  <div class="watch-row">
+    <div class="watch-card">
+      <div class="watch"><div class="watch-screen"><img src="screenshots/watch_today.png" alt="SimpleFit Apple Watch: Tagesansicht mit Trainingsfortschritt"></div></div>
+      <div class="watch-label" data-key="w-c1">Heute</div>
+    </div>
+    <div class="watch-card">
+      <div class="watch"><div class="watch-screen"><img src="screenshots/watch_week.png" alt="SimpleFit Apple Watch: Wochenziel und Streak"></div></div>
+      <div class="watch-label" data-key="w-c2">Woche · Ziel</div>
+    </div>
+    <div class="watch-card">
+      <div class="watch"><div class="watch-screen"><img src="screenshots/watch_status.png" alt="SimpleFit Apple Watch: Status und Sync"></div></div>
+      <div class="watch-label" data-key="w-c3">Status · Sync</div>
+    </div>
+  </div>
+  <div class="pills" style="justify-content:center; max-width:640px; margin-left:auto; margin-right:auto;">
+    <span class="pill"><span class="dot g"></span><span data-key="w-p1">Vom Handgelenk loggen</span></span>
+    <span class="pill"><span class="dot"></span><span data-key="w-p2">Tagesfortschritt &amp; Streak</span></span>
+    <span class="pill"><span class="dot o"></span><span data-key="w-p3">Complications</span></span>
+    <span class="pill"><span class="dot p"></span><span data-key="w-p4">Sync mit dem iPhone</span></span>
+  </div>
+</div>
+</div>
 
 <div class="divider"></div>
 
@@ -585,8 +704,7 @@
     </div>
     <div style="display:flex; justify-content:center;">
       <div class="phone lg">
-        <div class="di"></div>
-        <div class="phone-screen"><img src="screenshots/ss_08_calendar_tennis_mint_light.png" alt="Calendar Light"></div>
+        <div class="phone-screen"><img src="screenshots/home_blue_galaxy.png" alt="SimpleFit Heatmap-Kalender mit Aktive-Tage-Ring, Apple Health und Wochenzielen, Blau"></div>
       </div>
     </div>
   </div>
@@ -612,8 +730,7 @@
     </div>
     <div style="display:flex; justify-content:center;">
       <div class="phone lg">
-        <div class="di"></div>
-        <div class="phone-screen"><img src="screenshots/ss_06_stats_all_strength_midnight_dark.png" alt="Streak"></div>
+        <div class="phone-screen"><img src="screenshots/home_coral_dark.png" alt="SimpleFit Startbildschirm: Wochenziel erreicht, Streak und Aktive Tage mit Coral-Akzent"></div>
       </div>
     </div>
   </div>
@@ -640,8 +757,34 @@
     </div>
     <div style="display:flex; justify-content:center;">
       <div class="phone lg">
-        <div class="di"></div>
-        <div class="phone-screen"><img src="screenshots/ss_10_editor_football_emerald_light.png" alt="Activity Editor"></div>
+        <div class="phone-screen"><img src="screenshots/entry_new.png" alt="SimpleFit Neuer Eintrag: Sportart wählen, schnell erfasst"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ KRAFT-LOGGING ═══════════════ -->
+<div class="bg-radial-rose">
+<div class="section">
+  <div class="feat-row rev wrap">
+    <div class="feat-text">
+      <div class="label rose" data-key="st-label">Kraft · Logging</div>
+      <h2 class="title" data-key="st-h2">Sätze. Wiederholungen.<br><span class="dim">Gewicht.</span></h2>
+      <p class="body-text" data-key="st-body">Logge jede Übung mit Sätzen, Wiederholungen und Gewicht. SimpleFit berechnet dein Volumen und merkt sich deine Allzeit-Rekorde — alles im selben schnellen Eintrags-Sheet, ohne Umwege.</p>
+      <div class="pills">
+        <span class="pill"><span class="dot r"></span><span data-key="st-p1">Sätze &amp; Wiederholungen</span></span>
+        <span class="pill"><span class="dot o"></span><span data-key="st-p2">Gewicht &amp; Volumen</span></span>
+        <span class="pill"><span class="dot g"></span><span data-key="st-p3">Allzeit-Rekorde</span></span>
+        <span class="pill"><span class="dot"></span><span data-key="st-p4">Pro Übung</span></span>
+        <span class="pill"><span class="dot p"></span><span data-key="st-p5">Direkt im Kalender</span></span>
+      </div>
+    </div>
+    <div style="display:flex; justify-content:center;">
+      <div class="phone lg">
+        <div class="phone-screen"><img src="screenshots/strength_sheet_dark.png" alt="SimpleFit Kraft-Logging: Übungen mit Sätzen, Wiederholungen und Gewicht"></div>
       </div>
     </div>
   </div>
@@ -667,24 +810,24 @@
 
   <div class="phone-grid">
     <div class="phone-col">
-      <div class="phone md"><div class="di"></div><div class="phone-screen"><img src="screenshots/ss_01_stats_week_swimming_emerald_light.png" alt="Statistiken All"></div></div>
+      <div class="phone md"><div class="phone-screen"><img src="screenshots/all_green_light.png" alt="SimpleFit Statistik Alle mit Training-Insights"></div></div>
       <div class="phone-col-label" data-key="s4-col1">Alle · Streak &amp; Insights</div>
     </div>
     <div class="phone-col">
-      <div class="phone md"><div class="di"></div><div class="phone-screen"><img src="screenshots/ss_06_stats_all_strength_midnight_dark.png" alt="Statistiken Dark"></div></div>
+      <div class="phone md"><div class="phone-screen"><img src="screenshots/all_orange_dark.png" alt="SimpleFit Statistik Alle im Dark Mode"></div></div>
       <div class="phone-col-label" data-key="s4-col2">Alle · Dark</div>
     </div>
     <div class="phone-col">
-      <div class="phone md"><div class="di"></div><div class="phone-screen"><img src="screenshots/ss_05_stats_year_running_sunset_light.png" alt="Jahr"></div></div>
+      <div class="phone md"><div class="phone-screen"><img src="screenshots/year_gold_dark.png" alt="SimpleFit Jahresübersicht mit voller Heatmap"></div></div>
       <div class="phone-col-label" data-key="s4-col3">Jahr · Übersicht</div>
     </div>
     <div class="phone-col">
-      <div class="phone md"><div class="di"></div><div class="phone-screen"><img src="screenshots/ss_03_stats_month_yoga_rose_dark.png" alt="Monat"></div></div>
+      <div class="phone md"><div class="phone-screen"><img src="screenshots/month_pink_dark.png" alt="SimpleFit Monats-Heatmap"></div></div>
       <div class="phone-col-label" data-key="s4-col4">Monat · Heatmap</div>
     </div>
     <div class="phone-col">
-      <div class="phone md"><div class="di"></div><div class="phone-screen"><img src="screenshots/21_statistics_insights_mode.png" alt="Insights"></div></div>
-      <div class="phone-col-label" data-key="s4-col5">Sportarten &amp; Focus</div>
+      <div class="phone md"><div class="phone-screen"><img src="screenshots/week_blue_light.png" alt="SimpleFit Wochenübersicht mit Sportarten und Fokus"></div></div>
+      <div class="phone-col-label" data-key="s4-col5">Woche · Übersicht</div>
     </div>
   </div>
 </div>
@@ -702,11 +845,11 @@
   </div>
   <div class="phone-grid" style="margin-top:48px;">
     <div class="phone-col">
-      <div class="phone md"><div class="di"></div><div class="phone-screen"><img src="screenshots/ss_08_calendar_tennis_mint_light.png" alt="Light"></div></div>
+      <div class="phone md"><div class="phone-screen"><img src="screenshots/home_blue_light.png" alt="SimpleFit Startbildschirm im Light Mode"></div></div>
       <div class="phone-col-label">Light</div>
     </div>
     <div class="phone-col">
-      <div class="phone md"><div class="di"></div><div class="phone-screen"><img src="screenshots/ss_07_calendar_boxing_coral_dark.png" alt="Dark"></div></div>
+      <div class="phone md"><div class="phone-screen"><img src="screenshots/home_green.png" alt="SimpleFit Startbildschirm im Dark Mode"></div></div>
       <div class="phone-col-label">Dark</div>
     </div>
   </div>
@@ -725,11 +868,11 @@
   </div>
   <div class="phone-grid" style="margin-top:48px;">
     <div class="phone-col">
-      <div class="phone md"><div class="di"></div><div class="phone-screen"><img src="screenshots/10_calendar_sunset_dark.png" alt="Sunset Dark"></div></div>
+      <div class="phone md"><div class="phone-screen"><img src="screenshots/home_sunset_dark.png" alt="Sunset Dark"></div></div>
       <div class="phone-col-label">Sunset · Dark</div>
     </div>
     <div class="phone-col">
-      <div class="phone md"><div class="di"></div><div class="phone-screen"><img src="screenshots/11_calendar_rose_dark.png" alt="Rose Dark"></div></div>
+      <div class="phone md"><div class="phone-screen"><img src="screenshots/home_rose_dark.png" alt="Rose Dark"></div></div>
       <div class="phone-col-label">Rose · Dark</div>
     </div>
   </div>
@@ -742,16 +885,22 @@
 <div class="bg-radial-blue">
 <div class="section" style="text-align:center;">
   <div class="wrap" style="text-align:center; max-width:660px;">
-    <div class="label" style="display:block;" data-key="s7-label">Personalisierung · Akzentfarben</div>
-    <h2 class="title" style="text-align:center;" data-key="s7-h2">7 Farben.<br><span class="dim">Dein Stil.</span></h2>
-    <p class="body-text" style="margin:0 auto; text-align:center;" data-key="s7-body">Glacier Blue, Sunset, Emerald, Rose, Electric Indigo und mehr. Wähle den Akzent, der zu deiner Stimmung und deinem Gerät passt — und ändere ihn jederzeit.</p>
+    <div class="label" style="display:block;" data-key="s7-label">Personalisierung · Farbwähler</div>
+    <h2 class="title" style="text-align:center;" data-key="s7-h2">Jede Farbe.<br><span class="dim">Dein Stil.</span></h2>
+    <p class="body-text" style="margin:0 auto; text-align:center;" data-key="s7-body">Wähle mit dem Farbwähler eine beliebige Akzentfarbe — oder eines der fertigen Themes. Deine Wahl gilt überall: in der App, in den Widgets und auf der Apple Watch. <strong style="color:rgba(255,255,255,0.9);">Mit SimpleFit Pro.</strong></p>
+    <div class="spectrum" aria-hidden="true"></div>
+  </div>
+  <div style="display:flex; justify-content:center; margin-top:46px;">
+    <div class="phone lg">
+      <div class="phone-screen"><img src="screenshots/colorpicker_real.png" alt="SimpleFit Farbwähler: beliebige Akzentfarbe per Farbgitter, Spektrum oder Regler"></div>
+    </div>
   </div>
   <div class="theme-row">
-    <div class="theme-card"><div class="phone sm"><div class="di"></div><div class="phone-screen"><img src="screenshots/ss_08_calendar_tennis_mint_light.png" alt="Blue"></div></div><div class="theme-label">Glacier Blue</div></div>
-    <div class="theme-card"><div class="phone sm"><div class="di"></div><div class="phone-screen"><img src="screenshots/10_calendar_sunset_dark.png" alt="Sunset"></div></div><div class="theme-label">Sunset</div></div>
-    <div class="theme-card"><div class="phone sm"><div class="di"></div><div class="phone-screen"><img src="screenshots/06_calendar_emerald.png" alt="Emerald"></div></div><div class="theme-label">Emerald</div></div>
-    <div class="theme-card"><div class="phone sm"><div class="di"></div><div class="phone-screen"><img src="screenshots/07_calendar_rose.png" alt="Rose"></div></div><div class="theme-label">Rose</div></div>
-    <div class="theme-card"><div class="phone sm"><div class="di"></div><div class="phone-screen"><img src="screenshots/11_calendar_rose_dark.png" alt="Rose Dark"></div></div><div class="theme-label">Rose · Dark</div></div>
+    <div class="theme-card"><div class="phone sm"><div class="phone-screen"><img src="screenshots/home_glacierblue_dark.png" alt="SimpleFit mit Glacier-Blue-Akzent"></div></div><div class="theme-label">Glacier Blue</div></div>
+    <div class="theme-card"><div class="phone sm"><div class="phone-screen"><img src="screenshots/home_sunset_dark.png" alt="SimpleFit mit Sunset-Akzent"></div></div><div class="theme-label">Sunset</div></div>
+    <div class="theme-card"><div class="phone sm"><div class="phone-screen"><img src="screenshots/home_forest_dark.png" alt="SimpleFit mit Forest-Akzent"></div></div><div class="theme-label">Forest</div></div>
+    <div class="theme-card"><div class="phone sm"><div class="phone-screen"><img src="screenshots/home_rose_dark.png" alt="SimpleFit mit Rose-Akzent"></div></div><div class="theme-label">Rose</div></div>
+    <div class="theme-card"><div class="phone sm"><div class="phone-screen"><img src="screenshots/home_mint_light.png" alt="SimpleFit mit Mint-Akzent im Light Mode"></div></div><div class="theme-label">Mint · Light</div></div>
   </div>
 </div>
 </div>
@@ -768,12 +917,12 @@
   </div>
   <div style="display:flex; justify-content:center; gap:32px; flex-wrap:wrap; margin-top:48px; align-items:flex-end;">
     <div style="text-align:center;">
-      <div class="phone md"><div class="di"></div><div class="phone-screen"><img src="screenshots/ss_08_calendar_tennis_mint_light.png" alt="Nur Tracken"></div></div>
+      <div class="phone md"><div class="phone-screen"><img src="screenshots/home_pink.png" alt="SimpleFit Kalender, nur Tracken"></div></div>
       <div class="phone-col-label" style="margin-top:12px;" data-key="s8m-col1">🗓 Nur Tracken</div>
       <div style="font-size:12px; color:rgba(255,255,255,0.45); margin-top:4px;" data-key="s8m-col1b">Klar, fokussiert, schnell</div>
     </div>
     <div style="text-align:center;">
-      <div class="phone md"><div class="di"></div><div class="phone-screen"><img src="screenshots/21_statistics_insights_mode.png" alt="Tracken + Insights"></div></div>
+      <div class="phone md"><div class="phone-screen"><img src="screenshots/all_green_light.png" alt="SimpleFit Statistik mit Insights"></div></div>
       <div class="phone-col-label" style="margin-top:12px;" data-key="s8m-col2">📊 Tracken + Insights</div>
       <div style="font-size:12px; color:rgba(255,255,255,0.45); margin-top:4px;" data-key="s8m-col2b">Muster, Rekorde, Analysen</div>
     </div>
@@ -800,11 +949,11 @@
     </div>
     <div class="phone-grid" style="margin-top:0; gap:20px;">
       <div class="phone-col">
-        <div class="phone md"><div class="di"></div><div class="phone-screen"><img src="screenshots/ss_07_calendar_boxing_coral_dark.png" alt="Sport BG Dark"></div></div>
+        <div class="phone md"><div class="phone-screen"><img src="screenshots/home_orange.png" alt="SimpleFit mit Foto-Hintergrund und Liquid Glass"></div></div>
         <div class="phone-col-label" data-key="s8-col1">Cycling · Dark</div>
       </div>
       <div class="phone-col">
-        <div class="phone md"><div class="di"></div><div class="phone-screen"><img src="screenshots/ss_09_calendar_hiit_sunset_dark.png" alt="Sport BG Sunset"></div></div>
+        <div class="phone md"><div class="phone-screen"><img src="screenshots/glass_settings_real.png" alt="SimpleFit Glas-Einstellungen: Blur, Dimming und Clear Glass Cards"></div></div>
         <div class="phone-col-label" data-key="s8-col2">Hiking · Sunset</div>
       </div>
     </div>
@@ -830,8 +979,8 @@
       </div>
     </div>
     <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
-      <div class="phone md"><div class="di"></div><div class="phone-screen"><img src="screenshots/19_settings_bg_picker.png" alt="Settings BG Picker"></div></div>
-      <div class="phone md"><div class="di"></div><div class="phone-screen"><img src="screenshots/16_settings_colors_top.png" alt="Settings Colors"></div></div>
+      <div class="phone md"><div class="phone-screen"><img src="screenshots/settings_top_dark.png" alt="SimpleFit Einstellungen: Name, Wochenziel, Motivation und Theme"></div></div>
+      <div class="phone md"><div class="phone-screen"><img src="screenshots/settings_reminders_real.png" alt="SimpleFit Einstellungen: Erinnerungen und Apple Health"></div></div>
     </div>
   </div>
 </div>
@@ -856,7 +1005,7 @@
       </div>
     </div>
     <div style="display:flex; justify-content:center;">
-      <div class="phone md"><div class="di"></div><div class="phone-screen"><img src="screenshots/05_settings_health.png" alt="Health"></div></div>
+      <div class="phone md"><div class="phone-screen"><img src="screenshots/settings_health_real.png" alt="SimpleFit Apple Health Import, CSV/JSON Export, iCloud Sync und lokale Daten"></div></div>
     </div>
   </div>
 </div>
@@ -867,10 +1016,10 @@
 <!-- ═══════════════ CTA ═══════════════ -->
 <section class="cta-section">
   <h2 class="cta-h" data-key="cta-h">Bereit, konsequenter<br><span style="background:linear-gradient(135deg,var(--blue),var(--blue-light)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">zu trainieren?</span></h2>
-  <p class="cta-sub" data-key="cta-sub">7 Tage gratis testen — danach einmaliger Kauf. Kein Abo, kein Login, keine Werbung.</p>
-  <a href="https://apps.apple.com/app/id6762292658" class="btn" style="font-size:18px; padding:20px 52px;" data-key="cta-btn">7 Tage kostenlos starten</a>
+  <p class="cta-sub" data-key="cta-sub">3 Tage gratis testen — danach einmaliger Kauf. Kein Abo, kein Login, keine Werbung.</p>
+  <a href="https://apps.apple.com/app/id6762292658" class="btn" style="font-size:18px; padding:20px 52px;" data-key="cta-btn">3 Tage kostenlos starten</a>
   <div style="display:flex; justify-content:center; gap:28px; margin-top:28px; flex-wrap:wrap;">
-    <span style="font-size:13px; color:rgba(255,255,255,0.72);" data-key="cta-c1">✓ 7 Tage kostenlos testen</span>
+    <span style="font-size:13px; color:rgba(255,255,255,0.72);" data-key="cta-c1">✓ 3 Tage kostenlos testen</span>
     <span style="font-size:13px; color:rgba(255,255,255,0.72);" data-key="cta-c2">✓ SimpleFit Pro einmalig</span>
     <span style="font-size:13px; color:rgba(255,255,255,0.72);" data-key="cta-c3">✓ iOS 18+ · iPhone</span>
     <span style="font-size:13px; color:rgba(255,255,255,0.72);" data-key="cta-c4">✓ Keine Werbung</span>
@@ -886,7 +1035,7 @@
         <img src="icon.png" alt="SimpleFit Tracker" class="app-icon-footer">
         <strong style="font-size:18px; letter-spacing:-0.01em; color:#fff;">SimpleFit Tracker</strong>
       </div>
-      <p style="font-size:13px; color:rgba(255,255,255,0.55); line-height:1.6; max-width:280px;" data-key="footer-about">Workout-Kalender mit Heatmap, Streaks und Apple Health. Made in Switzerland.</p>
+      <p style="font-size:13px; color:rgba(255,255,255,0.55); line-height:1.6; max-width:280px;" data-key="footer-about">Workout-Kalender mit Heatmap, Apple Watch App und Kraft-Logging. Made in Switzerland.</p>
     </div>
 
     <div>
@@ -917,7 +1066,7 @@
 
   <div style="max-width:1100px; margin:48px auto 0; padding-top:28px; border-top:1px solid rgba(255,255,255,0.06); display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap;">
     <p style="font-size:12px; color:rgba(255,255,255,0.40); margin:0;" data-key="footer-copyright">© 2026 Anastasios Panagou · TEKNEIO®. SimpleFit Tracker. Alle Rechte vorbehalten.</p>
-    <p style="font-size:12px; color:rgba(255,255,255,0.40); margin:0;" data-key="footer-version">iOS 18+ · iPhone · Optimiert für Apple Health</p>
+    <p style="font-size:12px; color:rgba(255,255,255,0.40); margin:0;" data-key="footer-version">iOS 18+ · iPhone · Apple Watch · Apple Health</p>
   </div>
 </footer>
 
@@ -999,8 +1148,8 @@
         <div class="slide-sub" data-key="sl6-sub">Apple Health Import, iCloud Sync, CSV &amp; JSON Export.</div>
       </div>
       <div class="slide-phones">
-        <div class="sphone ghost r"><div class="di"></div><div class="screen"><img src="screenshots/16_settings_colors_top.png"></div></div>
-        <div class="sphone main"><div class="di"></div><div class="screen"><img src="screenshots/05_settings_health.png"></div></div>
+        <div class="sphone ghost r"><div class="di"></div><div class="screen"><img src="screenshots/settings_top_dark.png"></div></div>
+        <div class="sphone main"><div class="di"></div><div class="screen"><img src="screenshots/settings_bottom_dark.png"></div></div>
       </div>
     </div>
 
@@ -1012,22 +1161,22 @@
         <div class="slide-sub" data-key="sl7-sub">Automatisch oder manuell — hell, dunkel oder dein eigenes Foto.</div>
       </div>
       <div class="slide-phones">
-        <div class="sphone ghost l"><div class="di"></div><div class="screen"><img src="screenshots/11_calendar_rose_dark.png"></div></div>
-        <div class="sphone main"><div class="di"></div><div class="screen"><img src="screenshots/10_calendar_sunset_dark.png"></div></div>
+        <div class="sphone ghost l"><div class="di"></div><div class="screen"><img src="screenshots/home_rose_dark.png"></div></div>
+        <div class="sphone main"><div class="di"></div><div class="screen"><img src="screenshots/home_sunset_dark.png"></div></div>
       </div>
     </div>
 
     <!-- Slide 8: Color Themes -->
     <div class="slide slide-bg-blue">
       <div class="slide-text">
-        <div class="slide-tag" data-key="sl8-tag">7 Farben</div>
-        <div class="slide-h" data-key="sl8-h">Dein Stil.<br>Deine Farbe.</div>
-        <div class="slide-sub" data-key="sl8-sub">Glacier Blue, Sunset, Emerald, Rose und mehr — jederzeit wechselbar.</div>
+        <div class="slide-tag" data-key="sl8-tag">Farbwähler</div>
+        <div class="slide-h" data-key="sl8-h">Jede Farbe.<br>Dein Stil.</div>
+        <div class="slide-sub" data-key="sl8-sub">Wähle mit dem Farbwähler eine beliebige Akzentfarbe — jederzeit änderbar.</div>
       </div>
       <div class="slide-phones">
-        <div class="sphone ghost l"><div class="di"></div><div class="screen"><img src="screenshots/07_calendar_rose.png"></div></div>
-        <div class="sphone main"><div class="di"></div><div class="screen"><img src="screenshots/06_calendar_emerald.png"></div></div>
-        <div class="sphone ghost r"><div class="di"></div><div class="screen"><img src="screenshots/ss_08_calendar_tennis_mint_light.png"></div></div>
+        <div class="sphone ghost l"><div class="di"></div><div class="screen"><img src="screenshots/home_rose_dark.png"></div></div>
+        <div class="sphone main"><div class="di"></div><div class="screen"><img src="screenshots/home_glacierblue_dark.png"></div></div>
+        <div class="sphone ghost r"><div class="di"></div><div class="screen"><img src="screenshots/home_mint_light.png"></div></div>
       </div>
     </div>
 
@@ -1054,7 +1203,7 @@ const T = {
   'trust-2': { de: 'iCloud Sync', en: 'iCloud Sync' },
   'trust-3': { de: 'Keine Werbung · Kein Tracking', en: 'No ads · No tracking' },
   'trust-4': { de: 'Daten lokal auf deinem Gerät', en: 'Data stays on your device' },
-  'footer-about':   { de: 'Workout-Kalender mit Heatmap, Streaks und Apple Health. Made in Switzerland.', en: 'Workout calendar with heatmap, streaks and Apple Health. Made in Switzerland.' },
+  'footer-about':   { de: 'Workout-Kalender mit Heatmap, Apple Watch App und Kraft-Logging. Made in Switzerland.', en: 'Workout calendar with heatmap, Apple Watch app and strength logging. Made in Switzerland.' },
   'footer-product': { de: 'Produkt', en: 'Product' },
   'footer-download':{ de: 'Im App Store laden', en: 'Download on the App Store' },
   'footer-features':{ de: 'Features', en: 'Features' },
@@ -1064,11 +1213,11 @@ const T = {
   'footer-privacy': { de: 'Datenschutz', en: 'Privacy Policy' },
   'footer-terms':   { de: 'Lizenzbedingungen', en: 'License Terms' },
   'footer-copyright':{ de: '© 2026 Anastasios Panagou · TEKNEIO®. SimpleFit Tracker. Alle Rechte vorbehalten.', en: '© 2026 Anastasios Panagou · TEKNEIO®. SimpleFit Tracker. All rights reserved.' },
-  'footer-version': { de: 'iOS 18+ · iPhone · Optimiert für Apple Health', en: 'iOS 18+ · iPhone · Optimized for Apple Health' },
+  'footer-version': { de: 'iOS 18+ · iPhone · Apple Watch · Apple Health', en: 'iOS 18+ · iPhone · Apple Watch · Apple Health' },
   'hero-tagline': { de: 'Dein Training, jeden Tag.', en: 'Your Training, Every Day.' },
   'hero-sub':  { de: 'Bleib konsequent. Sieh deinen Fortschritt.<br>Kein Abo, kein Login — einfach öffnen und trainieren.', en: 'Stay consistent. See your progress.<br>No subscription, no login — just open and train.' },
-  'hero-btn':  { de: '7 Tage kostenlos testen', en: 'Try Free for 7 Days' },
-  'hero-price':{ de: '7 Tage gratis · danach <strong style="color:rgba(255,255,255,0.68);">einmaliger Kauf · Kein Abo · Für immer dein</strong>', en: '7 days free · then <strong style="color:rgba(255,255,255,0.68);">one-time purchase · No subscription · Yours forever</strong>' },
+  'hero-btn':  { de: '3 Tage kostenlos testen', en: 'Try Free for 3 Days' },
+  'hero-price':{ de: '3 Tage gratis · danach <strong style="color:rgba(255,255,255,0.68);">einmaliger Kauf · Kein Abo · Für immer dein</strong>', en: '3 days free · then <strong style="color:rgba(255,255,255,0.68);">one-time purchase · No subscription · Yours forever</strong>' },
 
   's1-label': { de: 'Kalender · Heatmap', en: 'Calendar · Heatmap' },
   's1-h2':    { de: 'Jeder Tag<br><span class="dim">zählt.</span>', en: 'Every Day<br><span class="dim">Counts.</span>' },
@@ -1105,7 +1254,7 @@ const T = {
   's4-col2': { de: 'Alle · Dark', en: 'All · Dark' },
   's4-col3': { de: 'Jahr · Übersicht', en: 'Year · Overview' },
   's4-col4': { de: 'Monat · Heatmap', en: 'Month · Heatmap' },
-  's4-col5': { de: 'Sportarten &amp; Focus', en: 'Sports &amp; Focus' },
+  's4-col5': { de: 'Woche · Übersicht', en: 'Week · Overview' },
 
   's5-label': { de: 'Erscheinungsbild · Themes', en: 'Appearance · Themes' },
   's5-h2':    { de: 'Hell. Dunkel.<br><span class="dim">Deine Wahl.</span>', en: 'Light. Dark.<br><span class="dim">Your Choice.</span>' },
@@ -1115,9 +1264,34 @@ const T = {
   's6-h2':    { de: 'Dunkel macht<br><span class="dim">den Unterschied.</span>', en: 'Dark Makes<br><span class="dim">the Difference.</span>' },
   's6-body':  { de: 'Im Dark Mode entfalten die Akzentfarben ihre ganze Eleganz. Warmes Orange oder leuchtendes Rose — beides sieht im Dunkeln besonders edel aus. Wähle den Stil, der zu dir passt.', en: 'In Dark Mode, the accent colors reveal their full elegance. Warm Orange or glowing Rose — both look especially refined in the dark. Choose the style that suits you.' },
 
-  's7-label': { de: 'Personalisierung · Akzentfarben', en: 'Personalization · Accent Colors' },
-  's7-h2':    { de: '7 Farben.<br><span class="dim">Dein Stil.</span>', en: '7 Colors.<br><span class="dim">Your Style.</span>' },
-  's7-body':  { de: 'Glacier Blue, Sunset, Emerald, Rose, Electric Indigo und mehr. Wähle den Akzent, der zu deiner Stimmung und deinem Gerät passt — und ändere ihn jederzeit.', en: 'Glacier Blue, Sunset, Emerald, Rose, Electric Indigo and more. Choose the accent that matches your mood and device — change it anytime.' },
+  's7-label': { de: 'Personalisierung · Farbwähler', en: 'Personalization · Color Picker' },
+  's7-h2':    { de: 'Jede Farbe.<br><span class="dim">Dein Stil.</span>', en: 'Any Color.<br><span class="dim">Your Style.</span>' },
+  's7-body':  { de: 'Wähle mit dem Farbwähler eine beliebige Akzentfarbe — oder eines der fertigen Themes. Deine Wahl gilt überall: in der App, in den Widgets und auf der Apple Watch. <strong style="color:rgba(255,255,255,0.9);">Mit SimpleFit Pro.</strong>', en: 'Pick any accent color with the color picker — or one of the ready-made themes. Your choice applies everywhere: in the app, your widgets and on Apple Watch. <strong style="color:rgba(255,255,255,0.9);">With SimpleFit Pro.</strong>' },
+
+  'vid-label': { de: 'App Preview · Video', en: 'App Preview · Video' },
+  'vid-h2':    { de: 'Sieh es<br><span class="dim">in Aktion.</span>', en: 'See it<br><span class="dim">in action.</span>' },
+  'vid-body':  { de: 'Kalender, Statistiken, Kraft-Logging und die Apple Watch App — in unter 30 Sekunden.', en: 'Calendar, statistics, strength logging and the Apple Watch app — in under 30 seconds.' },
+  'vid-cap':   { de: 'Echte App-Aufnahmen · Ton aus', en: 'Real app footage · Sound off' },
+
+  'st-label': { de: 'Kraft · Logging', en: 'Strength · Logging' },
+  'st-h2':    { de: 'Sätze. Wiederholungen.<br><span class="dim">Gewicht.</span>', en: 'Sets. Reps.<br><span class="dim">Weight.</span>' },
+  'st-body':  { de: 'Logge jede Übung mit Sätzen, Wiederholungen und Gewicht. SimpleFit berechnet dein Volumen und merkt sich deine Allzeit-Rekorde — alles im selben schnellen Eintrags-Sheet, ohne Umwege.', en: 'Log every exercise with sets, reps and weight. SimpleFit calculates your volume and remembers your all-time records — all in the same fast logging sheet, no detours.' },
+  'st-p1': { de: 'Sätze &amp; Wiederholungen', en: 'Sets &amp; reps' },
+  'st-p2': { de: 'Gewicht &amp; Volumen', en: 'Weight &amp; volume' },
+  'st-p3': { de: 'Allzeit-Rekorde', en: 'All-time records' },
+  'st-p4': { de: 'Pro Übung', en: 'Per exercise' },
+  'st-p5': { de: 'Direkt im Kalender', en: 'Right in the calendar' },
+
+  'w-label': { de: 'Apple Watch · Am Handgelenk', en: 'Apple Watch · On Your Wrist' },
+  'w-h2':    { de: 'Auch an<br><span class="dim">deinem Handgelenk.</span>', en: 'Right on<br><span class="dim">your wrist.</span>' },
+  'w-body':  { de: 'Logge dein Training und sieh Tagesfortschritt, Wochenziel und Streak direkt auf der Apple Watch. Mit Complications fürs Zifferblatt — ein Tipp genügt.', en: 'Log your workout and see daily progress, weekly goal and streak right on Apple Watch. With complications for your watch face — a single tap is enough.' },
+  'w-c1': { de: 'Heute', en: 'Today' },
+  'w-c2': { de: 'Woche · Ziel', en: 'Week · Goal' },
+  'w-c3': { de: 'Status · Sync', en: 'Status · Sync' },
+  'w-p1': { de: 'Vom Handgelenk loggen', en: 'Log from your wrist' },
+  'w-p2': { de: 'Tagesfortschritt &amp; Streak', en: 'Daily progress &amp; streak' },
+  'w-p3': { de: 'Complications', en: 'Complications' },
+  'w-p4': { de: 'Sync mit dem iPhone', en: 'Sync with iPhone' },
 
   's8m-label': { de: 'Dein Stil · Zwei Modi', en: 'Your Style · Two Modes' },
   's8m-h2':    { de: 'So einfach<br><span class="dim">wie du es willst.</span>', en: 'As simple<br><span class="dim">as you want it.</span>' },
@@ -1134,8 +1308,8 @@ const T = {
   's8-p2': { de: 'Liquid Glass · Klarglas-Modus', en: 'Liquid Glass · Clear glass mode' },
   's8-p3': { de: 'Blur &amp; Overlay einstellbar', en: 'Blur &amp; overlay adjustable' },
   's8-p4': { de: 'Eigenes Foto möglich', en: 'Custom photo supported' },
-  's8-col1': { de: 'Cycling · Dark', en: 'Cycling · Dark' },
-  's8-col2': { de: 'Hiking · Sunset', en: 'Hiking · Sunset' },
+  's8-col1': { de: 'Foto-Hintergrund', en: 'Photo background' },
+  's8-col2': { de: 'Glas einstellen', en: 'Adjust the glass' },
 
   's9-label': { de: 'Einstellungen · Ziele', en: 'Settings · Goals' },
   's9-h2':    { de: 'Alles nach<br><span class="dim">deinen Regeln.</span>', en: 'Everything<br><span class="dim">on Your Terms.</span>' },
@@ -1155,9 +1329,9 @@ const T = {
   's10-p5': { de: 'Daten nur lokal', en: 'Data stays local' },
 
   'cta-h':   { de: 'Bereit, konsequenter<br><span style="background:linear-gradient(135deg,var(--blue),var(--blue-light)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">zu trainieren?</span>', en: 'Ready to train<br><span style="background:linear-gradient(135deg,var(--blue),var(--blue-light)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">more consistently?</span>' },
-  'cta-sub': { de: '7 Tage gratis testen — danach einmaliger Kauf. Kein Abo, kein Login, keine Werbung.', en: 'Try free for 7 days — then one-time purchase. No subscription, no login, no ads.' },
-  'cta-btn': { de: '7 Tage kostenlos starten', en: 'Start Free for 7 Days' },
-  'cta-c1':  { de: '✓ 7 Tage kostenlos testen', en: '✓ 7 days free trial' },
+  'cta-sub': { de: '3 Tage gratis testen — danach einmaliger Kauf. Kein Abo, kein Login, keine Werbung.', en: 'Try free for 3 days — then one-time purchase. No subscription, no login, no ads.' },
+  'cta-btn': { de: '3 Tage kostenlos starten', en: 'Start Free for 3 Days' },
+  'cta-c1':  { de: '✓ 3 Tage kostenlos testen', en: '✓ 3 days free trial' },
   'cta-c2':  { de: '✓ SimpleFit Pro einmaliger Kauf', en: '✓ SimpleFit Pro one-time purchase' },
   'cta-c3':  { de: '✓ iOS 18+ · iPhone', en: '✓ iOS 18+ · iPhone' },
   'cta-c4':  { de: '✓ Keine Werbung', en: '✓ No ads' },
@@ -1183,9 +1357,9 @@ const T = {
   'sl7-tag': { de: 'Dark Mode', en: 'Dark Mode' },
   'sl7-h':   { de: 'Dunkel.<br>Elegant.', en: 'Dark.<br>Elegant.' },
   'sl7-sub': { de: 'Automatisch oder manuell — hell, dunkel oder dein eigenes Foto.', en: 'Automatic or manual — light, dark, or your own photo.' },
-  'sl8-tag': { de: '7 Farben', en: '7 Colors' },
-  'sl8-h':   { de: 'Dein Stil.<br>Deine Farbe.', en: 'Your Style.<br>Your Color.' },
-  'sl8-sub': { de: 'Glacier Blue, Sunset, Emerald, Rose und mehr — jederzeit wechselbar.', en: 'Glacier Blue, Sunset, Emerald, Rose and more — change anytime.' },
+  'sl8-tag': { de: 'Farbwähler', en: 'Color Picker' },
+  'sl8-h':   { de: 'Jede Farbe.<br>Dein Stil.', en: 'Any Color.<br>Your Style.' },
+  'sl8-sub': { de: 'Wähle mit dem Farbwähler eine beliebige Akzentfarbe — jederzeit änderbar.', en: 'Pick any accent color with the color picker — change anytime.' },
   'sl9-tag': { de: 'Monatsübersicht', en: 'Monthly View' },
   'sl9-h':   { de: '22 Trainings<br>im April.', en: '22 Workouts<br>in April.' },
   'sl9-sub': { de: 'Monats-Heatmap, Sport-Ranking und Fokus-Bereiche auf einen Blick.', en: 'Monthly heatmap, sport ranking and focus areas at a glance.' },
