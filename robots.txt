@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tekneio.github.io/simplefit/sitemap.xml
+Sitemap: https://simplefit.tekneio.com/sitemap.xml
