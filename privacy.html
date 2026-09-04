@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — Tekneio Streak</title>
-  <meta name="description" content="Privacy policy for Tekneio Streak. All workout data stays on your device and in your private iCloud. No accounts, no tracking, no third-party analytics." />
+  <meta name="description" content="Privacy policy for Tekneio Streak. All workout data stays on your device and in your private iCloud. No accounts, no tracking, no third-party SDKs. Optional usage statistics, without name or workout data, on our own Swiss server." />
   <!-- Canonical URL for SEO -->
   <link rel="canonical" href="https://streak.tekneio.com/privacy.html" />
   <style>
@@ -168,14 +168,14 @@
     </div>
 
     <div class="meta">
-      Last updated: May 25, 2026 (v4) &nbsp;&middot;&nbsp;
+      Last updated: September 4, 2026 (v5) &nbsp;&middot;&nbsp;
       Developer: Anastasios Panagou, Switzerland &nbsp;&middot;&nbsp;
       Platforms: iOS &amp; Android &nbsp;&middot;&nbsp;
       <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>
     </div>
 
     <h2>1. Introduction</h2>
-    <p>This Privacy Policy explains how Tekneio Streak (&ldquo;the app&rdquo;, &ldquo;we&rdquo;) processes your personal data. Tekneio Streak is available for <strong>iOS</strong> and <strong>Android</strong> and follows a strict data minimization principle: the app does not operate its own servers, uses no advertising, and integrates no analytics or tracking SDKs. All data either stays on your device or, on iOS, is stored in your private iCloud account, which only you can access. On Android, data stays exclusively on your device unless you choose to export it.</p>
+    <p>This Privacy Policy explains how Tekneio Streak (&ldquo;the app&rdquo;, &ldquo;we&rdquo;) processes your personal data. Tekneio Streak is available for <strong>iOS</strong> and <strong>Android</strong> and follows a strict data minimization principle: the app uses no advertising and integrates no third-party analytics or tracking SDKs. Your workout data either stays on your device or, on iOS, is stored in your private iCloud account, which only you can access. The only data that can leave your device is an optional usage statistic, without your name and without workout data, that you switch on yourself (see section 2.8). On Android, data stays exclusively on your device unless you choose to export it.</p>
     <p>This policy is intended to meet the requirements of the <strong>Swiss Federal Act on Data Protection (DSG/revFADP)</strong> and, where applicable, the <strong>EU General Data Protection Regulation (GDPR)</strong>.</p>
 
     <div class="card">
@@ -250,14 +250,23 @@
     <p><strong>Where stored:</strong> Locally in <code>UserDefaults</code> (iOS) or <code>DataStore</code> (Android). On iOS, it is also mirrored to <code>NSUbiquitousKeyValueStore</code> (iCloud Key-Value Store) to prevent trial resets through reinstall. No personal identification is associated with this timestamp.</p>
     <p><strong>Legal basis (where GDPR applies):</strong> Performance of a contract (Art.&nbsp;6(1)(b) GDPR).</p>
 
-    <h2>3. What We Do NOT Collect</h2>
+        <h3>2.8 Optional Usage Statistics <span class="badge">opt-in</span></h3>
+    <p>If, and only if, you switch on <strong>&ldquo;Send usage statistics&rdquo;</strong> (during onboarding or later in Settings), the app sends a small number of events, without your name and without workout data, to a server operated by the developer and hosted in Switzerland. The switch is off by default.</p>
+    <p><strong>What is sent:</strong> which screen or action occurred (for example &ldquo;app opened&rdquo;, &ldquo;workout logged&rdquo;, &ldquo;purchase screen shown&rdquo;, &ldquo;purchase completed&rdquo;), the app version, iOS version, device model and language, and a random installation identifier that the app generates itself and replaces with a new one every 45 days, so that no long-term profile of your device can build up. For a logged workout, only the sport category is included.</p>
+    <p><strong>What is never sent:</strong> your name, e-mail address, Apple ID, exercises, weights, notes, durations, health data, location, advertising identifiers or any identifier that could link the events to you as a person.</p>
+    <p><strong>IP address:</strong> your IP address reaches the server as part of every internet connection. The analytics software uses it only in memory, to derive the country and region and to compute a daily-rotating, non-reversible hash that separates one device from another for that single day. The IP address itself is not written to the database or to any log, and the key for the daily hash is deleted after two days, so activity cannot be linked across days.</p>
+    <p><strong>Legal basis and withdrawal:</strong> your consent (Art. 6(1)(a) GDPR; Art. 31(1) Swiss FADP). You can withdraw it at any time by switching the option off in Settings. The installation identifier is then deleted on your device, so later events can no longer be connected to earlier ones. To have the events already stored under your identifier deleted, e-mail the identifier (shown in Settings while the option is on) to <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>; we delete them within 30 days.</p>
+    <p><strong>Retention:</strong> raw events are deleted after 12 months; aggregated figures (for example &ldquo;number of app starts per week&rdquo;) contain no identifier and are kept for as long as needed to develop the app.</p>
+    <p><strong>No third parties:</strong> the analytics software runs on the developer&rsquo;s own server; no analytics provider receives the data.</p>
+
+<h2>3. What We Do NOT Collect</h2>
     <p>Tekneio Streak does not:</p>
     <ul>
       <li>Collect advertising identifiers (IDFA)</li>
-      <li>Use analytics or crash&#8209;reporting SDKs</li>
+      <li>Use third&#8209;party analytics, advertising or crash&#8209;reporting SDKs</li>
       <li>Sell or share your data for marketing purposes</li>
       <li>Perform automated profiling or automated individual decision&#8209;making</li>
-      <li>Operate its own backend server for user data</li>
+      <li>Operate any server that stores your workout data (the optional usage statistics in section 2.8 contain no workout data)</li>
     </ul>
 
     <h2>4. Your Rights</h2>
@@ -299,7 +308,7 @@
     <p>iCloud data (iOS) is encrypted in transit and at rest by Apple. Local data is protected by iOS sandboxing and device encryption on Apple devices, and by Android&rsquo;s per-app storage isolation on Android devices. The app does not use unencrypted storage and does not operate its own servers.</p>
 
     <h2>7. Children</h2>
-    <p>Tekneio Streak has the following content ratings: <strong>9+ on the App Store</strong> (Apple content rating), <strong>PEGI 3 on Google Play</strong> (IARC content rating). On Google Play, the app is marketed to users aged 13 and older. The app is not directed at children under 13 and does not knowingly collect personal data from children under 13. If you believe a child has provided data through the app, contact <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>.</p>
+    <p>Tekneio Streak has the following content ratings: <strong>4+ on the App Store</strong> (Apple content rating), <strong>PEGI 3 on Google Play</strong> (IARC content rating). On Google Play, the app is marketed to users aged 13 and older. The app is not directed at children under 13 and does not knowingly collect personal data from children under 13. If you believe a child has provided data through the app, contact <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>.</p>
 
     <h2>8. Changes</h2>
     <p>This policy may be updated from time to time. The &ldquo;Last updated&rdquo; date at the top reflects the current version. For material changes, you will be informed within the app. Any new processing that requires consent will be explicitly requested in the app.</p>
@@ -325,14 +334,14 @@
     </div>
 
     <div class="meta">
-      Zuletzt aktualisiert: 25. Mai 2026 (v4) &nbsp;&middot;&nbsp;
+      Zuletzt aktualisiert: 4. September 2026 (v5) &nbsp;&middot;&nbsp;
       Entwickler: Anastasios Panagou, Schweiz &nbsp;&middot;&nbsp;
       Plattformen: iOS &amp; Android &nbsp;&middot;&nbsp;
       <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>
     </div>
 
     <h2>1. Einleitung</h2>
-    <p>Diese Datenschutzerkl&auml;rung erl&auml;utert, wie Tekneio Streak (&bdquo;die App&ldquo;, &bdquo;wir&ldquo;) personenbezogene Daten bearbeitet. Die App ist f&uuml;r <strong>iOS</strong> und <strong>Android</strong> verf&uuml;gbar und folgt dem Prinzip der Datensparsamkeit: Tekneio Streak betreibt keine eigenen Server, verwendet keine Werbung und integriert keine Analyse&#8209; oder Tracking&#8209;SDKs. Alle Daten verbleiben entweder auf Ihrem Ger&auml;t oder werden &ndash; nur auf iOS &ndash; in Ihrer privaten iCloud gespeichert. Auf Android verbleiben alle Daten ausschliesslich lokal, ausser Sie exportieren sie manuell.</p>
+    <p>Diese Datenschutzerkl&auml;rung erl&auml;utert, wie Tekneio Streak (&bdquo;die App&ldquo;, &bdquo;wir&ldquo;) personenbezogene Daten bearbeitet. Die App ist f&uuml;r <strong>iOS</strong> und <strong>Android</strong> verf&uuml;gbar und folgt dem Prinzip der Datensparsamkeit: Tekneio Streak verwendet keine Werbung und integriert keine Analyse&#8209; oder Tracking&#8209;SDKs von Drittanbietern. Ihre Trainingsdaten verbleiben entweder auf Ihrem Ger&auml;t oder werden &ndash; nur auf iOS &ndash; in Ihrer privaten iCloud gespeichert. Das Einzige, was Ihr Ger&auml;t verlassen kann, ist eine optionale Nutzungsstatistik ohne Namen und ohne Trainingsdaten, die Sie selbst einschalten (siehe Abschnitt 2.8). Auf Android verbleiben alle Daten ausschliesslich lokal, ausser Sie exportieren sie manuell.</p>
     <p>Diese Erkl&auml;rung ber&uuml;cksichtigt das <strong>revidierte Schweizer Datenschutzgesetz (DSG/revDSG)</strong> sowie &ndash; soweit anwendbar &ndash; die <strong>EU&#8209;Datenschutz&#8209;Grundverordnung (DSGVO)</strong>.</p>
 
     <div class="card">
@@ -407,14 +416,23 @@
     <p><strong>Wo gespeichert:</strong> Lokal in <code>UserDefaults</code> (iOS) bzw. <code>DataStore</code> (Android). Auf iOS zus&auml;tzlich in <code>NSUbiquitousKeyValueStore</code> (iCloud Key&#8209;Value Store), um Trial&#8209;Resets durch Neuinstallation zu verhindern. Mit diesem Zeitstempel ist keine Personenidentifikation verkn&uuml;pft.</p>
     <p><strong>Rechtsgrundlage (soweit DSGVO anwendbar):</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO &ndash; Vertragserf&uuml;llung.</p>
 
-    <h2>3. Was wir nicht erfassen</h2>
+        <h3>2.8 Optionale Nutzungsstatistik <span class="badge">Opt-in</span></h3>
+    <p>Nur wenn Sie <strong>&bdquo;Nutzungsstatistik senden&ldquo;</strong> einschalten (beim ersten Start oder sp&auml;ter in den Einstellungen), sendet die App wenige Ereignisse ohne Namen und ohne Trainingsdaten an einen Server, den der Entwickler selbst betreibt und der in der Schweiz gehostet ist. Der Schalter ist standardm&auml;ssig aus.</p>
+    <p><strong>Was gesendet wird:</strong> welche Ansicht oder Aktion stattgefunden hat (zum Beispiel &bdquo;App ge&ouml;ffnet&ldquo;, &bdquo;Training eingetragen&ldquo;, &bdquo;Kaufansicht angezeigt&ldquo;, &bdquo;Kauf abgeschlossen&ldquo;), App&#8209;Version, iOS&#8209;Version, Ger&auml;temodell und Sprache sowie eine zuf&auml;llige Installationskennung, die die App selbst erzeugt und alle 45 Tage durch eine neue ersetzt, damit kein Langzeitprofil Ihres Ger&auml;ts entstehen kann. Bei einem eingetragenen Training wird nur die Sportkategorie mitgesendet.</p>
+    <p><strong>Was nie gesendet wird:</strong> Ihr Name, Ihre E&#8209;Mail&#8209;Adresse, Ihre Apple&#8209;ID, &Uuml;bungen, Gewichte, Notizen, Dauern, Gesundheitsdaten, Standort, Werbekennungen oder irgendeine Kennung, die die Ereignisse mit Ihnen als Person verkn&uuml;pfen k&ouml;nnte.</p>
+    <p><strong>IP&#8209;Adresse:</strong> Ihre IP&#8209;Adresse erreicht den Server als Teil jeder Internetverbindung. Die Analysesoftware verwendet sie nur im Arbeitsspeicher, um Land und Region zu bestimmen und einen t&auml;glich wechselnden, nicht umkehrbaren Hash zu berechnen, der an diesem einen Tag ein Ger&auml;t von einem anderen unterscheidet. Die IP&#8209;Adresse selbst wird weder in die Datenbank noch in ein Protokoll geschrieben, und der Schl&uuml;ssel f&uuml;r den Tages&#8209;Hash wird nach zwei Tagen gel&ouml;scht, sodass Aktivit&auml;ten nicht &uuml;ber Tage hinweg verkn&uuml;pft werden k&ouml;nnen.</p>
+    <p><strong>Rechtsgrundlage und Widerruf:</strong> Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO; Art. 31 Abs. 1 DSG). Sie k&ouml;nnen sie jederzeit widerrufen, indem Sie die Option in den Einstellungen ausschalten. Die Installationskennung wird dann auf Ihrem Ger&auml;t gel&ouml;scht, sp&auml;tere Ereignisse lassen sich nicht mehr mit fr&uuml;heren verbinden. Wenn Sie auch die bereits unter Ihrer Kennung gespeicherten Ereignisse l&ouml;schen lassen m&ouml;chten, senden Sie die Kennung (sie wird in den Einstellungen angezeigt, solange die Option aktiv ist) an <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>; wir l&ouml;schen sie innerhalb von 30 Tagen.</p>
+    <p><strong>Aufbewahrung:</strong> Rohereignisse werden nach 12 Monaten gel&ouml;scht; aggregierte Zahlen (zum Beispiel &bdquo;App&#8209;Starts pro Woche&ldquo;) enthalten keine Kennung und werden so lange aufbewahrt, wie es f&uuml;r die Weiterentwicklung der App n&ouml;tig ist.</p>
+    <p><strong>Keine Dritten:</strong> Die Analysesoftware l&auml;uft auf dem eigenen Server des Entwicklers; kein Analyseanbieter erh&auml;lt die Daten.</p>
+
+<h2>3. Was wir nicht erfassen</h2>
     <p>Tekneio Streak:</p>
     <ul>
       <li>verwendet keine Werbe&#8209;IDs (IDFA)</li>
-      <li>integriert keine Analyse&#8209; oder Absturzbericht&#8209;SDKs</li>
+      <li>integriert keine Analyse&#8209;, Werbe&#8209; oder Absturzbericht&#8209;SDKs von Drittanbietern</li>
       <li>gibt keine Daten zu Marketingzwecken weiter</li>
       <li>erstellt keine Profile und trifft keine automatisierten Einzelentscheidungen</li>
-      <li>betreibt keine eigene Serverinfrastruktur f&uuml;r Nutzerdaten</li>
+      <li>betreibt keinen Server, der Ihre Trainingsdaten speichert (die optionale Nutzungsstatistik in Abschnitt 2.8 enth&auml;lt keine Trainingsdaten)</li>
     </ul>
 
     <h2>4. Ihre Rechte</h2>
@@ -456,7 +474,7 @@
     <p>iCloud&#8209;Daten (iOS) werden von Apple verschl&uuml;sselt &uuml;bertragen und gespeichert. Lokale Daten sind durch iOS&#8209;Sandboxing und Ger&auml;teverschl&uuml;sselung (Apple) bzw. Androids App&#8209;spezifische Speicher&#8209;Isolation gesch&uuml;tzt. Wir verwenden keine unverschl&uuml;sselten Speicher und betreiben keine eigenen Server.</p>
 
     <h2>7. Kinder</h2>
-    <p>Tekneio Streak hat folgende Inhaltsbewertungen: <strong>9+ im App Store</strong> (Apple Content Rating), <strong>PEGI 3 auf Google Play</strong> (IARC Content Rating). Auf Google Play wird die App an Nutzer ab 13 Jahren vermarktet. Die App richtet sich nicht an Kinder unter 13 Jahren und erhebt wissentlich keine personenbezogenen Daten von Kindern unter 13 Jahren. Falls Sie glauben, dass ein Kind Daten &uuml;ber die App &uuml;bermittelt hat, kontaktieren Sie uns unter <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>.</p>
+    <p>Tekneio Streak hat folgende Inhaltsbewertungen: <strong>4+ im App Store</strong> (Apple Content Rating), <strong>PEGI 3 auf Google Play</strong> (IARC Content Rating). Auf Google Play wird die App an Nutzer ab 13 Jahren vermarktet. Die App richtet sich nicht an Kinder unter 13 Jahren und erhebt wissentlich keine personenbezogenen Daten von Kindern unter 13 Jahren. Falls Sie glauben, dass ein Kind Daten &uuml;ber die App &uuml;bermittelt hat, kontaktieren Sie uns unter <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>.</p>
 
     <h2>8. &Auml;nderungen</h2>
     <p>Wir k&ouml;nnen diese Erkl&auml;rung aktualisieren. Das Datum &bdquo;Zuletzt aktualisiert&ldquo; zeigt den aktuellen Stand. Bei wesentlichen &Auml;nderungen informieren wir Sie in der App. Neue Bearbeitungsvorg&auml;nge, die eine Einwilligung erfordern, werden in der App ausdr&uuml;cklich abgefragt.</p>
