@@ -209,7 +209,7 @@
         <li>iCloud Drive must be enabled (Settings → [Your Name] → iCloud → iCloud Drive → On)</li>
         <li>Streak must be enabled in iCloud (Settings → [Your Name] → iCloud → See All → Streak → On)</li>
         <li>Make sure both devices have an internet connection</li>
-        <li>Open Streak on both devices and pull-to-refresh on the calendar</li>
+        <li>Open Streak on both devices — sync runs automatically in the background</li>
       </ol>
       <p>Sync usually completes within seconds to a few minutes. If it still doesn't work after 10 minutes, contact us with your iOS version and a screenshot.</p>
       <p><em>Note: Streak for Android does not currently sync to the cloud. Data stays on your device. You can transfer data between Android devices via the JSON export/import feature (Settings → Data).</em></p>
@@ -250,18 +250,18 @@
       <summary>How can I export my data?</summary>
       <p>Your data belongs to you. Streak lets you export it any time on both platforms:</p>
       <ol>
-        <li>Open <strong>Settings</strong> → <strong>Data</strong> → <strong>Export CSV</strong> or <strong>Export JSON</strong></li>
+        <li>Open <strong>Settings</strong> → <strong>Backup</strong> → <strong>Export as CSV</strong> or <strong>Backup as JSON</strong></li>
         <li>Choose CSV (for spreadsheets) or JSON (full backup with custom sports + categories)</li>
         <li>Share or save the file via the system share sheet (iOS Share Sheet / Android Intent.ACTION_SEND)</li>
       </ol>
-      <p>On Android you can also re-import a JSON backup via Settings → Data → Import JSON — useful when switching devices.</p>
+      <p>A JSON backup can be re-imported on both platforms — useful when switching devices. iOS: Settings → Backup → Restore Backup. Android: Settings → Data → Import JSON.</p>
     </details>
 
     <details>
       <summary>How do I delete all my data?</summary>
       <p><strong>iOS:</strong></p>
       <ul>
-        <li><strong>Workouts &amp; settings:</strong> Settings → Data &amp; Privacy → Reset App</li>
+        <li><strong>Workouts &amp; settings:</strong> delete the Streak app from your iPhone — this removes all local workouts and settings</li>
         <li><strong>iCloud copies:</strong> Settings → [Your Name] → iCloud → Manage Account Storage → Streak → Delete</li>
         <li><strong>Apple Health workouts:</strong> open the Apple Health app → Browse → Workouts → swipe-delete entries</li>
       </ul>
@@ -295,7 +295,7 @@
       <p><strong>iOS:</strong></p>
       <ol>
         <li>Settings → <strong>Notifications</strong> → <strong>Streak</strong> → Allow Notifications: ON</li>
-        <li>Inside Streak: Settings → Reminders → enable and pick a time</li>
+        <li>Inside Streak: Settings → Daily Reminder → enable and pick a time</li>
         <li>Make sure Focus mode (Do Not Disturb) is not blocking the app</li>
       </ol>
       <p><strong>Android:</strong></p>
@@ -309,7 +309,7 @@
 
     <details>
       <summary>The app crashed or behaves unexpectedly</summary>
-      <p>We don't collect crash logs automatically (no analytics SDK), so we rely on your report. Please email <a href="mailto:hello@tekneio.com">hello@tekneio.com</a> with:</p>
+      <p>We don't collect crash logs (no crash reporting, and the optional usage statistics contain no crash data), so we rely on your report. Please email <a href="mailto:hello@tekneio.com">hello@tekneio.com</a> with:</p>
       <ul>
         <li>What you were doing when it crashed</li>
         <li>Platform: iOS or Android</li>
@@ -332,7 +332,7 @@
     </details>
 
     <h2>Privacy &amp; Data</h2>
-    <p>Streak follows a strict data-minimization principle. On iOS, your workouts live in your private iCloud or on your device. On Android, your data stays exclusively on your device. We do not run our own servers, do not use analytics, and do not show ads.</p>
+    <p>Streak follows a strict data-minimization principle. On iOS, your workouts live in your private iCloud or on your device. On Android, your data stays exclusively on your device. No ads, no tracking, no third-party analytics. The only thing that can leave your device is an optional usage statistic — without your name and without workout data — sent to a server we run ourselves in Switzerland, and only if you switch it on in Settings.</p>
     <p>Read the full <a href="privacy.html">Privacy Policy</a>.</p>
 
     <h2>System Requirements</h2>
@@ -390,7 +390,7 @@
         <li>iCloud Drive muss aktiv sein (Einstellungen → [Dein Name] → iCloud → iCloud Drive → Ein)</li>
         <li>Streak in iCloud aktivieren (Einstellungen → [Dein Name] → iCloud → Alle anzeigen → Streak → Ein)</li>
         <li>Beide Geräte brauchen eine Internetverbindung</li>
-        <li>Streak auf beiden Geräten öffnen und im Kalender nach unten ziehen, um zu aktualisieren</li>
+        <li>Streak auf beiden Geräten öffnen — der Sync läuft automatisch im Hintergrund</li>
       </ol>
       <p>Der Sync ist meist innerhalb weniger Minuten fertig. Wenn nach 10 Minuten nichts passiert, melde dich bei uns — gerne mit iOS-Version und Screenshot.</p>
       <p><em>Hinweis: Streak für Android synchronisiert derzeit nicht in die Cloud. Daten bleiben auf dem Gerät. Zum Übertragen zwischen Android-Geräten nutze den JSON-Export/Import (Einstellungen → Daten).</em></p>
@@ -431,18 +431,18 @@
       <summary>Wie exportiere ich meine Daten?</summary>
       <p>Deine Daten gehören dir — du kannst sie jederzeit auf beiden Plattformen exportieren:</p>
       <ol>
-        <li><strong>Einstellungen</strong> → <strong>Daten</strong> → <strong>Als CSV exportieren</strong> oder <strong>JSON-Backup exportieren</strong></li>
+        <li><strong>Einstellungen</strong> → <strong>Backup</strong> → <strong>Als CSV exportieren</strong> oder <strong>Als JSON sichern</strong></li>
         <li>CSV (für Tabellen) oder JSON (volles Backup inkl. eigener Sportarten + Kategorien) wählen</li>
         <li>Über das System-Share-Sheet teilen oder speichern (iOS Share Sheet / Android Intent.ACTION_SEND)</li>
       </ol>
-      <p>Auf Android kannst du ein JSON-Backup auch wieder importieren via Einstellungen → Daten → JSON-Backup importieren — praktisch beim Gerätewechsel.</p>
+      <p>Ein JSON-Backup lässt sich auf beiden Plattformen wieder einspielen — praktisch beim Gerätewechsel. iOS: Einstellungen → Backup → Backup wiederherstellen. Android: Einstellungen → Daten → JSON-Backup importieren.</p>
     </details>
 
     <details>
       <summary>Wie lösche ich alle meine Daten?</summary>
       <p><strong>iOS:</strong></p>
       <ul>
-        <li><strong>Trainings &amp; Einstellungen:</strong> Einstellungen → Daten &amp; Datenschutz → App zurücksetzen</li>
+        <li><strong>Trainings &amp; Einstellungen:</strong> die Streak-App vom iPhone löschen — damit sind alle lokalen Trainings und Einstellungen entfernt</li>
         <li><strong>iCloud-Kopien:</strong> Einstellungen → [Dein Name] → iCloud → Speicher verwalten → Streak → Löschen</li>
         <li><strong>Apple-Health-Trainings:</strong> Apple-Health-App → Übersicht → Workouts → einzelne Einträge nach links wischen</li>
       </ul>
@@ -476,7 +476,7 @@
       <p><strong>iOS:</strong></p>
       <ol>
         <li>Einstellungen → <strong>Mitteilungen</strong> → <strong>Streak</strong> → Mitteilungen erlauben: Ein</li>
-        <li>In Streak: Einstellungen → Erinnerungen → aktivieren und Zeit wählen</li>
+        <li>In Streak: Einstellungen → Tägliche Erinnerung → aktivieren und Zeit wählen</li>
         <li>Fokus-Modus (Nicht stören) prüfen — er kann Mitteilungen blockieren</li>
       </ol>
       <p><strong>Android:</strong></p>
@@ -490,7 +490,7 @@
 
     <details>
       <summary>Die App ist abgestürzt oder verhält sich unerwartet</summary>
-      <p>Wir sammeln keine automatischen Crash-Logs (keine Analytics-SDKs), deshalb sind wir auf deine Rückmeldung angewiesen. Bitte sende eine E-Mail an <a href="mailto:hello@tekneio.com">hello@tekneio.com</a> mit:</p>
+      <p>Wir sammeln keine Crash-Logs (kein Crash-Reporting, und die optionale Nutzungsstatistik enthält keine Absturzdaten), deshalb sind wir auf deine Rückmeldung angewiesen. Bitte sende eine E-Mail an <a href="mailto:hello@tekneio.com">hello@tekneio.com</a> mit:</p>
       <ul>
         <li>Was du gemacht hast, als der Fehler auftrat</li>
         <li>Plattform: iOS oder Android</li>
@@ -513,7 +513,7 @@
     </details>
 
     <h2>Datenschutz &amp; Daten</h2>
-    <p>Streak folgt dem Prinzip der Datensparsamkeit. Auf iOS liegen deine Trainings in deiner privaten iCloud oder auf deinem Gerät. Auf Android bleiben deine Daten ausschliesslich auf dem Gerät. Wir betreiben keine eigenen Server, keine Analyse-Tools, keine Werbung.</p>
+    <p>Streak folgt dem Prinzip der Datensparsamkeit. Auf iOS liegen deine Trainings in deiner privaten iCloud oder auf deinem Gerät. Auf Android bleiben deine Daten ausschliesslich auf dem Gerät. Keine Werbung, kein Tracking, keine Analyse-Tools von Dritten. Das Einzige, was dein Gerät verlassen kann, ist eine optionale Nutzungsstatistik — ohne Namen und ohne Trainingsdaten — an einen Server, den wir selbst in der Schweiz betreiben, und nur, wenn du sie in den Einstellungen einschaltest.</p>
     <p>Vollständige <a href="privacy.html">Datenschutzerklärung</a>.</p>
 
     <h2>Systemvoraussetzungen</h2>
@@ -612,18 +612,18 @@
       <summary>Comment exporter mes données ?</summary>
       <p>Tes données t'appartiennent — tu peux les exporter à tout moment sur les deux plateformes :</p>
       <ol>
-        <li><strong>Réglages</strong> → <strong>Données</strong> → <strong>Exporter en CSV</strong> ou <strong>Exporter sauvegarde JSON</strong></li>
+        <li><strong>Réglages</strong> → <strong>Sauvegarde</strong> → <strong>Exporter en CSV</strong> ou <strong>Sauvegarder en JSON</strong></li>
         <li>Choisis CSV (pour tableurs) ou JSON (sauvegarde complète avec sports/catégories personnalisés)</li>
         <li>Partage ou enregistre via la feuille de partage système (iOS Share Sheet / Android Intent.ACTION_SEND)</li>
       </ol>
-      <p>Sur Android, tu peux aussi réimporter une sauvegarde JSON via Réglages → Données → Importer sauvegarde JSON — utile lors d'un changement d'appareil.</p>
+      <p>Une sauvegarde JSON peut être réimportée sur les deux plateformes — utile lors d'un changement d'appareil. iOS : Réglages → Sauvegarde → Restaurer la sauvegarde. Android : Réglages → Données → Importer sauvegarde JSON.</p>
     </details>
 
     <details>
       <summary>Comment supprimer toutes mes données ?</summary>
       <p><strong>iOS :</strong></p>
       <ul>
-        <li><strong>Entraînements &amp; réglages :</strong> Réglages → Données et confidentialité → Réinitialiser l'app</li>
+        <li><strong>Entraînements &amp; réglages :</strong> supprime l'app Streak de ton iPhone — tous les entraînements et réglages locaux sont effacés</li>
         <li><strong>Copies iCloud :</strong> Réglages → [Ton nom] → iCloud → Gérer le stockage → Streak → Supprimer</li>
         <li><strong>Entraînements Apple Health :</strong> ouvre l'app Santé → Parcourir → Entraînements → glisse-supprime les entrées</li>
       </ul>
@@ -657,7 +657,7 @@
       <p><strong>iOS :</strong></p>
       <ol>
         <li>Réglages → <strong>Notifications</strong> → <strong>Streak</strong> → Autoriser : activé</li>
-        <li>Dans Streak : Réglages → Rappels → activer et choisir une heure</li>
+        <li>Dans Streak : Réglages → Rappel quotidien → activer et choisir une heure</li>
         <li>Vérifie le mode Concentration (Ne pas déranger) — il peut bloquer les apps</li>
       </ol>
       <p><strong>Android :</strong></p>
@@ -671,7 +671,7 @@
 
     <details>
       <summary>L'app a planté ou se comporte mal</summary>
-      <p>Nous ne collectons pas de logs de plantage automatiques (aucun SDK d'analytique). Envoie-nous un e-mail à <a href="mailto:hello@tekneio.com">hello@tekneio.com</a> avec :</p>
+      <p>Nous ne collectons pas de logs de plantage (pas de rapport de plantage, et les statistiques d'utilisation facultatives ne contiennent aucune donnée de plantage). Envoie-nous un e-mail à <a href="mailto:hello@tekneio.com">hello@tekneio.com</a> avec :</p>
       <ul>
         <li>Ce que tu faisais au moment du plantage</li>
         <li>Plateforme : iOS ou Android</li>
@@ -694,7 +694,7 @@
     </details>
 
     <h2>Confidentialité et données</h2>
-    <p>Streak suit le principe de minimisation des données. Sur iOS, tes entraînements restent dans ton iCloud privé ou sur ton appareil. Sur Android, tes données restent exclusivement sur ton appareil. Pas de serveurs, pas d'analytique, pas de publicité.</p>
+    <p>Streak suit le principe de minimisation des données. Sur iOS, tes entraînements restent dans ton iCloud privé ou sur ton appareil. Sur Android, tes données restent exclusivement sur ton appareil. Pas de publicité, pas de suivi, pas d'analytique tierce. La seule chose qui peut quitter ton appareil est une statistique d'utilisation facultative — sans nom ni données d'entraînement — envoyée à un serveur que nous exploitons nous-mêmes en Suisse, et uniquement si tu l'actives dans les réglages.</p>
     <p>Lis la <a href="privacy.html">politique de confidentialité complète</a>.</p>
 
     <h2>Configuration requise</h2>
