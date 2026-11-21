@@ -35,6 +35,9 @@
 
 <!-- Canonical URL for SEO -->
 <link rel="canonical" href="https://streak.tekneio.com/">
+<link rel="alternate" hreflang="de" href="https://streak.tekneio.com/">
+<link rel="alternate" hreflang="en" href="https://streak.tekneio.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://streak.tekneio.com/en/">
 
 <!-- Google Search Console Verification (Replace with real token after GSC signup) -->
 <meta name="google-site-verification" content="pH_jnJHXlFqD9otOO2_GCXu52X0LMQxWNQulKgTCK30">
@@ -568,7 +571,7 @@
 <body>
 
 <!-- Language Toggle -->
-<button id="lang-toggle" aria-label="Switch to English" style="position:fixed;top:20px;right:24px;z-index:1000;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.08em;padding:6px 14px;border-radius:20px;cursor:pointer;backdrop-filter:blur(14px);transition:background 0.2s,border-color 0.2s;">EN</button>
+<a id="lang-toggle" href="en/" hreflang="en" aria-label="Switch to English" style="position:fixed;top:20px;right:24px;z-index:1000;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.08em;padding:6px 14px;border-radius:20px;text-decoration:none;backdrop-filter:blur(14px);transition:background 0.2s,border-color 0.2s;">EN</a>
 
 <!-- ═══════════════ HERO ═══════════════ -->
 <section class="hero">
@@ -596,7 +599,7 @@
         <text x="60" y="45" fill="#fff" font-family="-apple-system, SF Pro Display, sans-serif" font-size="20" font-weight="600" letter-spacing="-0.01em">App Store</text>
       </svg>
     </a>
-    <p style="font-size:13px; color:rgba(255,255,255,0.65); letter-spacing:0.04em;" data-key="hero-price">7 Tage Streak Pro gratis · danach <strong style="color:rgba(255,255,255,0.92);">Loggen und Streak kostenlos weiter nutzen, die ganze App einmalig mit Pro freischalten</strong></p>
+    <p style="font-size:13px; color:rgba(255,255,255,0.65); letter-spacing:0.04em;" data-key="hero-price">7 Tage Streak Pro gratis · danach <strong style="color:rgba(255,255,255,0.68);">Loggen und Streak kostenlos weiter nutzen, die ganze App einmalig mit Pro freischalten</strong></p>
 
     <div style="display:flex; gap:18px; flex-wrap:wrap; justify-content:center; margin-top:8px; opacity:0.82;">
       <span style="display:inline-flex; align-items:center; gap:6px; font-size:12px; color:rgba(255,255,255,0.62); letter-spacing:0.02em;">
@@ -955,11 +958,11 @@
     <div class="phone-grid" style="margin-top:0; gap:20px;">
       <div class="phone-col">
         <div class="phone md"><div class="phone-screen"><img src="screenshots/home_orange.png" alt="Streak mit Foto-Hintergrund und Liquid Glass"></div></div>
-        <div class="phone-col-label" data-key="s8-col1">Cycling · Dark</div>
+        <div class="phone-col-label" data-key="s8-col1">Foto-Hintergrund</div>
       </div>
       <div class="phone-col">
         <div class="phone md"><div class="phone-screen"><img src="screenshots/glass_settings_real.png" alt="Streak Glas-Einstellungen: Blur, Dimming und Clear Glass Cards"></div></div>
-        <div class="phone-col-label" data-key="s8-col2">Hiking · Sunset</div>
+        <div class="phone-col-label" data-key="s8-col2">Glas einstellen</div>
       </div>
     </div>
   </div>
@@ -1025,7 +1028,7 @@
   <a href="https://apps.apple.com/app/id6762292658" class="btn" style="font-size:18px; padding:20px 52px;" data-key="cta-btn">7 Tage kostenlos starten</a>
   <div style="display:flex; justify-content:center; gap:28px; margin-top:28px; flex-wrap:wrap;">
     <span style="font-size:13px; color:rgba(255,255,255,0.72);" data-key="cta-c1">✓ 7 Tage kostenlos testen</span>
-    <span style="font-size:13px; color:rgba(255,255,255,0.72);" data-key="cta-c2">✓ Streak Pro einmalig</span>
+    <span style="font-size:13px; color:rgba(255,255,255,0.72);" data-key="cta-c2">✓ Streak Pro einmaliger Kauf</span>
     <span style="font-size:13px; color:rgba(255,255,255,0.72);" data-key="cta-c3">✓ iOS 18+ · iPhone</span>
     <span style="font-size:13px; color:rgba(255,255,255,0.72);" data-key="cta-c4">✓ Keine Werbung</span>
   </div>
@@ -1202,194 +1205,16 @@
 </div>
 
 <script>
-const T = {
-  'live-badge': { de: 'Jetzt im App Store', en: 'Now on the App Store' },
-  'trust-1': { de: 'Apple Health', en: 'Apple Health' },
-  'trust-2': { de: 'iCloud Sync', en: 'iCloud Sync' },
-  'trust-3': { de: 'Keine Werbung · Kein Tracking', en: 'No ads · No tracking' },
-  'trust-4': { de: 'Keine Trainingsdaten auf unseren Servern', en: 'No workout data on our servers' },
-  'footer-about':   { de: 'Workout-Kalender mit Heatmap, Apple Watch App und Kraft-Logging. Made in Switzerland.', en: 'Workout calendar with heatmap, Apple Watch app and strength logging. Made in Switzerland.' },
-  'footer-product': { de: 'Produkt', en: 'Product' },
-  'footer-download':{ de: 'Im App Store laden', en: 'Download on the App Store' },
-  'footer-features':{ de: 'Features', en: 'Features' },
-  'footer-support-h':{ de: 'Support', en: 'Support' },
-  'footer-help':    { de: 'Hilfe & FAQ', en: 'Help & FAQ' },
-  'footer-legal-h': { de: 'Rechtliches', en: 'Legal' },
-  'footer-privacy': { de: 'Datenschutz', en: 'Privacy Policy' },
-  'footer-terms':   { de: 'Lizenzbedingungen', en: 'License Terms' },
-  'footer-copyright':{ de: '© 2026 A. Panagou · TEKNEIO®. Streak. Alle Rechte vorbehalten.', en: '© 2026 A. Panagou · TEKNEIO®. Streak. All rights reserved.' },
-  'footer-version': { de: 'iOS 18+ · iPhone · Apple Watch · Apple Health', en: 'iOS 18+ · iPhone · Apple Watch · Apple Health' },
-  'hero-tagline': { de: 'Dein Training, jeden Tag.', en: 'Your Training, Every Day.' },
-  'hero-sub':  { de: 'Bleib konsequent. Sieh deinen Fortschritt.<br>Kein Abo, kein Login — einfach öffnen und trainieren.', en: 'Stay consistent. See your progress.<br>No subscription, no login — just open and train.' },
-  'hero-btn':  { de: '7 Tage kostenlos testen', en: 'Try Free for 7 Days' },
-  'hero-price':{ de: '7 Tage Streak Pro gratis · danach <strong style="color:rgba(255,255,255,0.68);">Loggen und Streak kostenlos weiter nutzen, die ganze App einmalig mit Pro freischalten</strong>', en: '7 days of Streak Pro free · then <strong style="color:rgba(255,255,255,0.68);">keep logging and your streak for free, unlock the whole app once with Pro</strong>' },
-
-  's1-label': { de: 'Kalender · Heatmap', en: 'Calendar · Heatmap' },
-  's1-h2':    { de: 'Jeder Tag<br><span class="dim">zählt.</span>', en: 'Every Day<br><span class="dim">Counts.</span>' },
-  's1-body':  { de: 'Die Heatmap zeigt auf einen Blick, wie aktiv du warst — je intensiver das Training, desto tiefer die Farbe. Aktive Tage leuchten, Pausen sind sichtbar. So behältst du deinen Rhythmus immer im Blick.', en: 'The heatmap shows at a glance how active you were — the more intense the workout, the deeper the color. Active days glow, rest days are visible. Always keep your rhythm in view.' },
-  's1-p1': { de: 'Heatmap nach Intensität', en: 'Heatmap by intensity' },
-  's1-p2': { de: 'Streak-Anzeige', en: 'Streak display' },
-  's1-p3': { de: 'Wochenziel-Tracking', en: 'Weekly goal tracking' },
-  's1-p4': { de: 'Monat und Jahr', en: 'Month and Year' },
-
-  's2-label': { de: 'Ziele · Streak · Rekord', en: 'Goals · Streak · Record' },
-  's2-h2':    { de: 'Bleib am<br><span class="dim">Ball.</span>', en: 'Stay on<br><span class="dim">Track.</span>' },
-  's2-body':  { de: 'Der Wochenring zeigt jeden Tag der Woche als Segment — ein Workout füllt es. Wochenziel erreicht, Wochen-Serie, Rekord: Streak zeigt es dir sofort. Diese kleinen Momente halten dich motiviert, Tag für Tag weiterzumachen.', en: 'The week ring shows every day of the week as a segment — a workout fills it. Weekly goal reached, week streak, record: Streak shows it right away. These small moments keep you motivated to keep going day after day.' },
-  's2-p1': { de: 'Wochenring mit Tagesbuchstaben', en: 'Week ring with day initials' },
-  's2-p2': { de: 'Tages- und Wochen-Serie', en: 'Day and week streak' },
-  's2-p3': { de: 'Neuer-Rekord-Badge', en: 'New Record Badge' },
-  's2-p4': { de: 'Motivationstext ein/aus', en: 'Motivation text on/off' },
-
-  's3-label': { de: 'Training · Erfassen', en: 'Training · Log' },
-  's3-h2':    { de: 'Eintragen<br><span class="dim">in Sekunden.</span>', en: 'Logged<br><span class="dim">in seconds.</span>' },
-  's3-body':  { de: 'Sport, Fokus, Dauer und Intensität — alles in einem Sheet, mit wenigen Taps. Kein langer Formular-Stress. Streak hält die Eingabe so schnell wie das Training selbst. Eigene Sportarten und Kategorien kannst du jederzeit hinzufügen.', en: 'Sport, focus, duration and intensity — all in one sheet, with just a few taps. No long forms. Streak keeps logging as fast as the workout itself. Add custom sports and categories anytime.' },
-  's3-p1': { de: '13+ Sportarten', en: '13+ Sports' },
-  's3-p2': { de: 'Intensitätsstufen', en: 'Intensity levels' },
-  's3-p3': { de: 'Fokus-Kategorien', en: 'Focus categories' },
-  's3-p4': { de: 'Dauer &amp; Notizen', en: 'Duration &amp; Notes' },
-  's3-p5': { de: 'Eigene Sportarten', en: 'Custom sports' },
-
-  's4-label': { de: 'Statistiken · Übersicht', en: 'Statistics · Overview' },
-  's4-h2':    { de: 'Dein Fortschritt,<br><span class="dim">auf einen Blick.</span>', en: 'Your Progress,<br><span class="dim">at a Glance.</span>' },
-  's4-body':  { de: 'Alle Trainings, diese Woche, Monat oder ganzes Jahr — Streak zeigt dir Charts, Monats-Heatmaps, Umfang und Ø Puls je Sportart und persönliche Insights. Alles klar, alles in einer App.', en: 'All workouts, this week, month or full year — Streak shows charts, monthly heatmaps, volume and average heart rate per sport, and personal insights. Everything clear, all in one app.' },
-  's4-lbl1': { de: 'Training eintragen', en: 'Log a workout' },
-  's4-lbl2': { de: 'Ansichten: Woche, Monat, Jahr, Alle', en: 'Views: Week, Month, Year, All' },
-  's4-lbl3': { de: 'Einmaliger Kauf · Kein Abo', en: 'One-time purchase · No subscription' },
-  's4-col1': { de: 'Alle · Streak &amp; Insights', en: 'All · Streak &amp; Insights' },
-  's4-col2': { de: 'Alle · Dark', en: 'All · Dark' },
-  's4-col3': { de: 'Jahr · Übersicht', en: 'Year · Overview' },
-  's4-col4': { de: 'Monat · Heatmap', en: 'Month · Heatmap' },
-  's4-col5': { de: 'Woche · Übersicht', en: 'Week · Overview' },
-
-  's5-label': { de: 'Erscheinungsbild · Themes', en: 'Appearance · Themes' },
-  's5-h2':    { de: 'Hell. Dunkel.<br><span class="dim">Deine Wahl.</span>', en: 'Light. Dark.<br><span class="dim">Your Choice.</span>' },
-  's5-body':  { de: 'Helles Tageslicht oder tief dunkler Nacht-Modus — Streak folgt automatisch dem System oder lässt sich fest einstellen. Auf allen Geräten, zu jeder Tageszeit.', en: 'Bright daylight or deep dark night mode — Streak follows the system automatically or can be fixed manually. On all devices, at any time of day.' },
-
-  's6-label': { de: 'Dark Mode · Akzentfarben', en: 'Dark Mode · Accent Colors' },
-  's6-h2':    { de: 'Dunkel macht<br><span class="dim">den Unterschied.</span>', en: 'Dark Makes<br><span class="dim">the Difference.</span>' },
-  's6-body':  { de: 'Im Dark Mode entfalten die Akzentfarben ihre ganze Eleganz. Warmes Orange oder leuchtendes Rose — beides sieht im Dunkeln besonders edel aus. Wähle den Stil, der zu dir passt.', en: 'In Dark Mode, the accent colors reveal their full elegance. Warm Orange or glowing Rose — both look especially refined in the dark. Choose the style that suits you.' },
-
-  's7-label': { de: 'Personalisierung · Farbwähler', en: 'Personalization · Color Picker' },
-  's7-h2':    { de: 'Jede Farbe.<br><span class="dim">Dein Stil.</span>', en: 'Any Color.<br><span class="dim">Your Style.</span>' },
-  's7-body':  { de: 'Wähle mit dem Farbwähler eine beliebige Akzentfarbe — oder eines der fertigen Themes. Deine Wahl gilt überall: in der App, in den Widgets und auf der Apple Watch. <strong style="color:rgba(255,255,255,0.9);">Mit Streak Pro.</strong>', en: 'Pick any accent color with the color picker — or one of the ready-made themes. Your choice applies everywhere: in the app, your widgets and on Apple Watch. <strong style="color:rgba(255,255,255,0.9);">With Streak Pro.</strong>' },
-
-  'vid-label': { de: 'App Preview · Video', en: 'App Preview · Video' },
-  'vid-h2':    { de: 'Sieh es<br><span class="dim">in Aktion.</span>', en: 'See it<br><span class="dim">in action.</span>' },
-  'vid-body':  { de: 'Kalender, Statistiken, Kraft-Logging und die Apple Watch App — in unter 30 Sekunden.', en: 'Calendar, statistics, strength logging and the Apple Watch app — in under 30 seconds.' },
-  'vid-cap':   { de: 'Echte App-Aufnahmen · Ton aus', en: 'Real app footage · Sound off' },
-
-  'st-label': { de: 'Kraft · Logging', en: 'Strength · Logging' },
-  'st-h2':    { de: 'Sätze. Wiederholungen.<br><span class="dim">Gewicht.</span>', en: 'Sets. Reps.<br><span class="dim">Weight.</span>' },
-  'st-body':  { de: 'Logge jede Übung mit Sätzen, Wiederholungen und Gewicht. Streak berechnet dein Volumen und merkt sich deine Allzeit-Rekorde — alles im selben schnellen Eintrags-Sheet, ohne Umwege.', en: 'Log every exercise with sets, reps and weight. Streak calculates your volume and remembers your all-time records — all in the same fast logging sheet, no detours.' },
-  'st-p1': { de: 'Sätze &amp; Wiederholungen', en: 'Sets &amp; reps' },
-  'st-p2': { de: 'Gewicht &amp; Volumen', en: 'Weight &amp; volume' },
-  'st-p3': { de: 'Allzeit-Rekorde', en: 'All-time records' },
-  'st-p4': { de: 'Pro Übung', en: 'Per exercise' },
-  'st-p5': { de: 'Direkt im Kalender', en: 'Right in the calendar' },
-
-  'w-label': { de: 'Apple Watch · Am Handgelenk', en: 'Apple Watch · On Your Wrist' },
-  'w-h2':    { de: 'Auch an<br><span class="dim">deinem Handgelenk.</span>', en: 'Right on<br><span class="dim">your wrist.</span>' },
-  'w-body':  { de: 'Logge dein Training und sieh Tagesfortschritt, Wochenziel und Streak direkt auf der Apple Watch. Ø Puls und Energie der Einheit landen automatisch im Eintrag. Mit Complications fürs Zifferblatt — ein Tipp genügt.', en: 'Log your workout and see daily progress, weekly goal and streak right on Apple Watch. Average heart rate and energy of the session land in the entry automatically. With complications for your watch face — a single tap is enough.' },
-  'w-c1': { de: 'Heute', en: 'Today' },
-  'w-c2': { de: 'Woche · Ziel', en: 'Week · Goal' },
-  'w-c3': { de: 'Status · Sync', en: 'Status · Sync' },
-  'w-p1': { de: 'Vom Handgelenk loggen', en: 'Log from your wrist' },
-  'w-p2': { de: 'Tagesfortschritt &amp; Streak', en: 'Daily progress &amp; streak' },
-  'w-p3': { de: 'Complications', en: 'Complications' },
-  'w-p4': { de: 'Sync mit dem iPhone', en: 'Sync with iPhone' },
-
-  's8m-label': { de: 'Dein Stil · Zwei Modi', en: 'Your Style · Two Modes' },
-  's8m-h2':    { de: 'So einfach<br><span class="dim">wie du es willst.</span>', en: 'As simple<br><span class="dim">as you want it.</span>' },
-  's8m-body':  { de: 'Streak passt sich deinem Stil an. Wer einfach nur tracken will, bekommt einen klaren Kalender — ohne Ablenkungen. Wer tiefer einsteigen möchte, aktiviert Insights und sieht Muster, Rekorde und Trainingsanalysen.', en: 'Streak adapts to your style. If you just want to track, you get a clean calendar — no distractions. If you want to go deeper, enable Insights and see patterns, records, and training analytics.' },
-  's8m-col1':  { de: '🗓 Nur Tracken', en: '🗓 Track Only' },
-  's8m-col1b': { de: 'Klar, fokussiert, schnell', en: 'Clean, focused, fast' },
-  's8m-col2':  { de: '📊 Tracken + Insights', en: '📊 Track + Insights' },
-  's8m-col2b': { de: 'Muster, Rekorde, Analysen', en: 'Patterns, records, analytics' },
-
-  's8-label': { de: 'Personalisierung · Hintergrund', en: 'Personalization · Background' },
-  's8-h2':    { de: '10 Sport-Designs.<br><span class="dim">Dein Look.</span>', en: '10 Sport Designs.<br><span class="dim">Your Look.</span>' },
-  's8-body':  { de: 'Wähle aus 10 sport-spezifischen Hintergrundbildern oder lade dein eigenes Foto. Die Karten legen sich als Liquid-Glass-Effekt darüber — weich, durchscheinend. Klarglas, Blur und Dunkel-Overlay sind frei einstellbar.', en: 'Choose from 10 sport-specific background images or upload your own photo. Cards overlay as a Liquid Glass effect — soft, translucent. Clear glass, blur and dark overlay are freely adjustable.' },
-  's8-p1': { de: '10 Sport-Hintergrundbilder', en: '10 sport background images' },
-  's8-p2': { de: 'Liquid Glass · Klarglas-Modus', en: 'Liquid Glass · Clear glass mode' },
-  's8-p3': { de: 'Blur &amp; Overlay einstellbar', en: 'Blur &amp; overlay adjustable' },
-  's8-p4': { de: 'Eigenes Foto möglich', en: 'Custom photo supported' },
-  's8-col1': { de: 'Foto-Hintergrund', en: 'Photo background' },
-  's8-col2': { de: 'Glas einstellen', en: 'Adjust the glass' },
-
-  's9-label': { de: 'Einstellungen · Ziele', en: 'Settings · Goals' },
-  's9-h2':    { de: 'Alles nach<br><span class="dim">deinen Regeln.</span>', en: 'Everything<br><span class="dim">on Your Terms.</span>' },
-  's9-body':  { de: 'Dein Name, dein Wochenziel (2–7× pro Woche), Motivationstext ein oder aus, tägliche Erinnerungen. Streak passt sich an — nicht andersherum. Keine erzwungenen Features, keine Ablenkungen.', en: 'Your name, your weekly goal (2–7× per week), motivation text on or off, daily reminders. Streak adapts to you — not the other way around. No forced features, no distractions.' },
-  's9-p1': { de: 'Wochenziel 2–7×', en: 'Weekly goal 2–7×' },
-  's9-p2': { de: 'Motivationstext', en: 'Motivation text' },
-  's9-p3': { de: 'Tägliche Erinnerung', en: 'Daily reminder' },
-  's9-p4': { de: 'Kein Login nötig', en: 'No login required' },
-
-  's10-label': { de: 'Apple Health · Daten', en: 'Apple Health · Data' },
-  's10-h2':    { de: 'Verbunden mit<br><span class="dim">Apple Health.</span>', en: 'Connected to<br><span class="dim">Apple Health.</span>' },
-  's10-body':  { de: 'Workouts aus Apple Health und von der Apple Watch landen von selbst in der Tagesliste — mit Dauer, Energie und Ø Puls. Mit Streak Pro siehst du zu jeder Einheit die Pulskurve und die Zonen. Exportiere deine Daten als CSV oder JSON, erstelle Backups und stelle sie wieder her. Deine Daten bleiben bei dir: auf dem Gerät oder in deiner privaten iCloud.', en: 'Workouts from Apple Health and Apple Watch land in the day list on their own — with duration, energy and average heart rate. With Streak Pro you see the heart-rate curve and zones of every workout. Export your data as CSV or JSON, create backups and restore them. Your data stays with you: on your device or in your private iCloud.' },
-  's10-p1': { de: 'Dauer, Energie &amp; Ø Puls', en: 'Duration, energy &amp; avg heart rate' },
-  's10-p2': { de: 'iCloud Sync', en: 'iCloud Sync' },
-  's10-p3': { de: 'CSV &amp; JSON Export', en: 'CSV &amp; JSON Export' },
-  's10-p4': { de: 'Backup &amp; Restore', en: 'Backup &amp; Restore' },
-  's10-p5': { de: 'Keine Trainingsdaten auf unseren Servern', en: 'No workout data on our servers' },
-
-  'cta-h':   { de: 'Bereit, konsequenter<br><span style="background:linear-gradient(135deg,var(--blue),var(--blue-light)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">zu trainieren?</span>', en: 'Ready to train<br><span style="background:linear-gradient(135deg,var(--blue),var(--blue-light)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">more consistently?</span>' },
-  'cta-sub': { de: '7 Tage Streak Pro gratis testen — danach Loggen und Streak kostenlos weiter nutzen, die ganze App einmalig mit Pro freischalten. Kein Abo, kein Login, keine Werbung.', en: 'Try Streak Pro free for 7 days — then keep logging and your streak for free, unlock the whole app once with Pro. No subscription, no login, no ads.' },
-  'cta-btn': { de: '7 Tage kostenlos starten', en: 'Start Free for 7 Days' },
-  'cta-c1':  { de: '✓ 7 Tage kostenlos testen', en: '✓ 7 days free trial' },
-  'cta-c2':  { de: '✓ Streak Pro einmaliger Kauf', en: '✓ Streak Pro one-time purchase' },
-  'cta-c3':  { de: '✓ iOS 18+ · iPhone', en: '✓ iOS 18+ · iPhone' },
-  'cta-c4':  { de: '✓ Keine Werbung', en: '✓ No ads' },
-
-  'sl1-tag': { de: 'Kalender', en: 'Calendar' },
-  'sl1-h':   { de: 'Jeder Tag<br>zählt.', en: 'Every Day<br>Counts.' },
-  'sl1-sub': { de: 'Die Heatmap macht deinen Fortschritt jeden Tag sichtbar.', en: 'The heatmap makes your progress visible every day.' },
-  'sl2-tag': { de: 'Training', en: 'Workout' },
-  'sl2-h':   { de: 'Eintragen<br>in Sekunden.', en: 'Logged<br>in seconds.' },
-  'sl2-sub': { de: 'Sport, Fokus, Dauer und Intensität mit wenigen Taps.', en: 'Sport, focus, duration and intensity with a few taps.' },
-  'sl3-tag': { de: 'Ziele · Streak', en: 'Goals · Streak' },
-  'sl3-h':   { de: 'Ziel erreicht.<br>Rekord!', en: 'Goal reached.<br>Record!' },
-  'sl3-sub': { de: 'Streaks, Wochenziele und Neuer-Rekord-Badges halten dich motiviert.', en: 'Streaks, weekly goals and new record badges keep you motivated.' },
-  'sl4-tag': { de: 'Statistiken', en: 'Statistics' },
-  'sl4-h':   { de: 'Dein Jahr,<br>auf einen Blick.', en: 'Your Year,<br>at a Glance.' },
-  'sl4-sub': { de: 'Woche, Monat, Jahr — Heatmap und Top-Sportarten immer im Überblick.', en: 'Week, month, year — heatmap and top sports always in view.' },
-  'sl5-tag': { de: 'Personalisierung', en: 'Personalization' },
-  'sl5-h':   { de: 'Liquid Glass<br>trifft dein Foto.', en: 'Liquid Glass<br>Meets Your Photo.' },
-  'sl5-sub': { de: 'Eigener Hintergrund mit Glass-Effekt — wie in Apple Maps.', en: 'Custom background with Glass effect — like in Apple Maps.' },
-  'sl6-tag': { de: 'Health · Daten', en: 'Health · Data' },
-  'sl6-h':   { de: 'Verbunden<br>mit Health.', en: 'Connected<br>to Health.' },
-  'sl6-sub': { de: 'Apple Health Import, iCloud Sync, CSV &amp; JSON Export.', en: 'Apple Health Import, iCloud Sync, CSV &amp; JSON Export.' },
-  'sl7-tag': { de: 'Dark Mode', en: 'Dark Mode' },
-  'sl7-h':   { de: 'Dunkel.<br>Elegant.', en: 'Dark.<br>Elegant.' },
-  'sl7-sub': { de: 'Automatisch oder manuell — hell, dunkel oder dein eigenes Foto.', en: 'Automatic or manual — light, dark, or your own photo.' },
-  'sl8-tag': { de: 'Farbwähler', en: 'Color Picker' },
-  'sl8-h':   { de: 'Jede Farbe.<br>Dein Stil.', en: 'Any Color.<br>Your Style.' },
-  'sl8-sub': { de: 'Wähle mit dem Farbwähler eine beliebige Akzentfarbe — jederzeit änderbar.', en: 'Pick any accent color with the color picker — change anytime.' },
-  'sl9-tag': { de: 'Monatsübersicht', en: 'Monthly View' },
-  'sl9-h':   { de: '22 Trainings<br>im April.', en: '22 Workouts<br>in April.' },
-  'sl9-sub': { de: 'Monats-Heatmap, Sport-Ranking und Fokus-Bereiche auf einen Blick.', en: 'Monthly heatmap, sport ranking and focus areas at a glance.' },
-};
-
-let currentLang = 'de';
-
-function setLang(lang) {
-  currentLang = lang;
-  document.documentElement.lang = lang;
-  document.querySelectorAll('[data-key]').forEach(el => {
-    const key = el.dataset.key;
-    if (T[key]) el.innerHTML = T[key][lang];
-  });
-  const btn = document.getElementById('lang-toggle');
-  btn.textContent = lang === 'de' ? 'EN' : 'DE';
-  btn.setAttribute('aria-label', lang === 'de' ? 'Switch to English' : 'Auf Deutsch wechseln');
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-  const userLang = (navigator.language || 'de').toLowerCase();
-  setLang(userLang.startsWith('de') ? 'de' : 'en');
-  document.getElementById('lang-toggle').addEventListener('click', () => {
-    setLang(currentLang === 'de' ? 'en' : 'de');
-  });
+  // nur-de:start
+  // Die englische Fassung ist eine eigene Seite (en/, erzeugt mit tools/build-en.mjs).
+  // Wer keinen deutschen Browser hat, sieht den Weg dorthin deutlicher.
+  if (!(navigator.language || 'de').toLowerCase().startsWith('de')) {
+    const en = document.getElementById('lang-toggle');
+    en.textContent = 'English version →';
+    en.style.background = 'rgba(255,255,255,0.24)';
+  }
+  // nur-de:ende
 
   // Premium fade-in on scroll
   const sections = document.querySelectorAll('.section, .cta-section, footer, .feat-row, .stat-grid, .phone-grid, .theme-row');

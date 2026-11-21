@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Streak — Workout Tracker with Apple Watch, Apple Health &amp; Strength Logging</title>
+<meta name="description" content="Workout tracker with a heatmap calendar, weekly ring, Apple Watch and Apple Health: duration, energy and heart rate right in the day list. Strength logging, statistics. No subscription, one-time purchase.">
+<meta name="keywords" content="workout tracker, training log, heatmap calendar, Apple Watch fitness app, strength logging, sets reps weight, streak, workout statistics, Apple Health, no subscription, one-time purchase, gym tracker, fitness app iPhone">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Streak — Workout Tracker with Apple Watch, Apple Health &amp; Strength Logging">
+<meta property="og:description" content="Workout tracker with a heatmap calendar, Apple Watch app and strength logging. Streaks, statistics, Apple Health. No subscription, one-time purchase.">
+<meta property="og:url" content="https://streak.tekneio.com/en/">
+<meta property="og:image" content="https://streak.tekneio.com/_render_premium/en_slide-1.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="de_CH">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Streak — Workout Tracker, Apple Watch &amp; Health">
+<meta name="twitter:description" content="Heatmap calendar, Apple Watch app and strength logging. Streaks, statistics, Apple Health. No subscription, one-time purchase.">
+<meta name="twitter:image" content="https://streak.tekneio.com/_render_premium/en_slide-1.png">
+
+<!-- Smart App Banner für iOS Safari -->
+<meta name="apple-itunes-app" content="app-id=6762292658">
+
+<!-- App Icon & Favicons -->
+<link rel="icon" type="image/png" href="../icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../icon.png">
+<link rel="shortcut icon" href="../icon.png">
+
+<!-- Theme color für mobile browser chrome -->
+<meta name="theme-color" content="#06091a">
+
+<!-- Canonical URL for SEO -->
+<link rel="canonical" href="https://streak.tekneio.com/en/">
+<link rel="alternate" hreflang="de" href="https://streak.tekneio.com/">
+<link rel="alternate" hreflang="en" href="https://streak.tekneio.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://streak.tekneio.com/en/">
+
+<!-- Google Search Console Verification (Replace with real token after GSC signup) -->
+<meta name="google-site-verification" content="pH_jnJHXlFqD9otOO2_GCXu52X0LMQxWNQulKgTCK30">
+
+<!-- Schema.org structured data: MobileApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Streak",
+  "operatingSystem": "iOS 18",
+  "applicationCategory": "HealthApplication",
+  "description": "Workout tracker with a heatmap calendar, weekly ring, Apple Watch and Apple Health (duration, energy, heart rate in the day list), strength logging and statistics. No subscription, no login, no tracking. One-time Pro purchase.",
+  "image": "https://streak.tekneio.com/icon.png",
+  "screenshot": "https://streak.tekneio.com/_render_premium/en_slide-1.png",
+  "softwareVersion": "2.0.1",
+  "featureList": [
+    "Heatmap calendar",
+    "Apple Watch app with complications",
+    "Strength logging: sets, reps, weight, volume, all-time records",
+    "Streaks and weekly goals",
+    "Statistics: week, month, year",
+    "Custom accent color (color picker)",
+    "Home and Lock Screen widgets",
+    "Apple Health import, iCloud sync, CSV/JSON export"
+  ],
+  "url": "https://streak.tekneio.com/en/",
+  "downloadUrl": "https://apps.apple.com/app/id6762292658",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CHF",
+    "availability": "https://schema.org/InStock"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "TEKNEIO",
+    "url": "https://streak.tekneio.com/",
+    "email": "hello@tekneio.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "TEKNEIO"
+  },
+  "inLanguage": [
+    "de",
+    "en",
+    "fr"
+  ],
+  "datePublished": "2026-05-09"
+}
+</script>
+
+<!-- Schema.org Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "TEKNEIO",
+  "url": "https://streak.tekneio.com/",
+  "logo": "https://streak.tekneio.com/icon.png",
+  "email": "hello@tekneio.com",
+  "sameAs": [
+    "https://apps.apple.com/app/id6762292658"
+  ]
+}
+</script>
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --blue:       #3670e0;
+    --blue-light: #5c94f2;
+    --blue-glow:  rgba(54,112,224,0.32);
+    --orange:     #f48c20;
+    --orange-glow:rgba(244,140,32,0.30);
+    --rose:       #e84d8a;
+    --rose-glow:  rgba(232,77,138,0.30);
+    --text:       #ffffff;
+    --muted:      rgba(255,255,255,0.70);
+    --glass:      rgba(255,255,255,0.08);
+    --border:     rgba(255,255,255,0.13);
+    --bg:         #06091a;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, 'SF Pro Display', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── Phone Frame ── */
+  .phone {
+    background: #1a1a1a;
+    border-radius: 51px;
+    padding: 7px;
+    box-shadow:
+      0 0 0 1.5px rgba(255,255,255,0.22),
+      0 0 0 3px rgba(255,255,255,0.05),
+      0 20px 60px rgba(0,0,0,0.55),
+      0 6px 18px rgba(0,0,0,0.35),
+      0 0 70px rgba(80,130,255,0.10),
+      inset 0 1px 0 rgba(255,255,255,0.14);
+    position: relative;
+    flex-shrink: 0;
+  }
+  .phone.sm  { width: 242px; border-radius: 46px; padding: 6px; }
+  .phone.md  { width: 290px; }
+  .phone.lg  { width: 352px; border-radius: 63px; padding: 9px; }
+  .phone.xl  { width: 387px; border-radius: 68px; padding: 10px; }
+
+  .phone-screen {
+    border-radius: 44px;
+    overflow: hidden;
+    background: #000;
+    line-height: 0;
+    position: relative;
+  }
+  .phone.sm  .phone-screen { border-radius: 40px; }
+  .phone.lg  .phone-screen { border-radius: 54px; }
+  .phone.xl  .phone-screen { border-radius: 58px; }
+  .phone-screen img { width: 100%; display: block; pointer-events: none; }
+
+  .di { /* Dynamic Island */
+    position: absolute;
+    top: 16px; left: 50%; transform: translateX(-50%);
+    width: 111px; height: 36px;
+    background: #000; border-radius: 22px; z-index: 10;
+  }
+  .phone.sm .di { top: 10px; width: 85px; height: 26px; }
+  .phone.lg .di { top: 17px; width: 133px; height: 41px; }
+  .phone.xl .di { top: 18px; width: 143px; height: 44px; }
+
+  /* ── Layout Helpers ── */
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+  .section { padding: 110px 28px; }
+  .divider {
+    height: 1px;
+    max-width: 1100px; margin: 0 auto;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.07), transparent);
+  }
+
+  /* ── Labels & Headlines ── */
+  .label {
+    display: inline-block;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.13em; text-transform: uppercase;
+    color: var(--blue-light); margin-bottom: 14px; opacity: 0.9;
+  }
+  .label.orange { color: var(--orange); }
+  .label.rose   { color: #f06faa; }
+  .label.green  { color: #34c759; }
+
+  h2.title {
+    font-size: clamp(34px, 4.5vw, 58px);
+    font-weight: 800; letter-spacing: -0.03em; line-height: 1.1;
+    margin-bottom: 18px;
+  }
+  h2.title .dim { color: rgba(255,255,255,0.28); }
+
+  p.body-text {
+    font-size: 17px; line-height: 1.7;
+    color: rgba(255,255,255,0.68);
+    max-width: 480px;
+  }
+
+  /* ── Feature Row ── */
+  .feat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 80px;
+    max-width: 1100px; margin: 0 auto;
+  }
+  .feat-row.rev { direction: rtl; }
+  .feat-row.rev > * { direction: ltr; }
+  .feat-text { padding: 16px 0; }
+
+  /* ── Pills ── */
+  .pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--glass); border: 1px solid var(--border);
+    border-radius: 100px; padding: 8px 16px;
+    font-size: 13px; font-weight: 500;
+    backdrop-filter: blur(10px); color: rgba(255,255,255,0.72);
+  }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue-light); }
+  .dot.g { background: #34c759; }
+  .dot.o { background: var(--orange); }
+  .dot.r { background: var(--rose); }
+  .dot.p { background: #af52de; }
+
+  /* ── Phone Cluster ── */
+  .cluster { position: relative; display: flex; align-items: flex-end; justify-content: center; }
+  .cluster .phone.side {
+    position: absolute;
+    opacity: 0.88;
+    z-index: 1;
+  }
+  .cluster .phone.center { z-index: 3; }
+  .cluster .phone.left-side  { transform: rotate(-4deg) translateY(40px) translateX(-10px); }
+  .cluster .phone.right-side { transform: rotate(4deg) translateY(40px) translateX(10px); }
+
+  /* ── Section BGs ── */
+  .bg-radial-blue   { background: radial-gradient(ellipse 80% 55% at 50% 50%, rgba(30,70,200,0.18) 0%, transparent 70%); }
+  .bg-radial-orange { background: radial-gradient(ellipse 80% 55% at 50% 50%, rgba(220,100,10,0.16) 0%, transparent 70%); }
+  .bg-radial-rose   { background: radial-gradient(ellipse 80% 55% at 50% 50%, rgba(200,40,90,0.16) 0%, transparent 70%); }
+  .bg-dark-subtle   { background: linear-gradient(180deg, transparent 0%, rgba(18,28,72,0.45) 25%, rgba(18,28,72,0.45) 75%, transparent 100%); }
+
+  /* ── Stats Cards ── */
+  .stat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 52px; max-width: 860px; margin-left: auto; margin-right: auto; }
+  .stat-card {
+    background: var(--glass); border: 1px solid var(--border);
+    border-radius: 20px; padding: 26px 20px; text-align: center;
+    backdrop-filter: blur(12px);
+  }
+  .stat-num {
+    font-size: 46px; font-weight: 800; letter-spacing: -0.03em; line-height: 1;
+    background: linear-gradient(135deg, #fff 30%, var(--blue-light));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    margin-bottom: 8px;
+  }
+  .stat-num.orange {
+    background: linear-gradient(135deg, #fff 20%, var(--orange));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .stat-lbl { font-size: 13px; color: var(--muted); font-weight: 500; }
+
+  /* ── Phone Grid ── */
+  .phone-grid {
+    display: flex; justify-content: center;
+    align-items: flex-start; gap: 28px; flex-wrap: wrap;
+    margin-top: 56px;
+  }
+  .phone-col { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .phone-col-label {
+    font-size: 13px; font-weight: 600;
+    color: rgba(255,255,255,0.82);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 100px; padding: 4px 14px;
+    backdrop-filter: blur(8px);
+  }
+
+  /* ── Theme Cards ── */
+  .theme-row { display: flex; justify-content: center; gap: 20px; margin-top: 56px; flex-wrap: wrap; align-items: flex-start; }
+  .theme-card { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .theme-label {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.05em;
+    color: rgba(255,255,255,0.82);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 100px; padding: 4px 14px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: auto;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 26px 24px 18px;
+    background: linear-gradient(180deg, #080e28 0%, var(--bg) 100%);
+    position: relative; overflow: hidden; text-align: center;
+  }
+
+  /* ── Aurora Orbs ── */
+  .orb {
+    position: absolute; border-radius: 50%;
+    pointer-events: none; will-change: transform;
+    filter: blur(90px); opacity: 0;
+    animation: orb-fade-in 2s ease forwards;
+  }
+  .orb-1 {
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(36,85,210,0.55) 0%, transparent 70%);
+    top: -180px; left: -180px;
+    animation: orb-fade-in 2s ease forwards, orb-a 20s ease-in-out 2s infinite alternate;
+  }
+  .orb-2 {
+    width: 560px; height: 560px;
+    background: radial-gradient(circle, rgba(90,45,200,0.45) 0%, transparent 70%);
+    top: 100px; right: -140px;
+    animation: orb-fade-in 2.5s ease forwards, orb-b 24s ease-in-out 2.5s infinite alternate;
+  }
+  .orb-3 {
+    width: 440px; height: 440px;
+    background: radial-gradient(circle, rgba(20,120,200,0.35) 0%, transparent 70%);
+    bottom: -80px; left: 30%;
+    animation: orb-fade-in 3s ease forwards, orb-c 18s ease-in-out 3s infinite alternate;
+  }
+
+  @keyframes orb-fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes orb-a {
+    0%   { transform: translate(0, 0) scale(1); }
+    33%  { transform: translate(55px, 35px) scale(1.07); }
+    66%  { transform: translate(-25px, 55px) scale(0.96); }
+    100% { transform: translate(30px, -20px) scale(1.04); }
+  }
+  @keyframes orb-b {
+    0%   { transform: translate(0, 0) scale(1); }
+    40%  { transform: translate(-45px, 28px) scale(1.06); }
+    70%  { transform: translate(20px, -35px) scale(0.93); }
+    100% { transform: translate(-30px, 45px) scale(1.08); }
+  }
+  @keyframes orb-c {
+    0%   { transform: translate(0, 0) scale(1); }
+    50%  { transform: translate(35px, -40px) scale(1.10); }
+    100% { transform: translate(-40px, 20px) scale(0.94); }
+  }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--glass); border: 1px solid var(--border);
+    border-radius: 100px; padding: 7px 18px;
+    font-size: 14px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;
+    color: var(--blue-light); margin-bottom: 30px;
+    backdrop-filter: blur(12px);
+    position: relative; z-index: 2;
+  }
+  .hero h1 { position: relative; z-index: 2; }
+  .hero .cluster {
+    position: relative; z-index: 1;
+  }
+  .hero .cluster::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px; height: 500px;
+    background: radial-gradient(ellipse, rgba(54,112,224,0.14) 0%, transparent 70%);
+    filter: blur(40px);
+    pointer-events: none; z-index: 0;
+  }
+  .badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--blue-light); box-shadow: 0 0 8px var(--blue-light); }
+  .hero h1 {
+    font-size: clamp(38px, 5.2vw, 60px);
+    font-weight: 800; letter-spacing: -0.02em; line-height: 1.0; margin-bottom: 6px;
+  }
+  .hero h1 .a { background: linear-gradient(140deg, var(--blue) 0%, var(--blue-light) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-tagline { font-size: clamp(18px, 2.3vw, 28px); font-weight: 600; color: rgba(255,255,255,0.80); margin: 0 auto 10px; position: relative; z-index: 5; letter-spacing: -0.01em; }
+  .hero-sub { font-size: 16px; font-weight: 400; color: var(--muted); max-width: 480px; line-height: 1.45; margin: 0 auto 16px; position: relative; z-index: 5; }
+
+  /* ── CTA ── */
+  .cta-section { text-align: center; padding: 110px 24px 90px; background: radial-gradient(ellipse 65% 50% at 50% 100%, rgba(36,85,210,0.32) 0%, transparent 70%); }
+  .cta-h { font-size: clamp(38px, 5.5vw, 70px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 18px; }
+  .cta-sub { font-size: 18px; color: var(--muted); margin-bottom: 44px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: linear-gradient(135deg, var(--blue), var(--blue-light));
+    color: #fff; font-size: 17px; font-weight: 700;
+    padding: 18px 42px; border-radius: 100px; text-decoration: none;
+    box-shadow: 0 8px 32px rgba(54,112,224,0.45), 0 2px 8px rgba(54,112,224,0.28);
+    transition: transform 0.15s, box-shadow 0.15s; letter-spacing: -0.01em;
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 42px rgba(54,112,224,0.55); }
+
+  /* ── SLIDE EXPORT ── (internal — hidden from public marketing page) */
+  .slide-section { display: none !important; background: #e4e8ed; padding: 72px 40px 56px; }
+  .slide-section-title { text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #888; margin-bottom: 40px; font-family: -apple-system,sans-serif; }
+  .slide-grid { display: grid; grid-template-columns: repeat(3, 390px); gap: 24px; justify-content: center; max-width: 1290px; margin: 0 auto; }
+  .slide {
+    width: 390px; height: 844px;
+    border-radius: 28px; overflow: hidden;
+    position: relative; display: flex; flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.09), 0 24px 60px rgba(0,0,0,0.14);
+  }
+  .slide-bg-blue   { background: linear-gradient(155deg, #132e80 0%, #09154a 100%); }
+  .slide-bg-orange { background: linear-gradient(155deg, #4a1f04 0%, #1a0a02 100%); }
+  .slide-bg-rose   { background: linear-gradient(155deg, #3a0820 0%, #150310 100%); }
+  .slide-bg-dark   { background: linear-gradient(155deg, #0b0d20 0%, #040610 100%); }
+  .slide-bg-light  { background: linear-gradient(155deg, #e8f0ff 0%, #f5f7ff 100%); }
+  .slide-bg-health { background: linear-gradient(155deg, #0f1828 0%, #060a18 100%); }
+  .slide-bg-purple { background: linear-gradient(155deg, #1a0840 0%, #0a0420 100%); }
+  .slide-bg-stats  { background: linear-gradient(155deg, #061828 0%, #030c18 100%); }
+
+  .slide-text {
+    padding: 38px 28px 20px; flex-shrink: 0; z-index: 2;
+  }
+  .slide-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.62); margin-bottom: 10px; }
+  .slide-bg-light .slide-tag { color: rgba(0,0,0,0.50); }
+  .slide-h { font-size: 30px; font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; color: #fff; margin-bottom: 10px; }
+  .slide-bg-light .slide-h { color: #0d1533; }
+  .slide-sub { font-size: 13px; line-height: 1.55; color: rgba(255,255,255,0.68); }
+  .slide-bg-light .slide-sub { color: rgba(0,0,0,0.58); }
+
+  .slide-phones {
+    flex: 1; position: relative;
+    display: flex; align-items: flex-start; justify-content: center;
+    overflow: hidden; padding-top: 6px;
+  }
+
+  /* Slide phone */
+  .sphone {
+    background: #111; border-radius: 36px; padding: 8px;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.09), 0 18px 46px rgba(0,0,0,0.6);
+    position: relative; flex-shrink: 0; z-index: 3;
+  }
+  .sphone.main { width: 206px; }
+  .sphone.ghost { width: 168px; border-radius: 30px; padding: 7px; opacity: 0.65; position: absolute; top: 35px; z-index: 2; }
+  .sphone.ghost.l { left: -10px; transform: rotate(-9deg); }
+  .sphone.ghost.r { right: -10px; transform: rotate(9deg); }
+  .sphone .di { position: absolute; top: 13px; left: 50%; transform: translateX(-50%); width: 74px; height: 22px; background: #000; border-radius: 12px; z-index: 5; }
+  .sphone.ghost .di { width: 60px; height: 18px; top: 10px; }
+  .sphone .screen { border-radius: 30px; overflow: hidden; background: #000; line-height: 0; }
+  .sphone.ghost .screen { border-radius: 25px; }
+  .sphone .screen img { width: 100%; display: block; }
+
+  /* Hero cluster — responsive */
+  .hero-cluster {
+    position: relative;
+    width: 100%;
+    max-width: 1180px;
+    aspect-ratio: 1180 / 820;
+    align-items: flex-start;
+  }
+  .hero-cluster .phone.side {
+    position: absolute;
+    width: 30%;
+  }
+  .hero-cluster .phone.left-side  { left: 6%; }
+  .hero-cluster .phone.right-side { right: 6%; }
+  .hero-cluster .phone.center {
+    position: relative;
+    z-index: 3;
+    width: 33%;
+  }
+
+  @media (max-width: 800px) {
+    .feat-row { grid-template-columns: 1fr; gap: 44px; }
+    .feat-row.rev { direction: ltr; }
+    .slide-grid { grid-template-columns: 390px; }
+    .stat-grid { grid-template-columns: 1fr; }
+    .cluster .phone.side { display: none; }
+    .hero-cluster { aspect-ratio: auto; height: auto; padding-top: 20px; }
+    .hero-cluster .phone.center { width: 70%; max-width: 320px; margin: 0 auto; }
+    .feat-text { min-width: 0; }
+    p.body-text { max-width: 100%; }
+  }
+  /* ── Premium Fade-In on Scroll ── */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s ease-out, transform 0.9s ease-out; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+  /* ── App Icon Hero ── */
+  .app-icon {
+    width: 64px; height: 64px;
+    border-radius: 16px;
+    box-shadow:
+      0 18px 48px rgba(54,112,224,0.40),
+      0 6px 18px rgba(0,0,0,0.50),
+      inset 0 1px 0 rgba(255,255,255,0.18);
+    margin-bottom: 8px;
+    position: relative; z-index: 4;
+    transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .app-icon:hover { transform: scale(1.04) rotate(-1deg); }
+  .app-icon-footer {
+    width: 44px; height: 44px;
+    border-radius: 11px;
+    box-shadow: 0 6px 20px rgba(54,112,224,0.30);
+  }
+
+  @media (max-width: 480px) {
+    .section { padding: 64px 20px; }
+    .hero { min-height: auto; padding: 56px 16px 40px; }
+    .hero-sub { font-size: 17px; max-width: 100%; }
+    .stat-card { padding: 22px 16px; }
+    .stat-num { font-size: 38px; }
+    .pills { gap: 8px; }
+    .pill { font-size: 12px; padding: 7px 13px; }
+    .phone.md { width: 240px; }
+    .phone.lg { width: 280px; }
+    .theme-row { gap: 14px; }
+    .watch { width: 158px; }
+  }
+
+  /* ── Video (in phone frame) ── */
+  .phone-screen video { width: 100%; display: block; }
+  .video-caption { font-size: 13px; color: rgba(255,255,255,0.42); margin-top: 18px; letter-spacing: 0.02em; }
+
+  /* ── Apple Watch frame ── */
+  .watch-row { display: flex; justify-content: center; gap: 34px; flex-wrap: wrap; margin-top: 54px; align-items: flex-start; }
+  .watch-card { display: flex; flex-direction: column; align-items: center; gap: 14px; position: relative; }
+  .watch-card::before { content: ''; position: absolute; left: 50%; top: 32%; transform: translate(-50%,-50%);
+    width: 150%; height: 120%; z-index: 0; pointer-events: none;
+    background: radial-gradient(ellipse at center, rgba(52,199,89,0.20), transparent 68%); filter: blur(26px); }
+  .watch-card > * { position: relative; z-index: 1; }
+  .watch {
+    width: 190px; background: #08080a; border-radius: 54px; padding: 13px;
+    position: relative; flex-shrink: 0;
+    box-shadow:
+      0 0 0 1.5px rgba(255,255,255,0.16),
+      0 0 0 7px rgba(38,38,42,0.55),
+      0 18px 50px rgba(0,0,0,0.55),
+      0 6px 16px rgba(0,0,0,0.4),
+      inset 0 1px 0 rgba(255,255,255,0.12);
+  }
+  .watch::after {
+    content: ''; position: absolute; right: -9px; top: 36%;
+    width: 7px; height: 48px;
+    background: linear-gradient(180deg, #3c3c40, #18181a);
+    border-radius: 4px; box-shadow: inset 0 1px 0 rgba(255,255,255,0.18);
+  }
+  .watch-screen { border-radius: 42px; overflow: hidden; background: #000; line-height: 0; }
+  .watch-screen img { width: 100%; display: block; }
+  .watch-label {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.05em;
+    color: rgba(255,255,255,0.82);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 100px; padding: 4px 14px;
+  }
+
+  /* ── Apple Watch in hero cluster ── */
+  .hero-watch { position: absolute; z-index: 6; width: 13%; left: 28.5%; bottom: 1%; }
+  .hero-watch .watch { width: 100%; padding: 8px; border-radius: 32px;
+    box-shadow: 0 0 0 1.2px rgba(255,255,255,0.16), 0 0 0 5px rgba(38,38,42,0.6),
+      0 16px 40px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.12); }
+  .hero-watch .watch::after { width: 5px; height: 30px; right: -7px; }
+  .hero-watch .watch-screen { border-radius: 25px; }
+  @media (max-width: 800px) { .hero-watch { display: none; } }
+
+  /* ── Color Spectrum (custom accent) ── */
+  .spectrum {
+    height: 16px; border-radius: 10px; max-width: 440px; margin: 26px auto 0;
+    background: linear-gradient(90deg, #ff3b30, #ff9500, #ffcc00, #34c759, #30c8c8, #5ac8fa, #007aff, #5856d6, #af52de, #ff2d55);
+    box-shadow: 0 6px 22px rgba(0,0,0,0.38), inset 0 1px 0 rgba(255,255,255,0.30);
+  }
+</style>
+</head>
+<body>
+
+<!-- Language Toggle -->
+<a id="lang-toggle" href="../" hreflang="de" aria-label="Auf Deutsch wechseln" style="position:fixed;top:20px;right:24px;z-index:1000;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.08em;padding:6px 14px;border-radius:20px;text-decoration:none;backdrop-filter:blur(14px);transition:background 0.2s,border-color 0.2s;">DE</a>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <img src="../icon.png" alt="Streak App Icon" class="app-icon">
+  <div class="badge" style="background:rgba(52,199,89,0.15); border-color:rgba(52,199,89,0.42); color:#34c759; margin-bottom:12px;">
+    <span style="width:8px; height:8px; background:#34c759; border-radius:50%; box-shadow:0 0 12px #34c759; display:inline-block;"></span>
+    <span data-key="live-badge">Now on the App Store</span>
+  </div>
+  <h1><span class="a">Streak</span></h1>
+  <p style="font-size:13px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.62); margin:-4px 0 14px;">by Tekneio<sup style="font-size:0.7em;">&reg;</sup> &middot; Swiss Made</p>
+  <p class="hero-tagline" data-key="hero-tagline">Your Training, Every Day.</p>
+  <p class="hero-sub" data-key="hero-sub">Stay consistent. See your progress.<br>No subscription, no login — just open and train.</p>
+
+  <div style="position:relative; z-index:5; margin-bottom:14px; display:flex; flex-direction:column; align-items:center; gap:10px;">
+    <a href="https://apps.apple.com/app/id6762292658" aria-label="Download on the App Store" style="display:inline-block; transition:transform 0.15s, filter 0.15s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="180" height="60" viewBox="0 0 180 60" style="filter:drop-shadow(0 8px 24px rgba(0,0,0,0.45));">
+        <rect width="180" height="60" rx="11" fill="#000" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+        <g transform="translate(14,12)" fill="#fff">
+          <path d="M22.5 18.5c0-3.4 2.8-5 2.9-5.1-1.6-2.3-4-2.6-4.9-2.7-2.1-0.2-4.1 1.2-5.2 1.2-1.1 0-2.7-1.2-4.5-1.2-2.3 0-4.4 1.3-5.6 3.4-2.4 4.1-0.6 10.2 1.7 13.6 1.1 1.6 2.5 3.5 4.2 3.4 1.7-0.1 2.3-1.1 4.4-1.1 2.1 0 2.6 1.1 4.4 1 1.8 0 3-1.6 4.1-3.3 1.3-1.9 1.8-3.7 1.8-3.8-0.1-0.1-3.5-1.3-3.5-5.3zm-3.6-9.7c0.9-1.1 1.6-2.7 1.4-4.3-1.4 0.1-3 0.9-4 2-0.9 1-1.7 2.6-1.5 4.1 1.6 0.1 3.2-0.8 4.1-1.8z"/>
+        </g>
+        <text x="60" y="25" fill="#fff" font-family="-apple-system, SF Pro Display, sans-serif" font-size="9" font-weight="400" letter-spacing="0.04em">Download on the</text>
+        <text x="60" y="45" fill="#fff" font-family="-apple-system, SF Pro Display, sans-serif" font-size="20" font-weight="600" letter-spacing="-0.01em">App Store</text>
+      </svg>
+    </a>
+    <p style="font-size:13px; color:rgba(255,255,255,0.65); letter-spacing:0.04em;" data-key="hero-price">7 days of Streak Pro free · then <strong style="color:rgba(255,255,255,0.68);">keep logging and your streak for free, unlock the whole app once with Pro</strong></p>
+
+    <div style="display:flex; gap:18px; flex-wrap:wrap; justify-content:center; margin-top:8px; opacity:0.82;">
+      <span style="display:inline-flex; align-items:center; gap:6px; font-size:12px; color:rgba(255,255,255,0.62); letter-spacing:0.02em;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+        <span data-key="trust-1">Apple Health</span>
+      </span>
+      <span style="display:inline-flex; align-items:center; gap:6px; font-size:12px; color:rgba(255,255,255,0.62); letter-spacing:0.02em;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+        <span data-key="trust-2">iCloud Sync</span>
+      </span>
+      <span style="display:inline-flex; align-items:center; gap:6px; font-size:12px; color:rgba(255,255,255,0.62); letter-spacing:0.02em;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+        <span data-key="trust-3">No ads · No tracking</span>
+      </span>
+      <span style="display:inline-flex; align-items:center; gap:6px; font-size:12px; color:rgba(255,255,255,0.62); letter-spacing:0.02em;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+        <span data-key="trust-4">No workout data on our servers</span>
+      </span>
+    </div>
+  </div>
+
+  <div class="cluster hero-cluster">
+    <div class="phone lg side left-side">
+      <div class="phone-screen"><img src="../screenshots/hero_stats_teal.png" alt="Streak statistics: workouts, active days, per week, records and training insights"></div>
+    </div>
+    <div class="phone xl center">
+      <div class="phone-screen"><img src="../screenshots/hero_home_green.png" alt="Streak home screen with heatmap calendar, Apple Health (sleep, Move, resting heart rate) and a strength entry"></div>
+    </div>
+    <div class="phone lg side right-side">
+      <div class="phone-screen"><img src="../screenshots/workout_detail.png" alt="Streak workout detail: Apple Watch heart-rate curve, zones, energy and duration"></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- video section hidden 2026-09-05: the preview still shows the pre-2.1 design; re-enable after a new recording
+<!~~ ═══════════════ APP PREVIEW VIDEO ═══════════════ ~~>
+<div class="bg-radial-blue">
+<div class="section" style="text-align:center; padding-top:84px; padding-bottom:84px;">
+  <div class="wrap" style="text-align:center; max-width:680px;">
+    <div class="label" style="display:block;" data-key="vid-label">App Preview · Video</div>
+    <h2 class="title" style="text-align:center;" data-key="vid-h2">See it<br><span class="dim">in action.</span></h2>
+    <p class="body-text" style="margin:0 auto 8px; text-align:center; max-width:480px;" data-key="vid-body">Calendar, statistics, strength logging and the Apple Watch app — in under 30 seconds.</p>
+  </div>
+  <div style="display:flex; justify-content:center; margin-top:44px;">
+    <div class="phone xl">
+      <div class="di"></div>
+      <div class="phone-screen">
+        <video src="../appreview_en.mp4" poster="../appreview_poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Streak App Preview"></video>
+      </div>
+    </div>
+  </div>
+  <p class="video-caption" data-key="vid-cap">Real app footage · Sound off</p>
+</div>
+</div>
+
+<div class="divider"></div>
+
+
+-->
+
+<!-- ═══════════════ APPLE WATCH ═══════════════ -->
+<div class="bg-radial-blue">
+<div class="section" style="text-align:center;">
+  <div class="wrap" style="text-align:center; max-width:680px;">
+    <div class="label green" style="display:block;" data-key="w-label">Apple Watch · On Your Wrist</div>
+    <h2 class="title" style="text-align:center;" data-key="w-h2">Right on<br><span class="dim">your wrist.</span></h2>
+    <p class="body-text" style="margin:0 auto; text-align:center; max-width:500px;" data-key="w-body">Log your workout and see daily progress, weekly goal and streak right on Apple Watch. Average heart rate and energy of the session land in the entry automatically. With complications for your watch face — a single tap is enough.</p>
+  </div>
+  <div class="watch-row">
+    <div class="watch-card">
+      <div class="watch"><div class="watch-screen"><img src="../screenshots/watch_today.png" alt="Streak on Apple Watch: today view with training progress"></div></div>
+      <div class="watch-label" data-key="w-c1">Today</div>
+    </div>
+    <div class="watch-card">
+      <div class="watch"><div class="watch-screen"><img src="../screenshots/watch_week.png" alt="Streak on Apple Watch: weekly goal and streak"></div></div>
+      <div class="watch-label" data-key="w-c2">Week · Goal</div>
+    </div>
+    <div class="watch-card">
+      <div class="watch"><div class="watch-screen"><img src="../screenshots/watch_status.png" alt="Streak on Apple Watch: status and sync"></div></div>
+      <div class="watch-label" data-key="w-c3">Status · Sync</div>
+    </div>
+  </div>
+  <div class="pills" style="justify-content:center; max-width:640px; margin-left:auto; margin-right:auto;">
+    <span class="pill"><span class="dot g"></span><span data-key="w-p1">Log from your wrist</span></span>
+    <span class="pill"><span class="dot"></span><span data-key="w-p2">Daily progress &amp; streak</span></span>
+    <span class="pill"><span class="dot o"></span><span data-key="w-p3">Complications</span></span>
+    <span class="pill"><span class="dot p"></span><span data-key="w-p4">Sync with iPhone</span></span>
+  </div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ HEATMAP KALENDER ═══════════════ -->
+<div class="bg-radial-blue">
+<div class="section">
+  <div class="feat-row wrap">
+    <div class="feat-text">
+      <div class="label" data-key="s1-label">Calendar · Heatmap</div>
+      <h2 class="title" data-key="s1-h2">Every Day<br><span class="dim">Counts.</span></h2>
+      <p class="body-text" data-key="s1-body">The heatmap shows at a glance how active you were — the more intense the workout, the deeper the color. Active days glow, rest days are visible. Always keep your rhythm in view.</p>
+      <div class="pills">
+        <span class="pill"><span class="dot"></span><span data-key="s1-p1">Heatmap by intensity</span></span>
+        <span class="pill"><span class="dot o"></span><span data-key="s1-p2">Streak display</span></span>
+        <span class="pill"><span class="dot g"></span><span data-key="s1-p3">Weekly goal tracking</span></span>
+        <span class="pill"><span class="dot"></span><span data-key="s1-p4">Month and Year</span></span>
+      </div>
+    </div>
+    <div style="display:flex; justify-content:center;">
+      <div class="phone lg">
+        <div class="phone-screen"><img src="../screenshots/home_blue_galaxy.png" alt="Streak heatmap calendar with active days ring, Apple Health and weekly goals, blue"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ ACHIEVEMENT / ZIEL ERREICHT ═══════════════ -->
+<div class="bg-radial-orange">
+<div class="section">
+  <div class="feat-row rev wrap">
+    <div class="feat-text">
+      <div class="label orange" data-key="s2-label">Goals · Streak · Record</div>
+      <h2 class="title" data-key="s2-h2">Stay on<br><span class="dim">Track.</span></h2>
+      <p class="body-text" data-key="s2-body">The week ring shows every day of the week as a segment — a workout fills it. Weekly goal reached, week streak, record: Streak shows it right away. These small moments keep you motivated to keep going day after day.</p>
+      <div class="pills">
+        <span class="pill"><span class="dot o"></span><span data-key="s2-p1">Week ring with day initials</span></span>
+        <span class="pill"><span class="dot o"></span><span data-key="s2-p2">Day and week streak</span></span>
+        <span class="pill"><span class="dot g"></span><span data-key="s2-p3">New Record Badge</span></span>
+        <span class="pill"><span class="dot o"></span><span data-key="s2-p4">Motivation text on/off</span></span>
+      </div>
+    </div>
+    <div style="display:flex; justify-content:center;">
+      <div class="phone lg">
+        <div class="phone-screen"><img src="../screenshots/home_coral_dark.png" alt="Streak home screen: weekly goal reached, streak and active days with coral accent"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ ACTIVITY EDITOR ═══════════════ -->
+<div class="bg-radial-blue">
+<div class="section">
+  <div class="feat-row wrap">
+    <div class="feat-text">
+      <div class="label" data-key="s3-label">Training · Log</div>
+      <h2 class="title" data-key="s3-h2">Logged<br><span class="dim">in seconds.</span></h2>
+      <p class="body-text" data-key="s3-body">Sport, focus, duration and intensity — all in one sheet, with just a few taps. No long forms. Streak keeps logging as fast as the workout itself. Add custom sports and categories anytime.</p>
+      <div class="pills">
+        <span class="pill"><span class="dot"></span><span data-key="s3-p1">13+ Sports</span></span>
+        <span class="pill"><span class="dot r"></span><span data-key="s3-p2">Intensity levels</span></span>
+        <span class="pill"><span class="dot"></span><span data-key="s3-p3">Focus categories</span></span>
+        <span class="pill"><span class="dot g"></span><span data-key="s3-p4">Duration &amp; Notes</span></span>
+        <span class="pill"><span class="dot p"></span><span data-key="s3-p5">Custom sports</span></span>
+      </div>
+    </div>
+    <div style="display:flex; justify-content:center;">
+      <div class="phone lg">
+        <div class="phone-screen"><img src="../screenshots/entry_new.png" alt="Streak new entry: pick a sport, logged in seconds"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ KRAFT-LOGGING ═══════════════ -->
+<div class="bg-radial-rose">
+<div class="section">
+  <div class="feat-row rev wrap">
+    <div class="feat-text">
+      <div class="label rose" data-key="st-label">Strength · Logging</div>
+      <h2 class="title" data-key="st-h2">Sets. Reps.<br><span class="dim">Weight.</span></h2>
+      <p class="body-text" data-key="st-body">Log every exercise with sets, reps and weight. Streak calculates your volume and remembers your all-time records — all in the same fast logging sheet, no detours.</p>
+      <div class="pills">
+        <span class="pill"><span class="dot r"></span><span data-key="st-p1">Sets &amp; reps</span></span>
+        <span class="pill"><span class="dot o"></span><span data-key="st-p2">Weight &amp; volume</span></span>
+        <span class="pill"><span class="dot g"></span><span data-key="st-p3">All-time records</span></span>
+        <span class="pill"><span class="dot"></span><span data-key="st-p4">Per exercise</span></span>
+        <span class="pill"><span class="dot p"></span><span data-key="st-p5">Right in the calendar</span></span>
+      </div>
+    </div>
+    <div style="display:flex; justify-content:center;">
+      <div class="phone lg">
+        <div class="phone-screen"><img src="../screenshots/strength_sheet_dark.png" alt="Streak strength logging: exercises with sets, reps and weight"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ STATISTIKEN ═══════════════ -->
+<div class="bg-dark-subtle">
+<div class="section" style="text-align:center;">
+  <div class="wrap" style="text-align:center; max-width:720px;">
+    <div class="label" style="display:block;" data-key="s4-label">Statistics · Overview</div>
+    <h2 class="title" style="text-align:center;" data-key="s4-h2">Your Progress,<br><span class="dim">at a Glance.</span></h2>
+    <p class="body-text" style="margin:0 auto; text-align:center; max-width:500px;" data-key="s4-body">All workouts, this week, month or full year — Streak shows charts, monthly heatmaps, volume and average heart rate per sport, and personal insights. Everything clear, all in one app.</p>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-card"><div class="stat-num">30s</div><div class="stat-lbl" data-key="s4-lbl1">Log a workout</div></div>
+    <div class="stat-card"><div class="stat-num">4</div><div class="stat-lbl" data-key="s4-lbl2">Views: Week, Month, Year, All</div></div>
+    <div class="stat-card"><div class="stat-num orange">1×</div><div class="stat-lbl" data-key="s4-lbl3">One-time purchase · No subscription</div></div>
+  </div>
+
+  <div class="phone-grid">
+    <div class="phone-col">
+      <div class="phone md"><div class="phone-screen"><img src="../screenshots/all_green_light.png" alt="Streak all-time statistics with training insights"></div></div>
+      <div class="phone-col-label" data-key="s4-col1">All · Streak &amp; Insights</div>
+    </div>
+    <div class="phone-col">
+      <div class="phone md"><div class="phone-screen"><img src="../screenshots/all_orange_dark.png" alt="Streak all-time statistics in Dark Mode"></div></div>
+      <div class="phone-col-label" data-key="s4-col2">All · Dark</div>
+    </div>
+    <div class="phone-col">
+      <div class="phone md"><div class="phone-screen"><img src="../screenshots/year_gold_dark.png" alt="Streak year overview with a full heatmap"></div></div>
+      <div class="phone-col-label" data-key="s4-col3">Year · Overview</div>
+    </div>
+    <div class="phone-col">
+      <div class="phone md"><div class="phone-screen"><img src="../screenshots/month_pink_dark.png" alt="Streak monthly heatmap"></div></div>
+      <div class="phone-col-label" data-key="s4-col4">Month · Heatmap</div>
+    </div>
+    <div class="phone-col">
+      <div class="phone md"><div class="phone-screen"><img src="../screenshots/week_blue_light.png" alt="Streak weekly overview with sports and focus"></div></div>
+      <div class="phone-col-label" data-key="s4-col5">Week · Overview</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ HELL & DUNKEL ═══════════════ -->
+<div class="bg-dark-subtle">
+<div class="section" style="text-align:center;">
+  <div class="wrap" style="text-align:center; max-width:660px;">
+    <div class="label" style="display:block;" data-key="s5-label">Appearance · Themes</div>
+    <h2 class="title" style="text-align:center;" data-key="s5-h2">Light. Dark.<br><span class="dim">Your Choice.</span></h2>
+    <p class="body-text" style="margin:0 auto; text-align:center;" data-key="s5-body">Bright daylight or deep dark night mode — Streak follows the system automatically or can be fixed manually. On all devices, at any time of day.</p>
+  </div>
+  <div class="phone-grid" style="margin-top:48px;">
+    <div class="phone-col">
+      <div class="phone md"><div class="phone-screen"><img src="../screenshots/home_blue_light.png" alt="Streak home screen in Light Mode"></div></div>
+      <div class="phone-col-label">Light</div>
+    </div>
+    <div class="phone-col">
+      <div class="phone md"><div class="phone-screen"><img src="../screenshots/home_green.png" alt="Streak home screen in Dark Mode"></div></div>
+      <div class="phone-col-label">Dark</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ DUNKEL — ELEGANZ (Orange + Rose) ═══════════════ -->
+<div class="bg-dark-subtle">
+<div class="section" style="text-align:center;">
+  <div class="wrap" style="text-align:center; max-width:660px;">
+    <div class="label orange" style="display:block;" data-key="s6-label">Dark Mode · Accent Colors</div>
+    <h2 class="title" style="text-align:center;" data-key="s6-h2">Dark Makes<br><span class="dim">the Difference.</span></h2>
+    <p class="body-text" style="margin:0 auto; text-align:center;" data-key="s6-body">In Dark Mode, the accent colors reveal their full elegance. Warm Orange or glowing Rose — both look especially refined in the dark. Choose the style that suits you.</p>
+  </div>
+  <div class="phone-grid" style="margin-top:48px;">
+    <div class="phone-col">
+      <div class="phone md"><div class="phone-screen"><img src="../screenshots/home_sunset_dark.png" alt="Sunset Dark"></div></div>
+      <div class="phone-col-label">Sunset · Dark</div>
+    </div>
+    <div class="phone-col">
+      <div class="phone md"><div class="phone-screen"><img src="../screenshots/home_rose_dark.png" alt="Rose Dark"></div></div>
+      <div class="phone-col-label">Rose · Dark</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ 7 FARBEN ═══════════════ -->
+<div class="bg-radial-blue">
+<div class="section" style="text-align:center;">
+  <div class="wrap" style="text-align:center; max-width:660px;">
+    <div class="label" style="display:block;" data-key="s7-label">Personalization · Color Picker</div>
+    <h2 class="title" style="text-align:center;" data-key="s7-h2">Any Color.<br><span class="dim">Your Style.</span></h2>
+    <p class="body-text" style="margin:0 auto; text-align:center;" data-key="s7-body">Pick any accent color with the color picker — or one of the ready-made themes. Your choice applies everywhere: in the app, your widgets and on Apple Watch. <strong style="color:rgba(255,255,255,0.9);">With Streak Pro.</strong></p>
+    <div class="spectrum" aria-hidden="true"></div>
+  </div>
+  <div style="display:flex; justify-content:center; margin-top:46px;">
+    <div class="phone lg">
+      <div class="phone-screen"><img src="../screenshots/colorpicker_real.png" alt="Streak color picker: any accent color via grid, spectrum or sliders"></div>
+    </div>
+  </div>
+  <div class="theme-row">
+    <div class="theme-card"><div class="phone sm"><div class="phone-screen"><img src="../screenshots/home_glacierblue_dark.png" alt="Streak with Glacier Blue accent"></div></div><div class="theme-label">Glacier Blue</div></div>
+    <div class="theme-card"><div class="phone sm"><div class="phone-screen"><img src="../screenshots/home_sunset_dark.png" alt="Streak with Sunset accent"></div></div><div class="theme-label">Sunset</div></div>
+    <div class="theme-card"><div class="phone sm"><div class="phone-screen"><img src="../screenshots/home_forest_dark.png" alt="Streak with Forest accent"></div></div><div class="theme-label">Forest</div></div>
+    <div class="theme-card"><div class="phone sm"><div class="phone-screen"><img src="../screenshots/home_rose_dark.png" alt="Streak with Rose accent"></div></div><div class="theme-label">Rose</div></div>
+    <div class="theme-card"><div class="phone sm"><div class="phone-screen"><img src="../screenshots/home_mint_light.png" alt="Streak with Mint accent in Light Mode"></div></div><div class="theme-label">Mint · Light</div></div>
+  </div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ ZWEI MODI ═══════════════ -->
+<div class="bg-radial-blue">
+<div class="section">
+  <div class="wrap" style="text-align:center; max-width:700px;">
+    <div class="label" style="display:block;" data-key="s8m-label">Your Style · Two Modes</div>
+    <h2 class="title" style="text-align:center;" data-key="s8m-h2">As simple<br><span class="dim">as you want it.</span></h2>
+    <p class="body-text" style="margin:0 auto; text-align:center; max-width:520px;" data-key="s8m-body">Streak adapts to your style. If you just want to track, you get a clean calendar — no distractions. If you want to go deeper, enable Insights and see patterns, records, and training analytics.</p>
+  </div>
+  <div style="display:flex; justify-content:center; gap:32px; flex-wrap:wrap; margin-top:48px; align-items:flex-end;">
+    <div style="text-align:center;">
+      <div class="phone md"><div class="phone-screen"><img src="../screenshots/home_pink.png" alt="Streak calendar, tracking only"></div></div>
+      <div class="phone-col-label" style="margin-top:12px;" data-key="s8m-col1">🗓 Track Only</div>
+      <div style="font-size:12px; color:rgba(255,255,255,0.45); margin-top:4px;" data-key="s8m-col1b">Clean, focused, fast</div>
+    </div>
+    <div style="text-align:center;">
+      <div class="phone md"><div class="phone-screen"><img src="../screenshots/all_green_light.png" alt="Streak statistics with insights"></div></div>
+      <div class="phone-col-label" style="margin-top:12px;" data-key="s8m-col2">📊 Track + Insights</div>
+      <div style="font-size:12px; color:rgba(255,255,255,0.45); margin-top:4px;" data-key="s8m-col2b">Patterns, records, analytics</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ CUSTOM BACKGROUND ═══════════════ -->
+<div class="bg-dark-subtle">
+<div class="section">
+  <div class="feat-row rev wrap">
+    <div class="feat-text">
+      <div class="label" data-key="s8-label">Personalization · Background</div>
+      <h2 class="title" data-key="s8-h2">10 Sport Designs.<br><span class="dim">Your Look.</span></h2>
+      <p class="body-text" data-key="s8-body">Choose from 10 sport-specific background images or upload your own photo. Cards overlay as a Liquid Glass effect — soft, translucent. Clear glass, blur and dark overlay are freely adjustable.</p>
+      <div class="pills">
+        <span class="pill"><span class="dot"></span><span data-key="s8-p1">10 sport background images</span></span>
+        <span class="pill"><span class="dot p"></span><span data-key="s8-p2">Liquid Glass · Clear glass mode</span></span>
+        <span class="pill"><span class="dot g"></span><span data-key="s8-p3">Blur &amp; overlay adjustable</span></span>
+        <span class="pill"><span class="dot o"></span><span data-key="s8-p4">Custom photo supported</span></span>
+      </div>
+    </div>
+    <div class="phone-grid" style="margin-top:0; gap:20px;">
+      <div class="phone-col">
+        <div class="phone md"><div class="phone-screen"><img src="../screenshots/home_orange.png" alt="Streak with a photo background and Liquid Glass"></div></div>
+        <div class="phone-col-label" data-key="s8-col1">Photo background</div>
+      </div>
+      <div class="phone-col">
+        <div class="phone md"><div class="phone-screen"><img src="../screenshots/glass_settings_real.png" alt="Streak glass settings: blur, dimming and Clear Glass Cards"></div></div>
+        <div class="phone-col-label" data-key="s8-col2">Adjust the glass</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ EINSTELLUNGEN ═══════════════ -->
+<div class="bg-radial-blue">
+<div class="section">
+  <div class="feat-row wrap">
+    <div class="feat-text">
+      <div class="label" data-key="s9-label">Settings · Goals</div>
+      <h2 class="title" data-key="s9-h2">Everything<br><span class="dim">on Your Terms.</span></h2>
+      <p class="body-text" data-key="s9-body">Your name, your weekly goal (2–7× per week), motivation text on or off, daily reminders. Streak adapts to you — not the other way around. No forced features, no distractions.</p>
+      <div class="pills">
+        <span class="pill"><span class="dot"></span><span data-key="s9-p1">Weekly goal 2–7×</span></span>
+        <span class="pill"><span class="dot g"></span><span data-key="s9-p2">Motivation text</span></span>
+        <span class="pill"><span class="dot o"></span><span data-key="s9-p3">Daily reminder</span></span>
+        <span class="pill"><span class="dot r"></span><span data-key="s9-p4">No login required</span></span>
+      </div>
+    </div>
+    <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
+      <div class="phone md"><div class="phone-screen"><img src="../screenshots/settings_top_dark.png" alt="Streak settings: name, weekly goal, motivation and theme"></div></div>
+      <div class="phone md"><div class="phone-screen"><img src="../screenshots/settings_reminders_real.png" alt="Streak settings: reminders and Apple Health"></div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ HEALTH & DATEN ═══════════════ -->
+<div class="bg-dark-subtle">
+<div class="section">
+  <div class="feat-row rev wrap">
+    <div class="feat-text">
+      <div class="label green" data-key="s10-label">Apple Health · Data</div>
+      <h2 class="title" data-key="s10-h2">Connected to<br><span class="dim">Apple Health.</span></h2>
+      <p class="body-text" data-key="s10-body">Workouts from Apple Health and Apple Watch land in the day list on their own — with duration, energy and average heart rate. With Streak Pro you see the heart-rate curve and zones of every workout. Export your data as CSV or JSON, create backups and restore them. Your data stays with you: on your device or in your private iCloud.</p>
+      <div class="pills">
+        <span class="pill"><span class="dot g"></span><span data-key="s10-p1">Duration, energy &amp; avg heart rate</span></span>
+        <span class="pill"><span class="dot"></span><span data-key="s10-p2">iCloud Sync</span></span>
+        <span class="pill"><span class="dot"></span><span data-key="s10-p3">CSV &amp; JSON Export</span></span>
+        <span class="pill"><span class="dot o"></span><span data-key="s10-p4">Backup &amp; Restore</span></span>
+        <span class="pill"><span class="dot g"></span><span data-key="s10-p5">No workout data on our servers</span></span>
+      </div>
+    </div>
+    <div style="display:flex; justify-content:center;">
+      <div class="phone md"><div class="phone-screen"><img src="../screenshots/workout_detail.png" alt="Streak workout detail: Apple Watch heart-rate curve, zones, energy and duration"></div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ CTA ═══════════════ -->
+<section class="cta-section">
+  <h2 class="cta-h" data-key="cta-h">Ready to train<br><span style="background:linear-gradient(135deg,var(--blue),var(--blue-light)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">more consistently?</span></h2>
+  <p class="cta-sub" data-key="cta-sub">Try Streak Pro free for 7 days — then keep logging and your streak for free, unlock the whole app once with Pro. No subscription, no login, no ads.</p>
+  <a href="https://apps.apple.com/app/id6762292658" class="btn" style="font-size:18px; padding:20px 52px;" data-key="cta-btn">Start Free for 7 Days</a>
+  <div style="display:flex; justify-content:center; gap:28px; margin-top:28px; flex-wrap:wrap;">
+    <span style="font-size:13px; color:rgba(255,255,255,0.72);" data-key="cta-c1">✓ 7 days free trial</span>
+    <span style="font-size:13px; color:rgba(255,255,255,0.72);" data-key="cta-c2">✓ Streak Pro one-time purchase</span>
+    <span style="font-size:13px; color:rgba(255,255,255,0.72);" data-key="cta-c3">✓ iOS 18+ · iPhone</span>
+    <span style="font-size:13px; color:rgba(255,255,255,0.72);" data-key="cta-c4">✓ No ads</span>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer style="padding:60px 24px 48px; border-top:1px solid rgba(255,255,255,0.06); background:rgba(0,0,0,0.30);">
+  <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:40px; align-items:start;">
+
+    <div>
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+        <img src="../icon.png" alt="Streak" class="app-icon-footer">
+        <strong style="font-size:18px; letter-spacing:-0.01em; color:#fff;">Streak</strong>
+      </div>
+      <p style="font-size:13px; color:rgba(255,255,255,0.55); line-height:1.6; max-width:280px;" data-key="footer-about">Workout calendar with heatmap, Apple Watch app and strength logging. Made in Switzerland.</p>
+    </div>
+
+    <div>
+      <h4 style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.50); margin-bottom:16px;" data-key="footer-product">Product</h4>
+      <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;">
+        <li><a href="https://apps.apple.com/app/id6762292658" style="font-size:14px; color:rgba(255,255,255,0.78); text-decoration:none;" data-key="footer-download">Download on the App Store</a></li>
+        <li><a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="font-size:14px; color:rgba(255,255,255,0.78); text-decoration:none;" data-key="footer-features">Features</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.50); margin-bottom:16px;" data-key="footer-support-h">Support</h4>
+      <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;">
+        <li><a href="https://streak.tekneio.com/support.html" style="font-size:14px; color:rgba(255,255,255,0.78); text-decoration:none;" data-key="footer-help">Help &amp; FAQ</a></li>
+        <li><a href="mailto:hello@tekneio.com" style="font-size:14px; color:rgba(255,255,255,0.78); text-decoration:none;">hello@tekneio.com</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.50); margin-bottom:16px;" data-key="footer-legal-h">Legal</h4>
+      <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;">
+        <li><a href="https://streak.tekneio.com/privacy.html" style="font-size:14px; color:rgba(255,255,255,0.78); text-decoration:none;" data-key="footer-privacy">Privacy Policy</a></li>
+        <li><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" style="font-size:14px; color:rgba(255,255,255,0.78); text-decoration:none;" data-key="footer-terms">License Terms</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div style="max-width:1100px; margin:48px auto 0; padding-top:28px; border-top:1px solid rgba(255,255,255,0.06); display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap;">
+    <p style="font-size:12px; color:rgba(255,255,255,0.40); margin:0;" data-key="footer-copyright">© 2026 A. Panagou · TEKNEIO®. Streak. All rights reserved.</p>
+    <p style="font-size:12px; color:rgba(255,255,255,0.40); margin:0;" data-key="footer-version">iOS 18+ · iPhone · Apple Watch · Apple Health</p>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     APP STORE SLIDES (390×844 — screenshot each)
+═══════════════════════════════════════════ -->
+<div class="slide-section">
+  <div class="slide-section-title">App Store Slides — Screenshot each at 390×844 px</div>
+  <div class="slide-grid">
+
+    <!-- Slide 1: Calendar Light -->
+    <div class="slide slide-bg-blue">
+      <div class="slide-text">
+        <div class="slide-tag" data-key="sl1-tag">Calendar</div>
+        <div class="slide-h" data-key="sl1-h">Every Day<br>Counts.</div>
+        <div class="slide-sub" data-key="sl1-sub">The heatmap makes your progress visible every day.</div>
+      </div>
+      <div class="slide-phones">
+        <div class="sphone ghost l"><div class="di"></div><div class="screen"><img src="../screenshots/ss_07_calendar_boxing_coral_dark.png"></div></div>
+        <div class="sphone main"><div class="di"></div><div class="screen"><img src="../screenshots/ss_08_calendar_tennis_mint_light.png"></div></div>
+      </div>
+    </div>
+
+    <!-- Slide 2: Activity Editor -->
+    <div class="slide slide-bg-light">
+      <div class="slide-text">
+        <div class="slide-tag" data-key="sl2-tag">Workout</div>
+        <div class="slide-h" data-key="sl2-h">Logged<br>in seconds.</div>
+        <div class="slide-sub" data-key="sl2-sub">Sport, focus, duration and intensity with a few taps.</div>
+      </div>
+      <div class="slide-phones">
+        <div class="sphone main"><div class="di"></div><div class="screen"><img src="../screenshots/ss_10_editor_football_emerald_light.png"></div></div>
+      </div>
+    </div>
+
+    <!-- Slide 3: Achievement Sunset Dark -->
+    <div class="slide slide-bg-orange">
+      <div class="slide-text">
+        <div class="slide-tag" data-key="sl3-tag">Goals · Streak</div>
+        <div class="slide-h" data-key="sl3-h">Goal reached.<br>Record!</div>
+        <div class="slide-sub" data-key="sl3-sub">Streaks, weekly goals and new record badges keep you motivated.</div>
+      </div>
+      <div class="slide-phones">
+        <div class="sphone main"><div class="di"></div><div class="screen"><img src="../screenshots/ss_06_stats_all_strength_midnight_dark.png"></div></div>
+      </div>
+    </div>
+
+    <!-- Slide 4: Stats Year -->
+    <div class="slide slide-bg-stats">
+      <div class="slide-text">
+        <div class="slide-tag" data-key="sl4-tag">Statistics</div>
+        <div class="slide-h" data-key="sl4-h">Your Year,<br>at a Glance.</div>
+        <div class="slide-sub" data-key="sl4-sub">Week, month, year — heatmap and top sports always in view.</div>
+      </div>
+      <div class="slide-phones">
+        <div class="sphone ghost l"><div class="di"></div><div class="screen"><img src="../screenshots/ss_06_stats_all_strength_midnight_dark.png"></div></div>
+        <div class="sphone main"><div class="di"></div><div class="screen"><img src="../screenshots/ss_05_stats_year_running_sunset_light.png"></div></div>
+      </div>
+    </div>
+
+    <!-- Slide 5: Custom Background -->
+    <div class="slide slide-bg-purple">
+      <div class="slide-text">
+        <div class="slide-tag" data-key="sl5-tag">Personalization</div>
+        <div class="slide-h" data-key="sl5-h">Liquid Glass<br>Meets Your Photo.</div>
+        <div class="slide-sub" data-key="sl5-sub">Custom background with Glass effect — like in Apple Maps.</div>
+      </div>
+      <div class="slide-phones">
+        <div class="sphone ghost l"><div class="di"></div><div class="screen"><img src="../screenshots/ss_08_calendar_tennis_mint_light.png"></div></div>
+        <div class="sphone main"><div class="di"></div><div class="screen"><img src="../screenshots/ss_07_calendar_boxing_coral_dark.png"></div></div>
+      </div>
+    </div>
+
+    <!-- Slide 6: Health & Data -->
+    <div class="slide slide-bg-health">
+      <div class="slide-text">
+        <div class="slide-tag" data-key="sl6-tag">Health · Data</div>
+        <div class="slide-h" data-key="sl6-h">Connected<br>to Health.</div>
+        <div class="slide-sub" data-key="sl6-sub">Apple Health Import, iCloud Sync, CSV &amp; JSON Export.</div>
+      </div>
+      <div class="slide-phones">
+        <div class="sphone ghost r"><div class="di"></div><div class="screen"><img src="../screenshots/settings_top_dark.png"></div></div>
+        <div class="sphone main"><div class="di"></div><div class="screen"><img src="../screenshots/settings_bottom_dark.png"></div></div>
+      </div>
+    </div>
+
+    <!-- Slide 7: Dark Eleganz Orange -->
+    <div class="slide slide-bg-orange">
+      <div class="slide-text">
+        <div class="slide-tag" data-key="sl7-tag">Dark Mode</div>
+        <div class="slide-h" data-key="sl7-h">Dark.<br>Elegant.</div>
+        <div class="slide-sub" data-key="sl7-sub">Automatic or manual — light, dark, or your own photo.</div>
+      </div>
+      <div class="slide-phones">
+        <div class="sphone ghost l"><div class="di"></div><div class="screen"><img src="../screenshots/home_rose_dark.png"></div></div>
+        <div class="sphone main"><div class="di"></div><div class="screen"><img src="../screenshots/home_sunset_dark.png"></div></div>
+      </div>
+    </div>
+
+    <!-- Slide 8: Color Themes -->
+    <div class="slide slide-bg-blue">
+      <div class="slide-text">
+        <div class="slide-tag" data-key="sl8-tag">Color Picker</div>
+        <div class="slide-h" data-key="sl8-h">Any Color.<br>Your Style.</div>
+        <div class="slide-sub" data-key="sl8-sub">Pick any accent color with the color picker — change anytime.</div>
+      </div>
+      <div class="slide-phones">
+        <div class="sphone ghost l"><div class="di"></div><div class="screen"><img src="../screenshots/home_rose_dark.png"></div></div>
+        <div class="sphone main"><div class="di"></div><div class="screen"><img src="../screenshots/home_glacierblue_dark.png"></div></div>
+        <div class="sphone ghost r"><div class="di"></div><div class="screen"><img src="../screenshots/home_mint_light.png"></div></div>
+      </div>
+    </div>
+
+    <!-- Slide 9: Stats Month Dark -->
+    <div class="slide slide-bg-dark">
+      <div class="slide-text">
+        <div class="slide-tag" data-key="sl9-tag">Monthly View</div>
+        <div class="slide-h" data-key="sl9-h">22 Workouts<br>in April.</div>
+        <div class="slide-sub" data-key="sl9-sub">Monthly heatmap, sport ranking and focus areas at a glance.</div>
+      </div>
+      <div class="slide-phones">
+        <div class="sphone ghost r"><div class="di"></div><div class="screen"><img src="../screenshots/ss_04_stats_month_hiking_forest_light.png"></div></div>
+        <div class="sphone main"><div class="di"></div><div class="screen"><img src="../screenshots/ss_03_stats_month_yoga_rose_dark.png"></div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  // Premium fade-in on scroll
+  const sections = document.querySelectorAll('.section, .cta-section, footer, .feat-row, .stat-grid, .phone-grid, .theme-row');
+  sections.forEach(s => s.classList.add('reveal'));
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -80px 0px', threshold: 0.05 });
+    sections.forEach(s => io.observe(s));
+  } else {
+    sections.forEach(s => s.classList.add('in'));
+  }
+});
+</script>
+
+</body>
+</html>
