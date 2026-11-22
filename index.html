@@ -53,18 +53,21 @@
   "description": "Workout-Tracker mit Heatmap-Kalender, Wochenring, Apple Watch und Apple Health (Dauer, Energie, Puls in der Tagesliste), Kraft-Logging und Statistiken. Kein Abo, kein Login, kein Tracking. Einmaliger Pro-Kauf.",
   "image": "https://streak.tekneio.com/icon.png",
   "screenshot": "https://streak.tekneio.com/_render_premium/en_slide-1.png",
-  "softwareVersion": "2.3.1",
+  "softwareVersion": "2.4.0",
   "featureList": [
     "Heatmap-Kalender",
     "Wochenring und Wochenziel mit Serie",
+    "Wochenziel in Trainingstagen oder Trainings, mit Wochen-Joker und Pause",
+    "Schnell eintragen mit einem Antippen",
     "Apple Watch App mit Complications",
     "Kraft-Logging: Sätze, Wiederholungen, Gewicht, Volumen, Allzeit-Rekorde",
     "Statistiken: Woche, Monat, Jahr, Alle",
+    "Rückblicke für Woche, Monat und Jahr zum Teilen",
     "Apple Health: Trainings mit Energie und Puls, Schlaf, Ruhepuls, Schritte",
     "Zwei Spalten auf dem aufgeklappten iPhone Duo",
     "Eigene Akzentfarbe (Farbwähler)",
     "Home- und Lock-Screen Widgets",
-    "iCloud Sync, CSV- und JSON-Export"
+    "iCloud Sync, CSV-Export und vollständiges JSON-Backup"
   ],
   "url": "https://streak.tekneio.com/",
   "downloadUrl": "https://apps.apple.com/app/id6762292658",
@@ -670,7 +673,7 @@
   <div class="wrap" style="text-align:center; max-width:680px;">
     <div class="label green" style="display:block;" data-key="w-label">Apple Watch · Am Handgelenk</div>
     <h2 class="title" style="text-align:center;" data-key="w-h2">Auch an<br><span class="dim">deinem Handgelenk.</span></h2>
-    <p class="body-text" style="margin:0 auto; text-align:center; max-width:500px;" data-key="w-body">Logge dein Training und sieh Tagesfortschritt, Wochenziel und Streak direkt auf der Apple Watch. Ø Puls und Energie der Einheit landen automatisch im Eintrag. Mit Complications fürs Zifferblatt — ein Tipp genügt.</p>
+    <p class="body-text" style="margin:0 auto; text-align:center; max-width:500px;" data-key="w-body">Logge dein Training und sieh Tagesfortschritt, Wochenziel und Streak direkt auf der Apple Watch. Trainierst du mehrmals am Tag, zeigt die Wochenseite jedes Training. Ø Puls und Energie der Einheit landen automatisch im Eintrag. Mit Complications fürs Zifferblatt.</p>
   </div>
   <div class="watch-row">
     <div class="watch-card">
@@ -731,12 +734,14 @@
     <div class="feat-text">
       <div class="label orange" data-key="s2-label">Ziele · Streak · Rekord</div>
       <h2 class="title" data-key="s2-h2">Bleib am<br><span class="dim">Ball.</span></h2>
-      <p class="body-text" data-key="s2-body">Der Wochenring zeigt jeden Tag der Woche als Segment — ein Workout füllt es. Wochenziel erreicht, Wochen-Serie, Rekord: Streak zeigt es dir sofort. Diese kleinen Momente halten dich motiviert, Tag für Tag weiterzumachen.</p>
+      <p class="body-text" data-key="s2-body">Der Wochenring zeigt jeden Tag der Woche als Segment. Trainierst du zweimal am Tag, teilt sich das Segment, und neben dem Ring steht zum Beispiel «4 Tage · 6 Trainings». Wochenziel erreicht, Wochenserie, Rekord: Streak zeigt es dir sofort. Eine Woche unter dem Ziel bricht deine Wochenserie nicht, dafür gibt es den Joker. Bist du krank oder in den Ferien, legst du eine Pause ein.</p>
       <div class="pills">
-        <span class="pill"><span class="dot o"></span><span data-key="s2-p1">Wochenring mit Tagesbuchstaben</span></span>
+        <span class="pill"><span class="dot o"></span><span data-key="s2-p1">Wochenring mit Tagen und Trainings</span></span>
         <span class="pill"><span class="dot o"></span><span data-key="s2-p2">Tages- und Wochen-Serie</span></span>
         <span class="pill"><span class="dot g"></span><span data-key="s2-p3">Neuer-Rekord-Badge</span></span>
         <span class="pill"><span class="dot o"></span><span data-key="s2-p4">Motivationstext ein/aus</span></span>
+        <span class="pill"><span class="dot g"></span><span data-key="s2-p5">Wochen-Joker</span></span>
+        <span class="pill"><span class="dot o"></span><span data-key="s2-p6">Pause bei Krankheit oder Ferien</span></span>
       </div>
     </div>
     <div style="display:flex; justify-content:center;">
@@ -757,13 +762,14 @@
     <div class="feat-text">
       <div class="label" data-key="s3-label">Training · Erfassen</div>
       <h2 class="title" data-key="s3-h2">Eintragen<br><span class="dim">in Sekunden.</span></h2>
-      <p class="body-text" data-key="s3-body">Sport, Fokus, Dauer und Intensität — alles in einem Sheet, mit wenigen Taps. Kein langer Formular-Stress. Streak hält die Eingabe so schnell wie das Training selbst. Eigene Sportarten und Kategorien kannst du jederzeit hinzufügen.</p>
+      <p class="body-text" data-key="s3-body">Tippe auf Plus und wähle dein letztes Training oder eine deiner üblichen Sportarten. Einmal antippen speichert, danach kannst du widerrufen oder Details ergänzen. Für alles andere hast du den Editor mit Sport, Fokus, Dauer und Intensität. Eigene Sportarten und Kategorien kannst du jederzeit hinzufügen.</p>
       <div class="pills">
-        <span class="pill"><span class="dot"></span><span data-key="s3-p1">13+ Sportarten</span></span>
+        <span class="pill"><span class="dot"></span><span data-key="s3-p1">14 Sportarten, neu Crosstrainer</span></span>
         <span class="pill"><span class="dot r"></span><span data-key="s3-p2">Intensitätsstufen</span></span>
         <span class="pill"><span class="dot"></span><span data-key="s3-p3">Fokus-Kategorien</span></span>
         <span class="pill"><span class="dot g"></span><span data-key="s3-p4">Dauer &amp; Notizen</span></span>
         <span class="pill"><span class="dot p"></span><span data-key="s3-p5">Eigene Sportarten</span></span>
+        <span class="pill"><span class="dot o"></span><span data-key="s3-p6">Mit einem Antippen eintragen</span></span>
       </div>
     </div>
     <div style="display:flex; justify-content:center;">
@@ -810,7 +816,7 @@
   <div class="wrap" style="text-align:center; max-width:720px;">
     <div class="label" style="display:block;" data-key="s4-label">Statistiken · Übersicht</div>
     <h2 class="title" style="text-align:center;" data-key="s4-h2">Dein Fortschritt,<br><span class="dim">auf einen Blick.</span></h2>
-    <p class="body-text" style="margin:0 auto; text-align:center; max-width:500px;" data-key="s4-body">Alle Trainings, diese Woche, Monat oder ganzes Jahr. Streak zeigt dir Charts, Monats-Heatmaps, Umfang, Ø Puls und Ø kcal je Sportart und persönliche Insights, etwa deine Trainingsminuten pro Woche neben der WHO-Empfehlung von 150 Minuten.</p>
+    <p class="body-text" style="margin:0 auto; text-align:center; max-width:500px;" data-key="s4-body">Alle Trainings, diese Woche, Monat oder ganzes Jahr. Streak zeigt dir Charts, Monats-Heatmaps, Umfang, Ø Puls und Ø kcal je Sportart und persönliche Insights, etwa deine Trainingsminuten pro Woche neben der WHO-Empfehlung von 150 Minuten. Woche, Monat und Jahr gibt es als Rückblick zum Teilen, im Story-Format.</p>
   </div>
 
   <div class="stat-grid">
@@ -981,12 +987,13 @@
     <div class="feat-text">
       <div class="label" data-key="s9-label">Einstellungen · Ziele</div>
       <h2 class="title" data-key="s9-h2">Alles nach<br><span class="dim">deinen Regeln.</span></h2>
-      <p class="body-text" data-key="s9-body">Dein Name, dein Wochenziel (2–7× pro Woche), Motivationstext ein oder aus, tägliche Erinnerungen. Streak passt sich an — nicht andersherum. Keine erzwungenen Features, keine Ablenkungen.</p>
+      <p class="body-text" data-key="s9-body">Dein Name, dein Wochenziel in Trainingstagen (2 bis 7) oder in Trainings (2 bis 14), Motivationstext ein oder aus. Die Erinnerung kommt täglich oder nur, wenn dein Wochenziel knapp wird. Bist du krank oder in den Ferien, legst du eine Pause ein, und deine Serie bleibt erhalten.</p>
       <div class="pills">
-        <span class="pill"><span class="dot"></span><span data-key="s9-p1">Wochenziel 2–7×</span></span>
+        <span class="pill"><span class="dot"></span><span data-key="s9-p1">Ziel in Tagen oder Trainings</span></span>
         <span class="pill"><span class="dot g"></span><span data-key="s9-p2">Motivationstext</span></span>
-        <span class="pill"><span class="dot o"></span><span data-key="s9-p3">Tägliche Erinnerung</span></span>
+        <span class="pill"><span class="dot o"></span><span data-key="s9-p3">Erinnerung bei knappem Ziel</span></span>
         <span class="pill"><span class="dot r"></span><span data-key="s9-p4">Kein Login nötig</span></span>
+        <span class="pill"><span class="dot p"></span><span data-key="s9-p5">Pause bis 90 Tage</span></span>
       </div>
     </div>
     <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
@@ -1006,12 +1013,12 @@
     <div class="feat-text">
       <div class="label green" data-key="s10-label">Apple Health · Daten</div>
       <h2 class="title" data-key="s10-h2">Verbunden mit<br><span class="dim">Apple Health.</span></h2>
-      <p class="body-text" data-key="s10-body">Workouts aus Apple Health und von der Apple Watch landen von selbst in der Tagesliste, mit Dauer, Energie und Ø Puls. Mit Streak Pro siehst du zu jeder Einheit die Pulskurve und die Zonen und an Tagen ohne Training deine Schritte. Exportiere deine Daten als CSV oder JSON, erstelle Backups und stelle sie wieder her. Deine Daten bleiben bei dir: auf dem Gerät oder in deiner privaten iCloud.</p>
+      <p class="body-text" data-key="s10-body">Workouts aus Apple Health und von der Apple Watch landen von selbst in der Tagesliste, mit Dauer, Energie und Ø Puls. Mit Streak Pro siehst du zu jeder Einheit die Pulskurve und die Zonen und an Tagen ohne Training deine Schritte. Exportiere deine Daten als CSV oder sichere sie als JSON-Backup, mit Uhrzeit, Übungen, Energie und Puls. Beim Zusammenführen entstehen keine Doppelten. Deine Daten bleiben bei dir: auf dem Gerät oder in deiner privaten iCloud.</p>
       <div class="pills">
         <span class="pill"><span class="dot g"></span><span data-key="s10-p1">Dauer, Energie &amp; Ø Puls</span></span>
         <span class="pill"><span class="dot"></span><span data-key="s10-p2">iCloud Sync</span></span>
         <span class="pill"><span class="dot"></span><span data-key="s10-p3">CSV &amp; JSON Export</span></span>
-        <span class="pill"><span class="dot o"></span><span data-key="s10-p4">Backup &amp; Restore</span></span>
+        <span class="pill"><span class="dot o"></span><span data-key="s10-p4">Vollständiges Backup</span></span>
         <span class="pill"><span class="dot g"></span><span data-key="s10-p5">Keine Trainingsdaten auf unseren Servern</span></span>
       </div>
     </div>

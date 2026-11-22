@@ -168,7 +168,7 @@
     </div>
 
     <div class="meta">
-      Last updated: November 22, 2026 (v8) &nbsp;&middot;&nbsp;
+      Last updated: November 22, 2026 (v9) &nbsp;&middot;&nbsp;
       Developer: Anastasios Panagou, Switzerland &nbsp;&middot;&nbsp;
       Platforms: iOS (Android in preparation) &nbsp;&middot;&nbsp;
       <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>
@@ -223,13 +223,13 @@
     <p><em>Streak does not use health data for advertising purposes and does not sell it to third parties or data brokers.</em></p>
 
     <h3>2.3 App Settings &amp; Preferences</h3>
-    <p><strong>What:</strong> Your optional name, optional birth year (only for heart-rate zones), weekly goal, appearance settings, notification preferences, accent color, and custom background selection.</p>
-    <p><strong>Where stored:</strong> Locally on your device only. iOS uses <code>UserDefaults</code>; Android uses Jetpack <code>DataStore</code>. This data is never transmitted or synced by the app to any server.</p>
+    <p><strong>What:</strong> Your optional name, optional birth year (only for heart-rate zones), weekly goal and whether it counts training days or workouts, breaks (dates and reason: illness, injury or time away), appearance settings, reminder time and whether the reminder only comes when your weekly goal gets tight, accent color, and custom background selection.</p>
+    <p><strong>Where stored:</strong> Locally on your device only. iOS uses <code>UserDefaults</code>; Android uses Jetpack <code>DataStore</code>. This data is never transmitted or synced by the app to any server. These settings are not synced via iCloud, not included in backups and not part of the usage statistics. A paired Apple Watch receives your weekly goal and what it counts, the accent color, whether the day context is on, the resulting week progress and streak, and the end date of a running break, but never the reason for a break.</p>
     <p><strong>Legal basis (where GDPR applies):</strong> Performance of a contract (Art.&nbsp;6(1)(b) GDPR).</p>
     <p><strong>Retention:</strong> Until you uninstall the app or reset the settings.</p>
 
     <h3>2.4 Widget Data</h3>
-    <p><strong>What:</strong> Your weekly goal, active days this week and on which days you trained, your current streak, the selected accent colour and whether Streak Pro is active, used for the Home Screen and Lock Screen widgets.</p>
+    <p><strong>What:</strong> Your weekly goal, this week&rsquo;s progress, on which days and how often you trained this week, your current streak, the accent colour and whether Streak Pro is active, used for the Home Screen and Lock Screen widgets.</p>
     <p><strong>Where stored:</strong> Locally on your device. iOS uses an app group shared container between the app and the widget extension; Android uses the same <code>DataStore</code> the main app reads from, accessed by the Glance widget worker. This data is never transmitted.</p>
     <p><strong>Legal basis (where GDPR applies):</strong> Performance of a contract (Art.&nbsp;6(1)(b) GDPR).</p>
 
@@ -244,7 +244,7 @@
     <p>For information about how the platforms process transaction data, see <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple&rsquo;s Privacy Policy</a> and <a href="https://policies.google.com/privacy" target="_blank">Google&rsquo;s Privacy Policy</a>.</p>
 
     <h3>2.6 Local Notifications</h3>
-    <p>Local notifications (for example, daily reminders) are scheduled and delivered entirely by your operating system (iOS or Android). No separate notification server is used and no notification data leaves your device.</p>
+    <p>Local notifications (the reminder, daily or, if you choose, only on days when your weekly goal gets tight) are scheduled and delivered by your operating system. During a break you have entered, the reminder stays off. No notification server is used and no notification data leaves your device.</p>
 
     <h3>2.7 Trial Period Tracking</h3>
     <p><strong>What:</strong> The timestamp of your first app launch, used to determine whether your 7-day free trial is still active.</p>
@@ -261,7 +261,7 @@
     <p><strong>No third-party analytics provider:</strong> the analytics software is self-hosted on hardware operated by the developer in Switzerland; data is transmitted TLS-encrypted, and no third-party analytics provider receives it.</p>
 
     <h3>2.9 Export &amp; Backup</h3>
-    <p>On your request, the app creates a CSV file or a JSON backup of your workout entries, including custom sports and categories. The JSON backup also holds simple app counters, such as how often the purchase screen was shown. The file goes only where you save or share it. We never receive it.</p>
+    <p>On your request, the app creates a CSV file or a JSON backup. The backup contains your workout entries as described in section 2.1, including values taken from Apple Health or Apple Watch such as active energy and average heart rate, plus your custom sports and categories and simple app counters. Settings and breaks are not included. The file goes only where you save or share it. We never receive it. Please handle it with care, as it may contain health information.</p>
 
 <h2>3. What We Do NOT Collect</h2>
     <p>Streak does not:</p>
@@ -338,7 +338,7 @@
     </div>
 
     <div class="meta">
-      Zuletzt aktualisiert: 22. November 2026 (v8) &nbsp;&middot;&nbsp;
+      Zuletzt aktualisiert: 22. November 2026 (v9) &nbsp;&middot;&nbsp;
       Entwickler: Anastasios Panagou, Schweiz &nbsp;&middot;&nbsp;
       Plattformen: iOS (Android in Vorbereitung) &nbsp;&middot;&nbsp;
       <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>
@@ -393,13 +393,13 @@
     <p><em>Gesundheitsdaten werden nicht f&uuml;r Werbezwecke verwendet und nicht an Dritte oder Datenh&auml;ndler weitergegeben.</em></p>
 
     <h3>2.3 App&#8209;Einstellungen und Pr&auml;ferenzen</h3>
-    <p><strong>Was:</strong> Optionaler Name, optionales Geburtsjahr (nur f&uuml;r Pulszonen), Wochenziel, Darstellungseinstellungen, Benachrichtigungszeiten, Akzentfarbe, gew&auml;hlter Hintergrund.</p>
-    <p><strong>Wo gespeichert:</strong> Ausschliesslich lokal auf Ihrem Ger&auml;t. iOS verwendet <code>UserDefaults</code>, Android verwendet Jetpack <code>DataStore</code>. Es findet keine &Uuml;bertragung statt.</p>
+    <p><strong>Was:</strong> Optionaler Name, optionales Geburtsjahr (nur f&uuml;r Pulszonen), Wochenziel und ob es Trainingstage oder Trainings z&auml;hlt, Pausen (Zeitraum und Grund: Krankheit, Verletzung oder Ferien), Darstellungseinstellungen, Erinnerungszeit und ob die Erinnerung nur bei knappem Wochenziel kommt, Akzentfarbe, gew&auml;hlter Hintergrund.</p>
+    <p><strong>Wo gespeichert:</strong> Ausschliesslich lokal auf Ihrem Ger&auml;t. iOS verwendet <code>UserDefaults</code>, Android verwendet Jetpack <code>DataStore</code>. Es findet keine &Uuml;bertragung statt. Diese Angaben werden nicht &uuml;ber iCloud abgeglichen, sind nicht im Backup enthalten und gehen nicht in die Nutzungsstatistik. Die gekoppelte Apple Watch erh&auml;lt davon Wochenziel und Z&auml;hlweise, Akzentfarbe, ob der Tageskontext eingeschaltet ist, den berechneten Stand von Woche und Serie sowie das Enddatum einer laufenden Pause, nie aber den Grund einer Pause.</p>
     <p><strong>Rechtsgrundlage (soweit DSGVO anwendbar):</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO / nach Schweizer Recht Vertragserf&uuml;llung.</p>
     <p><strong>Aufbewahrung:</strong> Bis zur Deinstallation der App oder bis Sie die Einstellungen zur&uuml;cksetzen.</p>
 
     <h3>2.4 Widget&#8209;Daten</h3>
-    <p><strong>Was:</strong> Wochenziel, aktive Tage dieser Woche und an welchen Tagen Sie trainiert haben, aktueller Streak, Akzentfarbe und ob Streak Pro aktiv ist, f&uuml;r die Widgets auf Home&#8209; und Sperrbildschirm.</p>
+    <p><strong>Was:</strong> Wochenziel, Fortschritt der Woche, an welchen Tagen und wie oft Sie diese Woche trainiert haben, aktuelle Serie, Akzentfarbe und ob Streak Pro aktiv ist, f&uuml;r die Widgets auf Home&#8209; und Sperrbildschirm.</p>
     <p><strong>Wo gespeichert:</strong> Lokal auf Ihrem Ger&auml;t. iOS nutzt einen App&#8209;Group&#8209;Container, Android verwendet denselben <code>DataStore</code> wie die Haupt&#8209;App, auf den der Glance&#8209;Widget&#8209;Worker zugreift. Keine &Uuml;bertragung an Server.</p>
     <p><strong>Rechtsgrundlage (soweit DSGVO anwendbar):</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO / Vertragserf&uuml;llung.</p>
 
@@ -414,7 +414,7 @@
     <p>Informationen zur Verarbeitung von Transaktionsdaten finden Sie in <a href="https://www.apple.com/legal/privacy/" target="_blank">Apples Datenschutzrichtlinien</a> bzw. <a href="https://policies.google.com/privacy" target="_blank">Googles Datenschutzrichtlinien</a>.</p>
 
     <h3>2.6 Lokale Benachrichtigungen</h3>
-    <p>Lokale Benachrichtigungen (z.B. t&auml;gliche Erinnerungen) werden vollst&auml;ndig durch das Betriebssystem (iOS bzw. Android) verwaltet. Kein Server ist involviert, keine Daten verlassen Ihr Ger&auml;t.</p>
+    <p>Lokale Benachrichtigungen (die Erinnerung, t&auml;glich oder auf Wunsch nur an Tagen, an denen Ihr Wochenziel knapp wird) plant und zeigt das Betriebssystem. W&auml;hrend einer eingetragenen Pause bleibt die Erinnerung aus. Kein Server ist beteiligt, keine Daten verlassen Ihr Ger&auml;t.</p>
 
     <h3>2.7 Trial&#8209;Periode</h3>
     <p><strong>Was:</strong> Zeitstempel des ersten App&#8209;Starts, um zu bestimmen, ob Ihre 7&#8209;t&auml;gige Gratis&#8209;Testphase noch l&auml;uft.</p>
@@ -431,7 +431,7 @@
     <p><strong>Kein Analyseanbieter als Dritter:</strong> Die Analysesoftware l&auml;uft selbst gehostet auf Hardware, die der Entwickler in der Schweiz betreibt; die Daten werden TLS&#8209;verschl&uuml;sselt &uuml;bertragen, und kein Analyseanbieter erh&auml;lt sie.</p>
 
     <h3>2.9 Export und Backup</h3>
-    <p>Auf Ihren Wunsch erstellt die App eine CSV&#8209;Datei oder ein JSON&#8209;Backup Ihrer Trainingseintr&auml;ge mit eigenen Sportarten und Kategorien. Das JSON&#8209;Backup enth&auml;lt zudem einfache Z&auml;hler der App, etwa wie oft die Kaufansicht erschien. Die Datei geht nur dorthin, wo Sie sie selbst speichern oder teilen. Wir erhalten sie nicht.</p>
+    <p>Auf Ihren Wunsch erstellt die App eine CSV&#8209;Datei oder ein JSON&#8209;Backup. Das Backup enth&auml;lt Ihre Trainingseintr&auml;ge wie in Abschnitt 2.1 beschrieben, also auch aus Apple Health oder von der Apple Watch &uuml;bernommene Werte wie aktive Energie und durchschnittliche Herzfrequenz, dazu eigene Sportarten und Kategorien sowie einfache Z&auml;hler der App. Einstellungen und Pausen sind nicht enthalten. Die Datei geht nur dorthin, wo Sie sie selbst speichern oder teilen. Wir erhalten sie nicht. Gehen Sie sorgf&auml;ltig mit ihr um, weil sie Gesundheitsangaben enthalten kann.</p>
 
 <h2>3. Was wir nicht erfassen</h2>
     <p>Streak:</p>
