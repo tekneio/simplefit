@@ -21,7 +21,7 @@
         "Two columns on the unfolded iPhone Duo",
         "Custom accent color (color picker)",
         "Home and Lock Screen widgets",
-        "iCloud sync, CSV export and complete JSON backup"
+        "iCloud sync, CSV export and JSON backup with exercises, energy and heart rate"
       ]
     }
   },
@@ -30,16 +30,16 @@
     "Streak Startbildschirm mit Heatmap-Kalender, Apple Health (Schlaf, Move, Ruhepuls) und Kraft-Eintrag": "Streak home screen with heatmap calendar, Apple Health (sleep, Move, resting heart rate) and a strength entry",
     "Streak Workout-Detail: Pulskurve, Zonen, Energie und Dauer von der Apple Watch": "Streak workout detail: Apple Watch heart-rate curve, zones, energy and duration",
     "Streak Apple Watch: Tagesansicht mit Trainingsfortschritt": "Streak on Apple Watch: today view with training progress",
-    "Streak Apple Watch: Wochenziel und Streak": "Streak on Apple Watch: weekly goal and streak",
+    "Streak Apple Watch: Woche mit jedem Training und Wochenziel": "Streak Apple Watch: the week with every workout and the weekly goal",
     "Streak Apple Watch: Status und Sync": "Streak on Apple Watch: status and sync",
     "Streak Heatmap-Kalender mit Aktive-Tage-Ring, Apple Health und Wochenzielen, Blau": "Streak heatmap calendar with active days ring, Apple Health and weekly goals, blue",
-    "Streak Startbildschirm: Wochenziel erreicht, Streak und Aktive Tage mit Coral-Akzent": "Streak home screen: weekly goal reached, streak and active days with coral accent",
-    "Streak Neuer Eintrag: Sportart wählen, schnell erfasst": "Streak new entry: pick a sport, logged in seconds",
+    "Streak Startbildschirm: Wochenring mit Tagen und Trainings, Wochenziel erreicht": "Streak home screen: week ring with days and workouts, weekly goal reached",
+    "Streak Schnellblatt: letztes Training wiederholen oder eine übliche Sportart antippen": "Streak quick log: repeat your last workout or tap one of your usual sports",
     "Streak Kraft-Logging: Übungen mit Sätzen, Wiederholungen und Gewicht": "Streak strength logging: exercises with sets, reps and weight",
     "Streak Statistik Alle mit Training-Insights": "Streak all-time statistics with training insights",
     "Streak Statistik Alle im Dark Mode": "Streak all-time statistics in Dark Mode",
     "Streak Jahresübersicht mit voller Heatmap": "Streak year overview with a full heatmap",
-    "Streak Monats-Heatmap": "Streak monthly heatmap",
+    "Streak Jahresrückblick als Bild zum Teilen": "Streak year in review as a picture to share",
     "Streak Wochenübersicht mit Sportarten und Fokus": "Streak weekly overview with sports and focus",
     "Streak Startbildschirm im Light Mode": "Streak home screen in Light Mode",
     "Streak Startbildschirm im Dark Mode": "Streak home screen in Dark Mode",
@@ -53,8 +53,8 @@
     "Streak Statistik mit Insights": "Streak statistics with insights",
     "Streak mit Foto-Hintergrund und Liquid Glass": "Streak with a photo background and Liquid Glass",
     "Streak Glas-Einstellungen: Blur, Dimming und Clear Glass Cards": "Streak glass settings: blur, dimming and Clear Glass Cards",
-    "Streak Einstellungen: Name, Wochenziel, Motivation und Theme": "Streak settings: name, weekly goal, motivation and theme",
-    "Streak Einstellungen: Erinnerungen und Apple Health": "Streak settings: reminders and Apple Health"
+    "Streak Einstellungen: Wochenziel, Zählweise und Pause": "Streak settings: weekly goal, what it counts and breaks",
+    "Streak Startbildschirm mit laufender Pause": "Streak home screen during a break"
   },
   "texts": {
     "live-badge": "Now on the App Store",
@@ -174,7 +174,7 @@
     "s10-p1": "Duration, energy &amp; avg heart rate",
     "s10-p2": "iCloud Sync",
     "s10-p3": "CSV &amp; JSON Export",
-    "s10-p4": "Complete backup",
+    "s10-p4": "Backup &amp; restore",
     "s10-p5": "No workout data on our servers",
     "cta-h": "Ready to train<br><span style=\"background:linear-gradient(135deg,var(--blue),var(--blue-light)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;\">more consistently?</span>",
     "cta-sub": "Try Streak Pro free for 7 days — then keep logging and your streak for free, unlock the whole app once with Pro. No subscription, no login, no ads.",
