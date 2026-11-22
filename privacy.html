@@ -168,14 +168,14 @@
     </div>
 
     <div class="meta">
-      Last updated: September 6, 2026 (v7) &nbsp;&middot;&nbsp;
+      Last updated: November 22, 2026 (v8) &nbsp;&middot;&nbsp;
       Developer: Anastasios Panagou, Switzerland &nbsp;&middot;&nbsp;
-      Platforms: iOS &amp; Android &nbsp;&middot;&nbsp;
+      Platforms: iOS (Android in preparation) &nbsp;&middot;&nbsp;
       <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>
     </div>
 
     <h2>1. Introduction</h2>
-    <p>This Privacy Policy explains how Streak (&ldquo;the app&rdquo;, &ldquo;we&rdquo;) processes your personal data. Streak is available for <strong>iOS</strong> and <strong>Android</strong> and follows a strict data minimization principle: the app uses no advertising and integrates no third-party analytics services, advertising or tracking SDKs. Your workout data either stays on your device or, on iOS, is stored in your private iCloud account, which only you can access. Apart from your optional iCloud sync, the only data sent to a server operated by us is optional usage statistics, without your name, workout details or health data, which you switch on yourself (see section 2.8). On Android, data stays exclusively on your device unless you choose to export it.</p>
+    <p>This Privacy Policy explains how Streak (&ldquo;the app&rdquo;, &ldquo;we&rdquo;) processes your personal data. Streak is available for <strong>iOS</strong>. An Android version is in preparation, and the Android sections apply once it is released. Streak follows a strict data minimization principle: the app uses no advertising and integrates no third-party analytics services, advertising or tracking SDKs. Your workout data either stays on your device or, on iOS, is stored in your private iCloud account, which only you can access. Apart from your optional iCloud sync, the only data sent to a server operated by us is optional usage statistics, without your name, workout details or health data, which you switch on yourself (see section 2.8). On Android, data stays exclusively on your device unless you choose to export it.</p>
     <p>This policy is intended to meet the requirements of the <strong>Swiss Federal Act on Data Protection (DSG/revFADP)</strong> and, where applicable, the <strong>EU General Data Protection Regulation (GDPR)</strong>.</p>
 
     <div class="card">
@@ -187,12 +187,13 @@
     <h2>2. Data We Process</h2>
 
     <h3>2.1 Workout &amp; Activity Logs</h3>
-    <p><strong>What:</strong> Your workout entries (date, activity type, duration, intensity, notes) and any custom sport types or categories you create.</p>
+    <p><strong>What:</strong> Your workout entries (date and time, activity type, focus, title, duration, intensity, notes, exercises with sets, reps and weight, active energy and average heart rate, and their origin such as Apple Watch or Apple Health) and any custom sport types or categories you create.</p>
     <p><strong>Where stored:</strong></p>
     <ul>
       <li><strong>iOS:</strong> On your device and, if iCloud is enabled, in your private iCloud CloudKit database. Data is encrypted by Apple and is accessible only to you &ndash; the developer has no access.</li>
       <li><strong>Android:</strong> Exclusively on your device in the app&rsquo;s private storage (Room database). No cloud sync. You can export your data at any time via Settings &gt; Data.</li>
     </ul>
+    <p><strong>Apple Watch:</strong> If an Apple Watch is paired, the app syncs your entries, weekly goal, streak and accent color directly between iPhone and watch (via Apple&rsquo;s WatchConnectivity framework). Workouts started on the watch are saved to Apple Health with their active energy. No server of ours is involved.</p>
     <p><strong>Legal basis (where GDPR applies):</strong> Performance of a contract (Art.&nbsp;6(1)(b) GDPR).</p>
     <p><strong>Retention:</strong> Until you delete the data in the app, uninstall the app, or remove it from your iCloud account (iOS). You fully control retention.</p>
 
@@ -201,7 +202,7 @@
     <ul>
       <li><strong>iOS &mdash; Apple HealthKit:</strong>
         <ul>
-          <li><strong>Read:</strong> Workouts (<code>HKWorkoutType</code>), Active Energy Burned, Heart Rate, Resting Heart Rate, Sleep Analysis, Step Count, Body Mass &ndash; to import your Apple Health workouts with their energy and average heart rate, to show your daily context (sleep, move, resting heart rate), to derive a workout's intensity, and to estimate calories for the Move ring. Heart-rate samples of a workout are read on demand for the Pro heart-rate curve and are not stored.</li>
+          <li><strong>Read:</strong> Workouts (<code>HKWorkoutType</code>), Active Energy Burned, Heart Rate, Resting Heart Rate, Sleep Analysis, Step Count, Body Mass &ndash; to import your Apple Health workouts with their energy and average heart rate, to show your daily context (sleep, move, resting heart rate), to show your steps on days without a workout, to derive a workout's intensity, and to estimate calories for the Move ring. Heart-rate samples of a workout are read on demand for the Pro heart-rate curve and are not stored.</li>
           <li><strong>Write:</strong> Workouts (<code>HKWorkoutType</code>) and Active Energy Burned &ndash; new workouts can optionally be written back to Apple Health.</li>
         </ul>
       </li>
@@ -222,13 +223,13 @@
     <p><em>Streak does not use health data for advertising purposes and does not sell it to third parties or data brokers.</em></p>
 
     <h3>2.3 App Settings &amp; Preferences</h3>
-    <p><strong>What:</strong> Your optional name, weekly goal, appearance settings, notification preferences, accent color, and custom background selection.</p>
+    <p><strong>What:</strong> Your optional name, optional birth year (only for heart-rate zones), weekly goal, appearance settings, notification preferences, accent color, and custom background selection.</p>
     <p><strong>Where stored:</strong> Locally on your device only. iOS uses <code>UserDefaults</code>; Android uses Jetpack <code>DataStore</code>. This data is never transmitted or synced by the app to any server.</p>
     <p><strong>Legal basis (where GDPR applies):</strong> Performance of a contract (Art.&nbsp;6(1)(b) GDPR).</p>
     <p><strong>Retention:</strong> Until you uninstall the app or reset the settings.</p>
 
     <h3>2.4 Widget Data</h3>
-    <p><strong>What:</strong> Active days this week, your current streak, and the selected accent colour &ndash; used to power the home screen widget.</p>
+    <p><strong>What:</strong> Your weekly goal, active days this week and on which days you trained, your current streak, the selected accent colour and whether Streak Pro is active, used for the Home Screen and Lock Screen widgets.</p>
     <p><strong>Where stored:</strong> Locally on your device. iOS uses an app group shared container between the app and the widget extension; Android uses the same <code>DataStore</code> the main app reads from, accessed by the Glance widget worker. This data is never transmitted.</p>
     <p><strong>Legal basis (where GDPR applies):</strong> Performance of a contract (Art.&nbsp;6(1)(b) GDPR).</p>
 
@@ -258,6 +259,9 @@
     <p><strong>Legal basis and withdrawal:</strong> your consent (Art. 6(1)(a) GDPR; Art. 31(1) Swiss FADP). You can withdraw it at any time by switching the option off in Settings. The installation identifier is then deleted on your device, so later events can no longer be connected to earlier ones. To have the events already stored under your identifier deleted, e-mail the identifier (shown in Settings while the option is on) to <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>; we delete them within 30 days. Identifiers that have already been replaced by the 45-day rotation can no longer be attributed to you, so events stored under them can neither be exported nor deleted individually; they expire with the retention period below.</p>
     <p><strong>Retention:</strong> raw events are deleted after 365 days; aggregated figures (for example &ldquo;number of app starts per week&rdquo;) contain no identifier and are kept for as long as needed to develop the app.</p>
     <p><strong>No third-party analytics provider:</strong> the analytics software is self-hosted on hardware operated by the developer in Switzerland; data is transmitted TLS-encrypted, and no third-party analytics provider receives it.</p>
+
+    <h3>2.9 Export &amp; Backup</h3>
+    <p>On your request, the app creates a CSV file or a JSON backup of your workout entries, including custom sports and categories. The JSON backup also holds simple app counters, such as how often the purchase screen was shown. The file goes only where you save or share it. We never receive it.</p>
 
 <h2>3. What We Do NOT Collect</h2>
     <p>Streak does not:</p>
@@ -334,14 +338,14 @@
     </div>
 
     <div class="meta">
-      Zuletzt aktualisiert: 6. September 2026 (v7) &nbsp;&middot;&nbsp;
+      Zuletzt aktualisiert: 22. November 2026 (v8) &nbsp;&middot;&nbsp;
       Entwickler: Anastasios Panagou, Schweiz &nbsp;&middot;&nbsp;
-      Plattformen: iOS &amp; Android &nbsp;&middot;&nbsp;
+      Plattformen: iOS (Android in Vorbereitung) &nbsp;&middot;&nbsp;
       <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>
     </div>
 
     <h2>1. Einleitung</h2>
-    <p>Diese Datenschutzerkl&auml;rung erl&auml;utert, wie Streak (&bdquo;die App&ldquo;, &bdquo;wir&ldquo;) personenbezogene Daten bearbeitet. Die App ist f&uuml;r <strong>iOS</strong> und <strong>Android</strong> verf&uuml;gbar und folgt dem Prinzip der Datensparsamkeit: Streak verwendet keine Werbung und nutzt keine Analyse&#8209;Dienste, Werbe&#8209; oder Tracking&#8209;SDKs von Drittanbietern. Ihre Trainingsdaten verbleiben entweder auf Ihrem Ger&auml;t oder werden &ndash; nur auf iOS &ndash; in Ihrer privaten iCloud gespeichert. Abgesehen von Ihrem optionalen iCloud&#8209;Sync sind die einzigen Daten, die an einen von uns betriebenen Server gehen, optionale Nutzungsstatistiken ohne Namen, Trainingsdetails oder Gesundheitsdaten, die Sie selbst einschalten (siehe Abschnitt 2.8). Auf Android verbleiben alle Daten ausschliesslich lokal, ausser Sie exportieren sie manuell.</p>
+    <p>Diese Datenschutzerkl&auml;rung erl&auml;utert, wie Streak (&bdquo;die App&ldquo;, &bdquo;wir&ldquo;) personenbezogene Daten bearbeitet. Die App ist f&uuml;r <strong>iOS</strong> erh&auml;ltlich, eine Android&#8209;Version ist in Vorbereitung. Die Angaben zu Android gelten ab deren Ver&ouml;ffentlichung. Die App folgt dem Prinzip der Datensparsamkeit: Streak verwendet keine Werbung und nutzt keine Analyse&#8209;Dienste, Werbe&#8209; oder Tracking&#8209;SDKs von Drittanbietern. Ihre Trainingsdaten verbleiben entweder auf Ihrem Ger&auml;t oder werden &ndash; nur auf iOS &ndash; in Ihrer privaten iCloud gespeichert. Abgesehen von Ihrem optionalen iCloud&#8209;Sync sind die einzigen Daten, die an einen von uns betriebenen Server gehen, optionale Nutzungsstatistiken ohne Namen, Trainingsdetails oder Gesundheitsdaten, die Sie selbst einschalten (siehe Abschnitt 2.8). Auf Android verbleiben alle Daten ausschliesslich lokal, ausser Sie exportieren sie manuell.</p>
     <p>Diese Erkl&auml;rung ber&uuml;cksichtigt das <strong>revidierte Schweizer Datenschutzgesetz (DSG/revDSG)</strong> sowie &ndash; soweit anwendbar &ndash; die <strong>EU&#8209;Datenschutz&#8209;Grundverordnung (DSGVO)</strong>.</p>
 
     <div class="card">
@@ -353,12 +357,13 @@
     <h2>2. Daten, die wir bearbeiten</h2>
 
     <h3>2.1 Trainings&#8209; und Aktivit&auml;tsdaten</h3>
-    <p><strong>Was:</strong> Ihre Trainingseintr&auml;ge (Datum, Sportart, Dauer, Intensit&auml;t, Notizen) sowie eigene Sportarten und Kategorien.</p>
+    <p><strong>Was:</strong> Ihre Trainingseintr&auml;ge (Datum und Uhrzeit, Sportart, Fokus, Titel, Dauer, Intensit&auml;t, Notizen, &Uuml;bungen mit S&auml;tzen, Wiederholungen und Gewicht, aktive Energie und durchschnittliche Herzfrequenz, Herkunft wie Apple Watch oder Apple Health) sowie eigene Sportarten und Kategorien.</p>
     <p><strong>Wo gespeichert:</strong></p>
     <ul>
       <li><strong>iOS:</strong> Auf Ihrem Ger&auml;t und, wenn iCloud aktiviert ist, in Ihrer privaten iCloud&#8209;CloudKit&#8209;Datenbank. Diese Daten sind von Apple verschl&uuml;sselt und nur f&uuml;r Sie zug&auml;nglich &ndash; wir haben keinen Zugriff.</li>
       <li><strong>Android:</strong> Ausschliesslich lokal auf Ihrem Ger&auml;t in der privaten App&#8209;Datenbank (Room). Keine Cloud&#8209;Synchronisation. Sie k&ouml;nnen die Daten jederzeit unter Einstellungen &gt; Daten exportieren.</li>
     </ul>
+    <p><strong>Apple Watch:</strong> Ist eine Apple Watch gekoppelt, gleicht die App Ihre Eintr&auml;ge, Ihr Wochenziel, Ihre Serie und die Akzentfarbe direkt zwischen iPhone und Uhr ab (&uuml;ber das WatchConnectivity&#8209;Framework von Apple). Auf der Uhr gestartete Trainings speichert die App mit aktiver Energie in Apple Health. Ein Server von uns ist daran nicht beteiligt.</p>
     <p><strong>Rechtsgrundlage (soweit DSGVO anwendbar):</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO &ndash; Vertragserf&uuml;llung; nach Schweizer Recht Vertragserf&uuml;llung gem&auml;ss DSG.</p>
     <p><strong>Aufbewahrung:</strong> Bis Sie die Daten in der App l&ouml;schen, die App deinstallieren oder sie aus Ihrem iCloud&#8209;Konto entfernen (iOS).</p>
 
@@ -367,7 +372,7 @@
     <ul>
       <li><strong>iOS &mdash; Apple HealthKit:</strong>
         <ul>
-          <li><strong>Lesen:</strong> Trainingseinheiten (<code>HKWorkoutType</code>), aktiv verbrannte Kalorien, Herzfrequenz, Ruhepuls, Schlaf, Schrittanzahl, K&ouml;rpergewicht &ndash; zum Importieren Ihrer Apple&#8209;Health&#8209;Trainings mit Energie und &Oslash;&nbsp;Puls, f&uuml;r den Tageskontext (Schlaf, Bewegung, Ruhepuls), zur Ableitung der Intensit&auml;t einer Einheit und zur Kaloriensch&auml;tzung f&uuml;r den Bewegungsring. Herzfrequenzwerte einer Einheit werden f&uuml;r die Pro&#8209;Pulskurve bei Bedarf gelesen und nicht gespeichert.</li>
+          <li><strong>Lesen:</strong> Trainingseinheiten (<code>HKWorkoutType</code>), aktiv verbrannte Kalorien, Herzfrequenz, Ruhepuls, Schlaf, Schrittanzahl, K&ouml;rpergewicht &ndash; zum Importieren Ihrer Apple&#8209;Health&#8209;Trainings mit Energie und &Oslash;&nbsp;Puls, f&uuml;r den Tageskontext (Schlaf, Bewegung, Ruhepuls), zur Anzeige Ihrer Schritte an Tagen ohne Training, zur Ableitung der Intensit&auml;t einer Einheit und zur Kaloriensch&auml;tzung f&uuml;r den Bewegungsring. Herzfrequenzwerte einer Einheit werden f&uuml;r die Pro&#8209;Pulskurve bei Bedarf gelesen und nicht gespeichert.</li>
           <li><strong>Schreiben:</strong> Trainingseinheiten und aktiv verbrannte Kalorien &ndash; neue Trainings k&ouml;nnen optional zur&uuml;ck in Apple Health geschrieben werden.</li>
         </ul>
       </li>
@@ -388,13 +393,13 @@
     <p><em>Gesundheitsdaten werden nicht f&uuml;r Werbezwecke verwendet und nicht an Dritte oder Datenh&auml;ndler weitergegeben.</em></p>
 
     <h3>2.3 App&#8209;Einstellungen und Pr&auml;ferenzen</h3>
-    <p><strong>Was:</strong> Optionaler Name, Wochenziel, Darstellungseinstellungen, Benachrichtigungszeiten, Akzentfarbe, gew&auml;hlter Hintergrund.</p>
+    <p><strong>Was:</strong> Optionaler Name, optionales Geburtsjahr (nur f&uuml;r Pulszonen), Wochenziel, Darstellungseinstellungen, Benachrichtigungszeiten, Akzentfarbe, gew&auml;hlter Hintergrund.</p>
     <p><strong>Wo gespeichert:</strong> Ausschliesslich lokal auf Ihrem Ger&auml;t. iOS verwendet <code>UserDefaults</code>, Android verwendet Jetpack <code>DataStore</code>. Es findet keine &Uuml;bertragung statt.</p>
     <p><strong>Rechtsgrundlage (soweit DSGVO anwendbar):</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO / nach Schweizer Recht Vertragserf&uuml;llung.</p>
     <p><strong>Aufbewahrung:</strong> Bis zur Deinstallation der App oder bis Sie die Einstellungen zur&uuml;cksetzen.</p>
 
     <h3>2.4 Widget&#8209;Daten</h3>
-    <p><strong>Was:</strong> Aktive Tage dieser Woche, aktueller Streak und Akzentfarbe &ndash; f&uuml;r das Home&#8209;Screen&#8209;Widget.</p>
+    <p><strong>Was:</strong> Wochenziel, aktive Tage dieser Woche und an welchen Tagen Sie trainiert haben, aktueller Streak, Akzentfarbe und ob Streak Pro aktiv ist, f&uuml;r die Widgets auf Home&#8209; und Sperrbildschirm.</p>
     <p><strong>Wo gespeichert:</strong> Lokal auf Ihrem Ger&auml;t. iOS nutzt einen App&#8209;Group&#8209;Container, Android verwendet denselben <code>DataStore</code> wie die Haupt&#8209;App, auf den der Glance&#8209;Widget&#8209;Worker zugreift. Keine &Uuml;bertragung an Server.</p>
     <p><strong>Rechtsgrundlage (soweit DSGVO anwendbar):</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO / Vertragserf&uuml;llung.</p>
 
@@ -424,6 +429,9 @@
     <p><strong>Rechtsgrundlage und Widerruf:</strong> Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO; Art. 31 Abs. 1 DSG). Sie k&ouml;nnen sie jederzeit widerrufen, indem Sie die Option in den Einstellungen ausschalten. Die Installationskennung wird dann auf Ihrem Ger&auml;t gel&ouml;scht, sp&auml;tere Ereignisse lassen sich nicht mehr mit fr&uuml;heren verbinden. Wenn Sie auch die bereits unter Ihrer Kennung gespeicherten Ereignisse l&ouml;schen lassen m&ouml;chten, senden Sie die Kennung (sie wird in den Einstellungen angezeigt, solange die Option aktiv ist) an <a href="mailto:hello@tekneio.com">hello@tekneio.com</a>; wir l&ouml;schen sie innerhalb von 30 Tagen. Kennungen, die durch die 45&#8209;Tage&#8209;Rotation bereits ersetzt wurden, lassen sich Ihnen nicht mehr zuordnen; darunter gespeicherte Ereignisse k&ouml;nnen deshalb weder exportiert noch gezielt gel&ouml;scht werden und verfallen mit der Aufbewahrungsfrist unten.</p>
     <p><strong>Aufbewahrung:</strong> Rohereignisse werden nach 365 Tagen gel&ouml;scht; aggregierte Zahlen (zum Beispiel &bdquo;App&#8209;Starts pro Woche&ldquo;) enthalten keine Kennung und werden so lange aufbewahrt, wie es f&uuml;r die Weiterentwicklung der App n&ouml;tig ist.</p>
     <p><strong>Kein Analyseanbieter als Dritter:</strong> Die Analysesoftware l&auml;uft selbst gehostet auf Hardware, die der Entwickler in der Schweiz betreibt; die Daten werden TLS&#8209;verschl&uuml;sselt &uuml;bertragen, und kein Analyseanbieter erh&auml;lt sie.</p>
+
+    <h3>2.9 Export und Backup</h3>
+    <p>Auf Ihren Wunsch erstellt die App eine CSV&#8209;Datei oder ein JSON&#8209;Backup Ihrer Trainingseintr&auml;ge mit eigenen Sportarten und Kategorien. Das JSON&#8209;Backup enth&auml;lt zudem einfache Z&auml;hler der App, etwa wie oft die Kaufansicht erschien. Die Datei geht nur dorthin, wo Sie sie selbst speichern oder teilen. Wir erhalten sie nicht.</p>
 
 <h2>3. Was wir nicht erfassen</h2>
     <p>Streak:</p>

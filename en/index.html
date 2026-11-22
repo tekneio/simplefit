@@ -53,16 +53,18 @@
   "description": "Workout tracker with a heatmap calendar, weekly ring, Apple Watch and Apple Health (duration, energy, heart rate in the day list), strength logging and statistics. No subscription, no login, no tracking. One-time Pro purchase.",
   "image": "https://streak.tekneio.com/icon.png",
   "screenshot": "https://streak.tekneio.com/_render_premium/en_slide-1.png",
-  "softwareVersion": "2.0.1",
+  "softwareVersion": "2.3.1",
   "featureList": [
     "Heatmap calendar",
+    "Week ring and weekly goal with streak",
     "Apple Watch app with complications",
     "Strength logging: sets, reps, weight, volume, all-time records",
-    "Streaks and weekly goals",
-    "Statistics: week, month, year",
+    "Statistics: week, month, year, all time",
+    "Apple Health: workouts with energy and heart rate, sleep, resting heart rate, steps",
+    "Two columns on the unfolded iPhone Duo",
     "Custom accent color (color picker)",
     "Home and Lock Screen widgets",
-    "Apple Health import, iCloud sync, CSV/JSON export"
+    "iCloud sync, CSV and JSON export"
   ],
   "url": "https://streak.tekneio.com/en/",
   "downloadUrl": "https://apps.apple.com/app/id6762292658",
@@ -706,12 +708,13 @@
     <div class="feat-text">
       <div class="label" data-key="s1-label">Calendar · Heatmap</div>
       <h2 class="title" data-key="s1-h2">Every Day<br><span class="dim">Counts.</span></h2>
-      <p class="body-text" data-key="s1-body">The heatmap shows at a glance how active you were — the more intense the workout, the deeper the color. Active days glow, rest days are visible. Always keep your rhythm in view.</p>
+      <p class="body-text" data-key="s1-body">The heatmap shows at a glance how active you were. The more workouts on a day, the stronger the color. Training days glow, rest days stay visible, so your rhythm is always in view.</p>
       <div class="pills">
-        <span class="pill"><span class="dot"></span><span data-key="s1-p1">Heatmap by intensity</span></span>
+        <span class="pill"><span class="dot"></span><span data-key="s1-p1">Heatmap by number of workouts</span></span>
         <span class="pill"><span class="dot o"></span><span data-key="s1-p2">Streak display</span></span>
         <span class="pill"><span class="dot g"></span><span data-key="s1-p3">Weekly goal tracking</span></span>
         <span class="pill"><span class="dot"></span><span data-key="s1-p4">Month and Year</span></span>
+        <span class="pill"><span class="dot p"></span><span data-key="s1-p5">iPhone Duo: two columns</span></span>
       </div>
     </div>
     <div style="display:flex; justify-content:center;">
@@ -811,7 +814,7 @@
   <div class="wrap" style="text-align:center; max-width:720px;">
     <div class="label" style="display:block;" data-key="s4-label">Statistics · Overview</div>
     <h2 class="title" style="text-align:center;" data-key="s4-h2">Your Progress,<br><span class="dim">at a Glance.</span></h2>
-    <p class="body-text" style="margin:0 auto; text-align:center; max-width:500px;" data-key="s4-body">All workouts, this week, month or full year — Streak shows charts, monthly heatmaps, volume and average heart rate per sport, and personal insights. Everything clear, all in one app.</p>
+    <p class="body-text" style="margin:0 auto; text-align:center; max-width:500px;" data-key="s4-body">All workouts, this week, month or full year. Streak shows charts, monthly heatmaps, volume, average heart rate and calories per sport, and personal insights, such as your training minutes per week next to the WHO guideline of 150 minutes.</p>
   </div>
 
   <div class="stat-grid">
@@ -1007,7 +1010,7 @@
     <div class="feat-text">
       <div class="label green" data-key="s10-label">Apple Health · Data</div>
       <h2 class="title" data-key="s10-h2">Connected to<br><span class="dim">Apple Health.</span></h2>
-      <p class="body-text" data-key="s10-body">Workouts from Apple Health and Apple Watch land in the day list on their own — with duration, energy and average heart rate. With Streak Pro you see the heart-rate curve and zones of every workout. Export your data as CSV or JSON, create backups and restore them. Your data stays with you: on your device or in your private iCloud.</p>
+      <p class="body-text" data-key="s10-body">Workouts from Apple Health and Apple Watch land in the day list on their own, with duration, energy and average heart rate. With Streak Pro you see the heart-rate curve and zones of every workout, and your steps on days without one. Export your data as CSV or JSON, create backups and restore them. Your data stays with you: on your device or in your private iCloud.</p>
       <div class="pills">
         <span class="pill"><span class="dot g"></span><span data-key="s10-p1">Duration, energy &amp; avg heart rate</span></span>
         <span class="pill"><span class="dot"></span><span data-key="s10-p2">iCloud Sync</span></span>
@@ -1078,7 +1081,7 @@
 
   <div style="max-width:1100px; margin:48px auto 0; padding-top:28px; border-top:1px solid rgba(255,255,255,0.06); display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap;">
     <p style="font-size:12px; color:rgba(255,255,255,0.40); margin:0;" data-key="footer-copyright">© 2026 A. Panagou · TEKNEIO®. Streak. All rights reserved.</p>
-    <p style="font-size:12px; color:rgba(255,255,255,0.40); margin:0;" data-key="footer-version">iOS 18+ · iPhone · Apple Watch · Apple Health</p>
+    <p style="font-size:12px; color:rgba(255,255,255,0.40); margin:0;" data-key="footer-version">iOS 18+ · iPhone and iPhone Duo · Apple Watch · Apple Health</p>
   </div>
 </footer>
 

@@ -53,16 +53,18 @@
   "description": "Workout-Tracker mit Heatmap-Kalender, Wochenring, Apple Watch und Apple Health (Dauer, Energie, Puls in der Tagesliste), Kraft-Logging und Statistiken. Kein Abo, kein Login, kein Tracking. Einmaliger Pro-Kauf.",
   "image": "https://streak.tekneio.com/icon.png",
   "screenshot": "https://streak.tekneio.com/_render_premium/en_slide-1.png",
-  "softwareVersion": "2.0.1",
+  "softwareVersion": "2.3.1",
   "featureList": [
     "Heatmap-Kalender",
+    "Wochenring und Wochenziel mit Serie",
     "Apple Watch App mit Complications",
     "Kraft-Logging: Sätze, Wiederholungen, Gewicht, Volumen, Allzeit-Rekorde",
-    "Streaks und Wochenziele",
-    "Statistiken: Woche, Monat, Jahr",
+    "Statistiken: Woche, Monat, Jahr, Alle",
+    "Apple Health: Trainings mit Energie und Puls, Schlaf, Ruhepuls, Schritte",
+    "Zwei Spalten auf dem aufgeklappten iPhone Duo",
     "Eigene Akzentfarbe (Farbwähler)",
     "Home- und Lock-Screen Widgets",
-    "Apple Health Import, iCloud Sync, CSV/JSON Export"
+    "iCloud Sync, CSV- und JSON-Export"
   ],
   "url": "https://streak.tekneio.com/",
   "downloadUrl": "https://apps.apple.com/app/id6762292658",
@@ -702,12 +704,13 @@
     <div class="feat-text">
       <div class="label" data-key="s1-label">Kalender · Heatmap</div>
       <h2 class="title" data-key="s1-h2">Jeder Tag<br><span class="dim">zählt.</span></h2>
-      <p class="body-text" data-key="s1-body">Die Heatmap zeigt auf einen Blick, wie aktiv du warst — je intensiver das Training, desto tiefer die Farbe. Aktive Tage leuchten, Pausen sind sichtbar. So behältst du deinen Rhythmus immer im Blick.</p>
+      <p class="body-text" data-key="s1-body">Die Heatmap zeigt auf einen Blick, wie aktiv du warst. Je mehr Trainings an einem Tag, desto kräftiger die Farbe. Trainingstage leuchten, Ruhetage bleiben sichtbar. So behältst du deinen Rhythmus im Blick.</p>
       <div class="pills">
-        <span class="pill"><span class="dot"></span><span data-key="s1-p1">Heatmap nach Intensität</span></span>
+        <span class="pill"><span class="dot"></span><span data-key="s1-p1">Heatmap nach Anzahl Trainings</span></span>
         <span class="pill"><span class="dot o"></span><span data-key="s1-p2">Streak-Anzeige</span></span>
         <span class="pill"><span class="dot g"></span><span data-key="s1-p3">Wochenziel-Tracking</span></span>
         <span class="pill"><span class="dot"></span><span data-key="s1-p4">Monat und Jahr</span></span>
+        <span class="pill"><span class="dot p"></span><span data-key="s1-p5">iPhone Duo: zwei Spalten</span></span>
       </div>
     </div>
     <div style="display:flex; justify-content:center;">
@@ -807,7 +810,7 @@
   <div class="wrap" style="text-align:center; max-width:720px;">
     <div class="label" style="display:block;" data-key="s4-label">Statistiken · Übersicht</div>
     <h2 class="title" style="text-align:center;" data-key="s4-h2">Dein Fortschritt,<br><span class="dim">auf einen Blick.</span></h2>
-    <p class="body-text" style="margin:0 auto; text-align:center; max-width:500px;" data-key="s4-body">Alle Trainings, diese Woche, Monat oder ganzes Jahr — Streak zeigt dir Charts, Monats-Heatmaps, Umfang und Ø Puls je Sportart und persönliche Insights. Alles klar, alles in einer App.</p>
+    <p class="body-text" style="margin:0 auto; text-align:center; max-width:500px;" data-key="s4-body">Alle Trainings, diese Woche, Monat oder ganzes Jahr. Streak zeigt dir Charts, Monats-Heatmaps, Umfang, Ø Puls und Ø kcal je Sportart und persönliche Insights, etwa deine Trainingsminuten pro Woche neben der WHO-Empfehlung von 150 Minuten.</p>
   </div>
 
   <div class="stat-grid">
@@ -1003,7 +1006,7 @@
     <div class="feat-text">
       <div class="label green" data-key="s10-label">Apple Health · Daten</div>
       <h2 class="title" data-key="s10-h2">Verbunden mit<br><span class="dim">Apple Health.</span></h2>
-      <p class="body-text" data-key="s10-body">Workouts aus Apple Health und von der Apple Watch landen von selbst in der Tagesliste — mit Dauer, Energie und Ø Puls. Mit Streak Pro siehst du zu jeder Einheit die Pulskurve und die Zonen. Exportiere deine Daten als CSV oder JSON, erstelle Backups und stelle sie wieder her. Deine Daten bleiben bei dir: auf dem Gerät oder in deiner privaten iCloud.</p>
+      <p class="body-text" data-key="s10-body">Workouts aus Apple Health und von der Apple Watch landen von selbst in der Tagesliste, mit Dauer, Energie und Ø Puls. Mit Streak Pro siehst du zu jeder Einheit die Pulskurve und die Zonen und an Tagen ohne Training deine Schritte. Exportiere deine Daten als CSV oder JSON, erstelle Backups und stelle sie wieder her. Deine Daten bleiben bei dir: auf dem Gerät oder in deiner privaten iCloud.</p>
       <div class="pills">
         <span class="pill"><span class="dot g"></span><span data-key="s10-p1">Dauer, Energie &amp; Ø Puls</span></span>
         <span class="pill"><span class="dot"></span><span data-key="s10-p2">iCloud Sync</span></span>
@@ -1074,7 +1077,7 @@
 
   <div style="max-width:1100px; margin:48px auto 0; padding-top:28px; border-top:1px solid rgba(255,255,255,0.06); display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap;">
     <p style="font-size:12px; color:rgba(255,255,255,0.40); margin:0;" data-key="footer-copyright">© 2026 A. Panagou · TEKNEIO®. Streak. Alle Rechte vorbehalten.</p>
-    <p style="font-size:12px; color:rgba(255,255,255,0.40); margin:0;" data-key="footer-version">iOS 18+ · iPhone · Apple Watch · Apple Health</p>
+    <p style="font-size:12px; color:rgba(255,255,255,0.40); margin:0;" data-key="footer-version">iOS 18+ · iPhone und iPhone Duo · Apple Watch · Apple Health</p>
   </div>
 </footer>
 
