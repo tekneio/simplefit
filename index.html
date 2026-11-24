@@ -565,6 +565,34 @@
   .hero-watch .watch-screen { border-radius: 25px; }
   @media (max-width: 800px) { .hero-watch { display: none; } }
 
+  /* ── iPhone Duo, aufgeklappt quer ── */
+  .duo-stage { max-width: 880px; margin: 44px auto 0; position: relative; }
+  .duo-stage input { position: absolute; opacity: 0; pointer-events: none; }
+  .duo-tabs { display: inline-flex; gap: 4px; padding: 4px; margin-bottom: 26px; border-radius: 999px;
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10); }
+  .duo-tabs label { padding: 8px 20px; border-radius: 999px; font-size: 13px; font-weight: 600;
+    color: rgba(255,255,255,0.60); cursor: pointer; transition: background .2s, color .2s; }
+  #duo-v1:checked ~ .duo-tabs label[for="duo-v1"],
+  #duo-v2:checked ~ .duo-tabs label[for="duo-v2"] { background: rgba(255,255,255,0.16); color: #fff; }
+  #duo-v1:focus-visible ~ .duo-tabs label[for="duo-v1"],
+  #duo-v2:focus-visible ~ .duo-tabs label[for="duo-v2"] { outline: 2px solid var(--orange); outline-offset: 2px; }
+  .duo { background: #1a1a1a; border-radius: 40px; padding: 10px; position: relative;
+    box-shadow: 0 0 0 1.5px rgba(255,255,255,0.22), 0 0 0 3px rgba(255,255,255,0.05),
+      0 24px 70px rgba(0,0,0,0.55), 0 6px 18px rgba(0,0,0,0.35), 0 0 80px rgba(220,120,20,0.10),
+      inset 0 1px 0 rgba(255,255,255,0.14); }
+  .duo-screen { border-radius: 31px; overflow: hidden; background: #000; line-height: 0; position: relative;
+    aspect-ratio: 1720 / 1210; }
+  .duo-screen img { width: 100%; height: auto; display: none; pointer-events: none; }
+  #duo-v1:checked ~ .duo .duo-shot-1, #duo-v2:checked ~ .duo .duo-shot-2 { display: block; }
+  /* Knick in der Mitte */
+  .duo-screen::after { content: ''; position: absolute; top: 0; bottom: 0; left: 50%; width: 26px; transform: translateX(-50%);
+    background: linear-gradient(90deg, transparent, rgba(0,0,0,0.14) 46%, rgba(255,255,255,0.05) 54%, transparent); pointer-events: none; }
+  @media (max-width: 700px) {
+    .duo { border-radius: 20px; padding: 5px; }
+    .duo-screen { border-radius: 15px; }
+    .duo-screen::after { width: 14px; }
+  }
+
   /* ── Color Spectrum (custom accent) ── */
   .spectrum {
     height: 16px; border-radius: 10px; max-width: 440px; margin: 26px auto 0;
@@ -694,6 +722,37 @@
     <span class="pill"><span class="dot"></span><span data-key="w-p2">Tagesfortschritt &amp; Streak</span></span>
     <span class="pill"><span class="dot o"></span><span data-key="w-p3">Complications</span></span>
     <span class="pill"><span class="dot p"></span><span data-key="w-p4">Sync mit dem iPhone</span></span>
+  </div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ IPHONE DUO ═══════════════ -->
+<div class="bg-radial-orange">
+<div class="section" style="text-align:center;">
+  <div class="wrap" style="text-align:center; max-width:680px;">
+    <div class="label orange" style="display:block;" data-key="d-label">iPhone Duo · Aufgeklappt</div>
+    <h2 class="title" style="text-align:center;" data-key="d-h2">Mehr Platz.<br><span class="dim">Mehr Überblick.</span></h2>
+    <p class="body-text" style="margin:0 auto; text-align:center; max-width:520px;" data-key="d-body">Aufgeklappt nutzt Streak die ganze Fläche des iPhone Duo: links deine Woche mit Ring und dem heutigen Tag, rechts der Monat und dein Wochenziel über die letzten zehn Wochen. Auch die Statistik steht in zwei Spalten. Zugeklappt bleibt alles wie gewohnt.</p>
+  </div>
+  <div class="duo-stage">
+    <input type="radio" name="duo-view" id="duo-v1" checked>
+    <input type="radio" name="duo-view" id="duo-v2">
+    <div class="duo-tabs">
+      <label for="duo-v1" data-key="d-t1">Kalender</label>
+      <label for="duo-v2" data-key="d-t2">Statistik</label>
+    </div>
+    <div class="duo"><div class="duo-screen">
+      <img class="duo-shot-1" src="screenshots/de/duo_calendar.jpg" data-shot="duo_calendar" width="1720" height="1210" alt="Streak auf dem aufgeklappten iPhone Duo: Woche mit Ring links, Monatskalender und Wochenziel rechts">
+      <img class="duo-shot-2" src="screenshots/de/duo_stats.jpg" data-shot="duo_stats" width="1720" height="1210" loading="lazy" alt="Streak auf dem aufgeklappten iPhone Duo: Statistik der Woche in zwei Spalten">
+    </div></div>
+  </div>
+  <div class="pills" style="justify-content:center; max-width:640px; margin-left:auto; margin-right:auto;">
+    <span class="pill"><span class="dot o"></span><span data-key="d-p1">Zwei Spalten aufgeklappt</span></span>
+    <span class="pill"><span class="dot"></span><span data-key="d-p2">Kalender und Statistik</span></span>
+    <span class="pill"><span class="dot g"></span><span data-key="d-p3">Wochenziel über zehn Wochen</span></span>
+    <span class="pill"><span class="dot p"></span><span data-key="d-p4">Zugeklappt wie gewohnt</span></span>
   </div>
 </div>
 </div>
